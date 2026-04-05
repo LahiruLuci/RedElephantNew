@@ -92,7 +92,7 @@ export default function AdvancedWellnessPage() {
                     <Revealer>
                         <div style={{ position: 'relative', paddingBottom: '120%' }}>
                             <Image
-                                src="/assets/spa-and-wellness/Yoga.webp"
+                                src="/assets/traditional-treatment.webp"
                                 alt="Philosophy"
                                 fill
                                 style={{ objectFit: 'cover', borderRadius: '4px' }}

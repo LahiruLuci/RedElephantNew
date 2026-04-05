@@ -12,10 +12,10 @@ const slides = [
         sub: 'Ancient wonders rise from emerald jungles',
         accent: '#C0392B',
         posD: 'center center',
-        posM: '50% center', 
+        posM: '50% center',
     },
     {
-        src: '/assets/hero-image-2.webp',
+        src: '/assets/beach-sunset.webp',
         alt: 'Unawatuna Beach — turquoise waters',
         label: 'Coastal Bliss',
         headline: ['Golden', 'Shores'],
@@ -35,7 +35,7 @@ const slides = [
         posM: 'center 30%', /* Keep leopard in frame on mobile */
     },
     {
-        src: '/assets/culture-package/esela-perahera.webp',
+        src: '/assets/kandy-asela-perahera.webp',
         alt: 'Kandy Esala Perahera — the grand cultural procession',
         label: 'Living Culture',
         headline: ['Feel the', 'Spirit'],
@@ -184,16 +184,16 @@ export default function HeroSection() {
                     } as React.CSSProperties} />
                     <div style={{
                         position: 'absolute', inset: 0,
-                        background: 'linear-gradient(135deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.2) 55%,rgba(0,0,0,.5) 100%)',
+                        background: 'linear-gradient(135deg,rgba(0,0,0,.4) 0%,rgba(0,0,0,.1) 55%,rgba(0,0,0,.3) 100%)',
                     }} />
                 </div>
             )}
 
             {/* ══ GRADIENT OVERLAYS ══ */}
-            <div style={{ position: 'absolute', inset: 0, zIndex: 2, background: 'linear-gradient(135deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.25) 55%,rgba(0,0,0,.55) 100%)' }} />
-            <div style={{ position: 'absolute', inset: 0, zIndex: 2, background: `linear-gradient(110deg,${slide.accent}50 0%,transparent 45%)`, transition: 'background 1s ease', pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, zIndex: 2, background: 'linear-gradient(135deg,rgba(0,0,0,.4) 0%,rgba(0,0,0,.15) 55%,rgba(0,0,0,.35) 100%)' }} />
+            <div style={{ position: 'absolute', inset: 0, zIndex: 2, background: `linear-gradient(110deg,${slide.accent}25 0%,transparent 45%)`, transition: 'background 1s ease', pointerEvents: 'none' }} />
             {/* heavy bottom fade so stats bar reads well */}
-            <div style={{ position: 'absolute', inset: 0, zIndex: 2, background: 'linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.1) 38%)', pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, zIndex: 2, background: 'linear-gradient(to top,rgba(0,0,0,.65) 0%,rgba(0,0,0,.05) 35%)', pointerEvents: 'none' }} />
 
             {/* ══ LEFT ACCENT BAR ══ */}
             <div style={{

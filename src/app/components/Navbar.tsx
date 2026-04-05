@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 
 /* ─── Data ─── */
 const megaCols = [
@@ -71,6 +72,7 @@ const rightLinks = ['Wellness', 'Contact'];
 const MOBILE_BP = 1024; // px
 
 export default function Navbar() {
+    const pathname = usePathname();
     const [scrolled, setScrolled] = useState(false);
     const [megaOpen, setMegaOpen] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -290,15 +292,34 @@ export default function Navbar() {
                                 transition: 'opacity 0.4s ease, transform 0.5s cubic-bezier(0.4,0,0.2,1)',
                                 flexShrink: 0,
                             }}>
-                                {leftLinks.map(label => (
-                                    <Link key={label} href={label === 'Home' ? '/' : label === 'About Us' ? '/about' : label === 'Weddings & Events' ? '/weddings' : '#'}
-                                        style={baseLinkStyle}
-                                        onMouseEnter={hoverIn}
-                                        onMouseLeave={hoverOut}
-                                    >
-                                        {label}
-                                    </Link>
-                                ))}
+                                {leftLinks.map(label => {
+                                    const href = label === 'Home' ? '/' : label === 'About Us' ? '/about' : label === 'Weddings & Events' ? '/weddings' : '#';
+                                    const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
+
+                                    return (
+                                        <Link key={label} href={href}
+                                            style={{
+                                                ...baseLinkStyle,
+                                                color: isActive ? linkHoverC : linkColor,
+                                                background: isActive ? linkHoverB : 'none',
+                                                position: 'relative'
+                                            }}
+                                            onMouseEnter={hoverIn}
+                                            onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                                                if (!isActive) hoverOut(e);
+                                            }}
+                                        >
+                                            {label}
+                                            {isActive && (
+                                                <div style={{
+                                                    position: 'absolute', bottom: '4px', left: '50%', transform: 'translateX(-50%)',
+                                                    width: '4px', height: '4px', borderRadius: '50%', background: '#C41E3A',
+                                                    animation: 'scale-in 0.3s ease forwards'
+                                                }} />
+                                            )}
+                                        </Link>
+                                    );
+                                })}
                             </nav>
 
                             {/* LOGO — centred at top, slides left on scroll */}
@@ -378,16 +399,35 @@ export default function Navbar() {
                                         : 'max-width 0.3s ease, opacity 0.2s ease',
                                     pointerEvents: scrolled ? 'all' : 'none',
                                 }}>
-                                    {leftLinks.map(label => (
-                                        <Link key={`r-${label}`}
-                                            href={label === 'Home' ? '/' : label === 'About Us' ? '/about' : label === 'Weddings & Events' ? '/weddings' : '#'}
-                                            style={{ ...baseLinkStyle, paddingLeft: '10px', paddingRight: '10px' }}
-                                            onMouseEnter={hoverIn}
-                                            onMouseLeave={hoverOut}
-                                        >
-                                            {label}
-                                        </Link>
-                                    ))}
+                                    {leftLinks.map(label => {
+                                        const href = label === 'Home' ? '/' : label === 'About Us' ? '/about' : label === 'Weddings & Events' ? '/weddings' : '#';
+                                        const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
+
+                                        return (
+                                            <Link key={`r-${label}`}
+                                                href={href}
+                                                style={{
+                                                    ...baseLinkStyle,
+                                                    paddingLeft: '10px', paddingRight: '10px',
+                                                    color: isActive ? linkHoverC : linkColor,
+                                                    background: isActive ? linkHoverB : 'none',
+                                                    position: 'relative'
+                                                }}
+                                                onMouseEnter={hoverIn}
+                                                onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                                                    if (!isActive) hoverOut(e);
+                                                }}
+                                            >
+                                                {label}
+                                                {isActive && (
+                                                    <div style={{
+                                                        position: 'absolute', bottom: '4px', left: '50%', transform: 'translateX(-50%)',
+                                                        width: '4px', height: '4px', borderRadius: '50%', background: '#C41E3A',
+                                                    }} />
+                                                )}
+                                            </Link>
+                                        );
+                                    })}
                                     <div style={{ width: '1px', height: '16px', background: scrolled ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.15)', margin: '0 4px', flexShrink: 0 }} />
                                 </div>
 
@@ -496,16 +536,34 @@ export default function Navbar() {
                                 </div>
 
                                 {/* Regular right links */}
-                                {rightLinks.map(label => (
-                                    <Link key={label}
-                                        href={label === 'Contact' ? '/contact' : label === 'Wellness' ? '/wellness' : '#'}
-                                        style={baseLinkStyle}
-                                        onMouseEnter={hoverIn}
-                                        onMouseLeave={hoverOut}
-                                    >
-                                        {label}
-                                    </Link>
-                                ))}
+                                {rightLinks.map(label => {
+                                    const href = label === 'Contact' ? '/contact' : label === 'Wellness' ? '/wellness' : '#';
+                                    const isActive = pathname === (href as string) || ((href as string) !== '/' && pathname.startsWith(href as string));
+
+                                    return (
+                                        <Link key={label}
+                                            href={href}
+                                            style={{
+                                                ...baseLinkStyle,
+                                                color: isActive ? linkHoverC : linkColor,
+                                                background: isActive ? linkHoverB : 'none',
+                                                position: 'relative'
+                                            }}
+                                            onMouseEnter={hoverIn}
+                                            onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                                                if (!isActive) hoverOut(e);
+                                            }}
+                                        >
+                                            {label}
+                                            {isActive && (
+                                                <div style={{
+                                                    position: 'absolute', bottom: '4px', left: '50%', transform: 'translateX(-50%)',
+                                                    width: '4px', height: '4px', borderRadius: '50%', background: '#C41E3A',
+                                                }} />
+                                            )}
+                                        </Link>
+                                    );
+                                })}
                             </nav>
                         </>
                     )}
@@ -629,16 +687,16 @@ export default function Navbar() {
                                                 </div>
                                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
                                                     {col.links.map(l => (
-                                                         <Link key={l.label} href={l.href} onClick={() => setMobileOpen(false)}
-                                                             style={{
-                                                                 display: 'block', color: '#7A7060', textDecoration: 'none',
-                                                                 fontFamily: 'var(--font-body)', fontSize: '1.14rem',
-                                                                 padding: '8px 0 8px 14px',
-                                                                 borderLeft: '2px solid rgba(196,30,58,0.25)',
-                                                                 transition: 'color 0.2s, border-color 0.2s',
-                                                             }}
-                                                         >{l.label}</Link>
-                                                     ))}
+                                                        <Link key={l.label} href={l.href} onClick={() => setMobileOpen(false)}
+                                                            style={{
+                                                                display: 'block', color: '#7A7060', textDecoration: 'none',
+                                                                fontFamily: 'var(--font-body)', fontSize: '1.14rem',
+                                                                padding: '8px 0 8px 14px',
+                                                                borderLeft: '2px solid rgba(196,30,58,0.25)',
+                                                                transition: 'color 0.2s, border-color 0.2s',
+                                                            }}
+                                                        >{l.label}</Link>
+                                                    ))}
                                                 </div>
                                                 {col.subTitle && <>
                                                     <div style={{
@@ -671,20 +729,29 @@ export default function Navbar() {
                             </div>
                         );
 
-                        /* ── Regular flat link ── */
+                        const href = label === 'Home' ? '/' : label === 'About Us' ? '/about' : label === 'Weddings & Events' ? '/weddings' : label === 'Wellness' ? '/wellness' : label === 'Contact' ? '/contact' : '#';
+                        const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
+
                         return (
                             <div key={label} style={{ borderBottom: '1px solid rgba(0,0,0,0.07)' }}>
                                 <Link
-                                    href={label === 'Home' ? '/' : label === 'About Us' ? '/about' : label === 'Weddings & Events' ? '/weddings' : label === 'Wellness' ? '/wellness' : label === 'Contact' ? '/contact' : '#'}
+                                    href={href}
                                     onClick={() => setMobileOpen(false)}
                                     style={{
-                                        display: 'block', color: '#1C1A18', textDecoration: 'none',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                        color: isActive ? '#C41E3A' : '#1C1A18', textDecoration: 'none',
                                         fontFamily: 'var(--font-accent)', fontSize: '1rem', fontWeight: 600,
                                         letterSpacing: '0.08em', textTransform: 'uppercase',
                                         padding: '18px 0',
+                                        background: isActive ? 'rgba(196,30,58,0.04)' : 'none',
+                                        paddingLeft: isActive ? '12px' : '0',
+                                        transition: 'all 0.3s ease'
                                     }}
                                 >
                                     {label}
+                                    {isActive && (
+                                        <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#C41E3A', marginRight: '12px' }} />
+                                    )}
                                 </Link>
                             </div>
                         );
@@ -709,6 +776,13 @@ export default function Navbar() {
                     </div>
                 </div>  {/* end scrollable nav items */}
             </div>      {/* end mobile overlay panel */}
+            {/* ══ GLOBAL KEYFRAMES ══ */}
+            <style>{`
+                @keyframes scale-in {
+                    from { transform: translateX(-50%) scale(0); opacity: 0; }
+                    to { transform: translateX(-50%) scale(1); opacity: 1; }
+                }
+            `}</style>
         </>
     );
 }

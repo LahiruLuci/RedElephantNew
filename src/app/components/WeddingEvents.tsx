@@ -369,7 +369,7 @@ export default function WeddingEvents() {
                 {/* Background photo with mouse parallax */}
                 <div style={{
                     position: 'absolute', inset: '-8%',
-                    backgroundImage: 'url(/assets/wedding-and-events/beach-weddign.webp)',
+                    backgroundImage: 'url(/assets/wedding-new-2.webp)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     transform: `translate(${(mousePos.x - 0.5) * -18}px, ${(mousePos.y - 0.5) * -12}px)`,
@@ -672,7 +672,7 @@ export default function WeddingEvents() {
                 {/* Left — Photo */}
                 <div style={{ position: 'relative', minHeight: '400px', overflow: 'hidden' }}>
                     <Image
-                        src="/assets/wedding-and-events/weddinggg.webp"
+                        src="/assets/wedding-new-1.webp"
                         alt="Wedding Ceremony"
                         fill
                         style={{ objectFit: 'cover', transition: 'transform 0.8s ease' }}
