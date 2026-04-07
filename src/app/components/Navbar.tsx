@@ -23,19 +23,24 @@ const megaCols = [
             { label: 'Nuwara Eliya', href: '/destinations/nuwaraeliya' },
             { label: 'Ella', href: '/destinations/ella' },
             { label: 'Hatton', href: '/destinations/hatton' },
-            { label: 'Knuckles', href: '/destinations/knuckles' }
+            { label: 'Badulla', href: '/destinations/badulla' }
         ],
     },
     {
         title: 'Sun and Sand',
         links: [
             { label: 'All Beaches', href: '/destinations/beaches' },
-            { label: 'Unawatuna', href: '/destinations/unawatuna' },
-            { label: 'Galle & Fort', href: '/destinations/galle' },
+            { label: 'Ahangama/Ahungalla', href: '/destinations/beaches' },
+            { label: 'Arugam Bay', href: '/destinations/arugambay' },
+            { label: 'Bentota', href: '/destinations/bentota' },
+            { label: 'Galle & Unawatuna', href: '/destinations/galle' },
             { label: 'Negombo', href: '/destinations/negombo' },
+            { label: 'Kalpitiya', href: '/destinations/kalpitiya' },
+            { label: 'Mirissa/Weligama', href: '/destinations/mirissa' },
+            { label: 'Koggala', href: '/destinations/beaches' },
+            { label: 'Pasikuda/Trinco', href: '/destinations/beaches' },
             { label: 'Hikkaduwa', href: '/destinations/hikkaduwa' },
-            { label: 'Mirissa', href: '/destinations/mirissa' },
-            { label: 'Weligama', href: '/destinations/weligama' }
+            { label: 'Hiriketiya', href: '/destinations/beaches' }
         ],
     },
     {
@@ -43,31 +48,37 @@ const megaCols = [
         links: [
             { label: 'All Parks', href: '/destinations/wildlife' },
             { label: 'Yala National Park', href: '/destinations/yala' },
-            { label: 'Udawalawe', href: '/destinations/udawalawe' },
-            { label: 'Minneriya', href: '/destinations/minneriya' },
-            { label: 'Wilpattu', href: '/destinations/wilpattu' },
-            { label: 'Gal Oya', href: '/destinations/galoya' }
+            { label: 'Udawalawe National Park', href: '/destinations/udawalawe' },
+            { label: 'Minneriya National Park', href: '/destinations/minneriya' },
+            { label: 'Bundala National Park', href: '/destinations/wildlife' },
+            { label: 'Kumana National Park', href: '/destinations/wildlife' },
+            { label: 'Kaudulla National Park', href: '/destinations/wildlife' },
+            { label: 'Galoya National Park', href: '/destinations/galoya' },
+            { label: 'Habarana', href: '/destinations/wildlife' },
+            { label: 'Wilpattu National Park', href: '/destinations/wilpattu' },
+            { label: 'Sinharaja Forest', href: '/destinations/wildlife' }
         ],
     },
     {
         title: 'Culture & Heritage',
         links: [
             { label: 'All Heritage', href: '/destinations/heritage' },
-            { label: 'Colombo', href: '/destinations/colombo' },
             { label: 'Galle Fort', href: '/destinations/galle' },
-            { label: 'Kitulgala Adventure', href: '/destinations/kitulgala' }
+            { label: 'Jaffna', href: '/destinations/heritage' },
+            { label: 'Colombo', href: '/destinations/colombo' },
+            { label: 'Chilaw', href: '/destinations/heritage' }
         ],
-        subTitle: 'Air / Sea Ports',
+        subTitle: 'Air/Sea Ports',
         subLinks: [
-            { label: 'All Ports', href: '#' },
-            { label: 'Colombo Airport', href: '/destinations/airport' },
-            { label: 'Hambantota Seaport', href: '#' }
+            { label: 'Global Access Overview', href: '/destinations/all-ports' },
+            { label: 'Sky Portals (Airports)', href: '/destinations/airports' },
+            { label: 'Maritime Gates (Ports)', href: '/destinations/seaports' }
         ],
     },
 ];
 
-const leftLinks = ['Home', 'About Us', 'Weddings & Events'];
-const rightLinks = ['Wellness', 'Contact'];
+const leftLinks = ['Home', 'Wellness', 'Weddings & Events'];
+const rightLinks = ['About Us', 'Contact'];
 
 const MOBILE_BP = 1024; // px
 
@@ -293,7 +304,7 @@ export default function Navbar() {
                                 flexShrink: 0,
                             }}>
                                 {leftLinks.map(label => {
-                                    const href = label === 'Home' ? '/' : label === 'About Us' ? '/about' : label === 'Weddings & Events' ? '/weddings' : '#';
+                                    const href = label === 'Home' ? '/' : label === 'Wellness' ? '/wellness' : label === 'Weddings & Events' ? '/weddings' : '#';
                                     const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
 
                                     return (
@@ -400,7 +411,7 @@ export default function Navbar() {
                                     pointerEvents: scrolled ? 'all' : 'none',
                                 }}>
                                     {leftLinks.map(label => {
-                                        const href = label === 'Home' ? '/' : label === 'About Us' ? '/about' : label === 'Weddings & Events' ? '/weddings' : '#';
+                                        const href = label === 'Home' ? '/' : label === 'Wellness' ? '/wellness' : label === 'Weddings & Events' ? '/weddings' : '#';
                                         const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
 
                                         return (
@@ -456,74 +467,79 @@ export default function Navbar() {
                                         top: '72px',
                                         left: 0,
                                         right: 0,
-                                        background: 'rgba(255,253,249,0.98)',
-                                        backdropFilter: 'blur(20px)',
-                                        WebkitBackdropFilter: 'blur(20px)',
-                                        borderTop: '2px solid #C41E3A',
-                                        borderBottom: '1px solid rgba(0,0,0,0.06)',
-                                        padding: '36px 0 40px',
+                                        background: '#0F0F0D', // Match high-end dark background
+                                        borderTop: '1.5px solid #C41E3A',
+                                        padding: '48px 0 64px',
                                         opacity: megaOpen ? 1 : 0,
                                         pointerEvents: megaOpen ? 'all' : 'none',
                                         transform: megaOpen ? 'translateY(0)' : 'translateY(-10px)',
-                                        transition: 'opacity 0.28s ease, transform 0.28s ease',
-                                        zIndex: 999,
-                                        boxShadow: '0 16px 48px rgba(0,0,0,0.10)',
+                                        transition: 'opacity 0.32s cubic-bezier(0.4,0,0.2,1), transform 0.32s cubic-bezier(0.4,0,0.2,1)',
+                                        zIndex: 1100,
+                                        boxShadow: '0 24px 64px rgba(0,0,0,0.45)',
                                     }}>
                                         <div style={{
                                             maxWidth: '1440px',
                                             margin: '0 auto',
-                                            padding: '0 40px',
+                                            padding: '0 56px',
                                             display: 'grid',
                                             gridTemplateColumns: 'repeat(4,1fr)',
-                                            gap: '40px',
+                                            gap: '48px',
                                         }}>
-                                            {megaCols.map(col => (
-                                                <div key={col.title}>
+                                            {megaCols.map((col, idx) => (
+                                                <div key={col.title} style={{
+                                                    borderRight: idx < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none',
+                                                    paddingRight: '24px'
+                                                }}>
                                                     <h3 style={{
                                                         fontFamily: 'var(--font-accent)',
-                                                        fontSize: '0.94rem',
-                                                        fontWeight: 700,
-                                                        letterSpacing: '0.18em',
-                                                        textTransform: 'uppercase',
-                                                        color: 'var(--color-primary-light)',
-                                                        marginBottom: '12px',
-                                                        paddingBottom: '8px',
-                                                        borderBottom: '1px solid rgba(196,30,58,0.25)',
+                                                        fontSize: '1.14rem',
+                                                        fontWeight: 500,
+                                                        color: '#C41E3A', // Match reference red text
+                                                        marginBottom: '26px',
+                                                        letterSpacing: '0.01em',
                                                     }}>{col.title}</h3>
-                                                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                                                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
                                                         {col.links.map(l => (
                                                             <li key={l.label}>
-                                                                <a href={l.href} style={{
-                                                                    fontFamily: 'var(--font-body)', fontSize: '0.94rem',
-                                                                    color: '#7A7060', textDecoration: 'none',
-                                                                    display: 'block', padding: '2px 0',
-                                                                    transition: 'color 0.2s, padding-left 0.2s',
+                                                                <Link href={l.href} style={{
+                                                                    fontFamily: 'var(--font-accent)',
+                                                                    fontSize: '0.94rem',
+                                                                    fontWeight: 400,
+                                                                    color: 'rgba(255,255,255,0.85)',
+                                                                    textDecoration: 'none',
+                                                                    display: 'block',
+                                                                    transition: 'color 0.2s, transform 0.2s',
                                                                 }}
-                                                                    onMouseEnter={e => { e.currentTarget.style.color = '#C41E3A'; e.currentTarget.style.paddingLeft = '6px'; }}
-                                                                    onMouseLeave={e => { e.currentTarget.style.color = '#7A7060'; e.currentTarget.style.paddingLeft = '0'; }}
-                                                                >{l.label}</a>
+                                                                    onMouseEnter={e => { e.currentTarget.style.color = '#fff'; e.currentTarget.style.transform = 'translateX(4px)'; }}
+                                                                    onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.85)'; e.currentTarget.style.transform = 'translateX(0)'; }}
+                                                                >{l.label}</Link>
                                                             </li>
                                                         ))}
                                                     </ul>
                                                     {col.subTitle && <>
                                                         <h3 style={{
-                                                            fontFamily: 'var(--font-accent)', fontSize: '0.94rem', fontWeight: 700,
-                                                            letterSpacing: '0.18em', textTransform: 'uppercase',
-                                                            color: 'var(--color-primary-light)',
-                                                            marginBottom: '12px', marginTop: '20px',
-                                                            paddingBottom: '8px', borderBottom: '1px solid rgba(196,30,58,0.25)',
+                                                            fontFamily: 'var(--font-accent)',
+                                                            fontSize: '1.14rem',
+                                                            fontWeight: 500,
+                                                            color: '#C41E3A',
+                                                            marginBottom: '26px',
+                                                            marginTop: '44px',
+                                                            letterSpacing: '0.01em',
                                                         }}>{col.subTitle}</h3>
-                                                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                                                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
                                                             {(col.subLinks ?? []).map(l => (
                                                                 <li key={l.label}>
                                                                     <Link href={l.href} style={{
-                                                                        fontFamily: 'var(--font-body)', fontSize: '0.94rem',
-                                                                        color: '#7A7060', textDecoration: 'none',
-                                                                        display: 'block', padding: '2px 0',
-                                                                        transition: 'color 0.2s, padding-left 0.2s',
+                                                                        fontFamily: 'var(--font-accent)',
+                                                                        fontSize: '0.94rem',
+                                                                        fontWeight: 400,
+                                                                        color: 'rgba(255,255,255,0.85)',
+                                                                        textDecoration: 'none',
+                                                                        display: 'block',
+                                                                        transition: 'color 0.2s, transform 0.2s',
                                                                     }}
-                                                                        onMouseEnter={e => { e.currentTarget.style.color = '#C41E3A'; e.currentTarget.style.paddingLeft = '6px'; }}
-                                                                        onMouseLeave={e => { e.currentTarget.style.color = '#7A7060'; e.currentTarget.style.paddingLeft = '0'; }}
+                                                                        onMouseEnter={e => { e.currentTarget.style.color = '#fff'; e.currentTarget.style.transform = 'translateX(4px)'; }}
+                                                                        onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.85)'; e.currentTarget.style.transform = 'translateX(0)'; }}
                                                                     >{l.label}</Link>
                                                                 </li>
                                                             ))}
@@ -537,7 +553,7 @@ export default function Navbar() {
 
                                 {/* Regular right links */}
                                 {rightLinks.map(label => {
-                                    const href = label === 'Contact' ? '/contact' : label === 'Wellness' ? '/wellness' : '#';
+                                    const href = label === 'About Us' ? '/about' : label === 'Contact' ? '/contact' : '#';
                                     const isActive = pathname === (href as string) || ((href as string) !== '/' && pathname.startsWith(href as string));
 
                                     return (
@@ -564,6 +580,7 @@ export default function Navbar() {
                                         </Link>
                                     );
                                 })}
+
                             </nav>
                         </>
                     )}
@@ -637,7 +654,7 @@ export default function Navbar() {
                 {/* Scrollable nav items */}
                 <div style={{ padding: '24px 24px 0' }}>
                     {/* Mobile nav items */}
-                    {[...leftLinks, 'DESTINATIONS_SPECIAL', ...rightLinks].map((label) => {
+                    {['Home', 'DESTINATIONS_SPECIAL', 'Wellness', 'Weddings & Events', 'About Us', 'Contact'].map((label) => {
                         /* ── Destinations accordion ── */
                         if (label === 'DESTINATIONS_SPECIAL') return (
                             <div key="dest" style={{ borderBottom: '1px solid rgba(0,0,0,0.07)' }}>

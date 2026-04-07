@@ -249,13 +249,13 @@ export default function CollectionPage({ data }: { data: CollectionData }) {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     transform: `translateY(${scrolled * 0.35}px)`,
-                    filter: 'brightness(0.5) saturate(0.75)',
+                    /* Removed filter for raw image look */
                     willChange: 'transform',
                 }} />
 
                 {/* Gradients */}
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(7,8,10,0) 0%, rgba(7,8,10,0.4) 40%, rgba(7,8,10,1) 100%)' }} />
-                <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at bottom left, ${accent}1A 0%, transparent 60%)` }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(7,8,10,0.1) 0%, rgba(7,8,10,0.4) 50%, rgba(7,8,10,0.95) 100%)' }} />
+                <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse at bottom left, ${accent}12 0%, transparent 60%)` }} />
 
                 {/* Accent blob */}
                 <div style={{

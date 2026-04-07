@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Josefin+Sans:wght@300;400;600;700&display=swap');
 @import "tailwindcss";
 
 /* =============================================
@@ -50,10 +50,13 @@
         --gradient-card: linear-gradient(180deg, transparent 30%, rgba(10, 10, 15, 0.95) 100%);
         --gradient-gold: linear-gradient(135deg, #B8960C, #D4AF37, #F5D76E);
 
-        /* === TYPOGRAPHY === */
-        --font-heading: 'Playfair Display', Georgia, serif;
-        --font-body: 'Inter', system-ui, sans-serif;
-        --font-accent: 'Montserrat', sans-serif;
+        /* === TYPOGRAPHY — Premium Luxury Travel Tier === */
+        /* Cormorant Garamond: Ultra-editorial luxury serif (Aman, Four Seasons style) */
+        --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+        /* Plus Jakarta Sans: Crisp, modern, premium body text */
+        --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+        /* Josefin Sans: Elegant thin uppercase labels (luxury fashion & travel) */
+        --font-accent: 'Josefin Sans', sans-serif;
 
         /* === SPACING & SIZING === */
         --nav-height: 80px;

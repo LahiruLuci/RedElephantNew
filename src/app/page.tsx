@@ -23,7 +23,7 @@ export default function Home() {
       <WellnessSpa />
       <WeddingEvents />
       <TravelBlog />
-      <PartnersAwards />
+      {/* <PartnersAwards /> */}
       <TestimonialsSection />
       <CTASection />
     </main>

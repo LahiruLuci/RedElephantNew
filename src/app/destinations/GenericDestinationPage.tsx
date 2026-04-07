@@ -2,7 +2,7 @@
 
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { destinations } from '../../data/destinations';
+import { destinations, Attraction, Activity } from '../data/destinations';
 
 const baseDark = '#090A09'; // Extremely deep slate/charcoal
 const muted = '#939A95';
@@ -10,7 +10,7 @@ const gold = '#C9A96E';
 const subtleBorder = 'rgba(255, 255, 255, 0.04)';
 const glassBg = 'rgba(255, 255, 255, 0.02)';
 
-export default function DestinationDetail() {
+export default function GenericDestinationPage() {
     const params = useParams();
     const router = useRouter();
     const id = params?.id as string;
@@ -36,15 +36,13 @@ export default function DestinationDetail() {
     const data = destinations[id];
     if (!data) {
         return (
-            <>
-                <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: baseDark, padding: 24 }}>
-                    <div style={{ textAlign: 'center' }}>
-                        <div style={{ fontFamily: 'var(--font-heading)', fontSize: '3rem', fontWeight: 800, color: 'white', marginBottom: 16 }}>404</div>
-                        <p style={{ fontFamily: 'var(--font-body)', color: muted, marginBottom: 24 }}>Destination not found.</p>
-                        <button onClick={() => router.push('/tours/cultural-classic')} style={{ background: gold, color: baseDark, padding: '12px 28px', borderRadius: 50, border: 'none', cursor: 'pointer', fontFamily: 'var(--font-accent)', fontSize: '0.84rem', letterSpacing: '.1em', textTransform: 'uppercase', fontWeight: 800 }}>← Back to Tour</button>
-                    </div>
+            <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: baseDark, padding: 24 }}>
+                <div style={{ textAlign: 'center' }}>
+                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '3rem', fontWeight: 800, color: 'white', marginBottom: 16 }}>404</div>
+                    <p style={{ fontFamily: 'var(--font-body)', color: muted, marginBottom: 24 }}>Destination not found.</p>
+                    <button onClick={() => router.push('/')} style={{ background: gold, color: baseDark, padding: '12px 28px', borderRadius: 50, border: 'none', cursor: 'pointer', fontFamily: 'var(--font-accent)', fontSize: '0.84rem', letterSpacing: '.1em', textTransform: 'uppercase', fontWeight: 800 }}>← Back Home</button>
                 </div>
-            </>
+            </div>
         );
     }
 
@@ -326,7 +324,7 @@ export default function DestinationDetail() {
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fill, minmax(360px, 1fr))', gap: 32 }}>
-                    {data.attractions.map((attraction, idx) => (
+                    {data.attractions.map((attraction: Attraction, idx: number) => (
                         <div key={idx} className="glass-card">
                             {attraction.image && (
                                 <div style={{
@@ -370,7 +368,7 @@ export default function DestinationDetail() {
                         </div>
 
                         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 32 }}>
-                            {data.activities.map((activity, idx) => (
+                            {data.activities.map((activity: Activity, idx: number) => (
                                 <div key={idx} className="activity-card" style={{ marginTop: (!isMobile && idx % 2 !== 0) ? 60 : 0 }}>
                                     <div className="act-num">
                                         {String(idx + 1).padStart(2, '0')}
@@ -412,7 +410,7 @@ export default function DestinationDetail() {
                         </div>
 
                         <div>
-                            {data.cultural_insights.map((insight, idx) => (
+                            {data.cultural_insights.map((insight: any, idx: number) => (
                                 <div key={idx} className="accom-card" style={{ flexDirection: (!isMobile && idx % 2 !== 0) ? 'row-reverse' : undefined }}>
                                     <div className="accom-img-col">
                                         <div className="accom-img-wrapper">
@@ -431,7 +429,7 @@ export default function DestinationDetail() {
                                             {insight.description}
                                         </p>
                                         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                                            {insight.highlights.map((highlight, hIdx) => (
+                                            {insight.highlights.map((highlight: string, hIdx: number) => (
                                                 <div key={hIdx} className="accom-feature-chip">
                                                     <span style={{ color: gold }}>✦</span> {highlight}
                                                 </div>

@@ -5,44 +5,44 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 /* ─── Slide data ─── */
 const slides = [
     {
-        src: '/assets/hero-image-1.webp',
-        alt: 'Sri Lanka Tea Estates',
-        label: 'Cultural Triangle',
-        headline: ['Discover', 'Sri Lanka'],
-        sub: 'Ancient wonders rise from emerald jungles',
-        accent: '#C0392B',
-        posD: 'center center',
-        posM: '50% center',
-    },
-    {
-        src: '/assets/beach-sunset.webp',
-        alt: 'Unawatuna Beach — turquoise waters',
-        label: 'Coastal Bliss',
-        headline: ['Golden', 'Shores'],
-        sub: 'Pristine beaches, whale-watching cruises and coral reefs kissed by the Indian Ocean',
+        src: '/assets/index-hero.webp',
+        alt: 'Sri Lanka Ancient Heritage',
+        label: 'Cultural Legacy',
+        headline: ['Timeless', 'Wonders'],
+        sub: 'Immerse Yourself in the Grandeur of Ancient Kingdoms and Sacred Cities',
         accent: '#C9A96E',
         posD: 'center center',
-        posM: '60% center', /* Keep beach subject in frame */
+        posM: '65% center', /* Focus on people/pathway on mobile */
     },
     {
-        src: '/assets/yala-national-park-1.webp',
-        alt: 'Yala National Park — leopard safari',
-        label: 'Wildlife Safari',
-        headline: ['Wild', 'Encounters'],
-        sub: "Spot leopards, elephants and blue whales in the world's most biodiverse island nation",
+        src: '/assets/tour-category/adventure1.webp',
+        alt: 'Sri Lanka Adventure Exploration',
+        label: 'Spirit of Adventure',
+        headline: ['Epic', 'Journeys'],
+        sub: 'From Misty Peaks to Wild Jungles, Discover the Heart of Adventure',
         accent: '#D4842A',
-        posD: 'center 40%',
-        posM: 'center 30%', /* Keep leopard in frame on mobile */
+        posD: 'center center',
+        posM: '70% center', /* Keep subject more centered for adventure vibe */
     },
     {
-        src: '/assets/kandy-asela-perahera.webp',
-        alt: 'Kandy Esala Perahera — the grand cultural procession',
-        label: 'Living Culture',
-        headline: ['Feel the', 'Spirit'],
-        sub: 'Fire-breathers, Kandyan dancers and adorned elephants — culture that truly lives',
-        accent: '#8B4513',
+        src: '/assets/home-slide-03.webp',
+        alt: 'Sigiriya Rock Fortress Sri Lanka',
+        label: 'Ancient Wonders',
+        headline: ['Rise of', 'Sigiriya'],
+        sub: 'Ascend the Legendary Lion Rock — A UNESCO Wonder Carved by Ancient Kings',
+        accent: '#C9A96E',
         posD: 'center center',
-        posM: 'center 20%', /* Focus on dancers/elephants */
+        posM: 'center center',
+    },
+    {
+        src: '/assets/home-slide-04.webp',
+        alt: 'Sri Lanka Luxury Retreat',
+        label: 'Luxury Escapes',
+        headline: ['Refined', 'Luxury'],
+        sub: 'Experience Unparalleled Comfort in the Island\'s Most Exquisite Hideaways',
+        accent: '#27AE60',
+        posD: 'center center',
+        posM: 'center center',
     },
 ];
 
@@ -158,7 +158,8 @@ export default function HeroSection() {
                     objectFit: 'cover',
                     '--pos-d': slide.posD,
                     '--pos-m': slide.posM,
-                    transform: `scale(1.08) translate(${px}px,${py}px)`,
+                    /* Increased scale for immersive parallax filling */
+                    transform: `scale(1.12) translate(${px}px,${py}px)`,
                     transition: 'transform .1s linear',
                     zIndex: 1,
                     animation: `kb-hero ${DURATION + 1000}ms ease-out forwards`,
@@ -182,18 +183,16 @@ export default function HeroSection() {
                         '--pos-d': nextSlide.posD,
                         '--pos-m': nextSlide.posM,
                     } as React.CSSProperties} />
-                    <div style={{
-                        position: 'absolute', inset: 0,
-                        background: 'linear-gradient(135deg,rgba(0,0,0,.4) 0%,rgba(0,0,0,.1) 55%,rgba(0,0,0,.3) 100%)',
-                    }} />
+                    {/* Darkening overlay removed for raw image look */}
                 </div>
             )}
 
             {/* ══ GRADIENT OVERLAYS ══ */}
-            <div style={{ position: 'absolute', inset: 0, zIndex: 2, background: 'linear-gradient(135deg,rgba(0,0,0,.4) 0%,rgba(0,0,0,.15) 55%,rgba(0,0,0,.35) 100%)' }} />
-            <div style={{ position: 'absolute', inset: 0, zIndex: 2, background: `linear-gradient(110deg,${slide.accent}25 0%,transparent 45%)`, transition: 'background 1s ease', pointerEvents: 'none' }} />
-            {/* heavy bottom fade so stats bar reads well */}
-            <div style={{ position: 'absolute', inset: 0, zIndex: 2, background: 'linear-gradient(to top,rgba(0,0,0,.65) 0%,rgba(0,0,0,.05) 35%)', pointerEvents: 'none' }} />
+            {/* Minimum overlays for 100% raw image feel */}
+            <div style={{ position: 'absolute', inset: 0, zIndex: 2, background: 'linear-gradient(135deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,.08) 100%)' }} />
+            <div style={{ position: 'absolute', inset: 0, zIndex: 2, background: `linear-gradient(110deg,${slide.accent}08 0%,transparent 35%)`, transition: 'background 1s ease', pointerEvents: 'none' }} />
+            {/* Minimal bottom fade for stats readability */}
+            <div style={{ position: 'absolute', inset: 0, zIndex: 2, background: 'linear-gradient(to top,rgba(0,0,0,.25) 0%,rgba(0,0,0,0) 25%)', pointerEvents: 'none' }} />
 
             {/* ══ LEFT ACCENT BAR ══ */}
             <div style={{

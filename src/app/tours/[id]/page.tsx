@@ -187,8 +187,8 @@ export default function TourDetailPage() {
                             }} />
                         ))}
                     </div>
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,rgba(10,8,6,.28) 0%,rgba(10,8,6,.66) 58%,rgba(10,8,6,.94) 100%)' }} />
-                    <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(135deg,${pkg.accent}20 0%,transparent 55%)` }} />
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,rgba(10,8,6,.12) 0%,rgba(10,8,6,.35) 58%,rgba(10,8,6,.88) 100%)' }} />
+                    <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(135deg,${pkg.accent}12 0%,transparent 55%)` }} />
                     <div style={{ position: 'absolute', top: '28%', right: '8%', width: 130, height: 130, borderRadius: '50%', border: `1px solid ${pkg.accent}44`, animation: 'tdRipple 4.5s ease-out infinite', pointerEvents: 'none' }} />
                     <div style={{ position: 'absolute', top: '28%', right: '8%', width: 130, height: 130, borderRadius: '50%', border: `1px solid ${pkg.accent}28`, animation: 'tdRipple 4.5s ease-out 1.8s infinite', pointerEvents: 'none' }} />
 
