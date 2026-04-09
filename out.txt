@@ -1,0 +1,40 @@
+            <section style={{ padding: '160px 24px', background: burgundy, color: bgPaper, margin: '120px 0' }}>
+                <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 60 }}>
+                    <Pillar num="01" title="The Concierge" text="A dedicated planner who learns your story, manages your vendors, and protects your peace." />
+                    <Pillar num="02" title="The Floral Art" text="Sourcing the rarest blooms from the central highlands to create living sculptures for your aisle." />
+                    <Pillar num="03" title="The Gastronomy" text="A menu that travels from traditional Hela flavors to modern global fusion, plated as art." />
+                    <Pillar num="04" title="The Production" text="Cinematic lighting and sound that transforms a setting into an atmosphere of purely cinematic quality." />
+                </div>
+            </section>
+
+            {/* 5. PACKAGE TIERS (FLOATING CARDS) */}
+            <section style={{ padding: '120px 0', background: sandSilk }}>
+                <div style={{ textAlign: 'center', marginBottom: 80 }}>
+                    <Revealer>
+                        <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '3rem', fontWeight: 300 }}>Curated Packages</h2>
+                        <p style={{ opacity: 0.6, fontSize: '1rem', marginTop: 10 }}>Starting points for a journey that is entirely yours.</p>
+                    </Revealer>
+                </div>
+
+                <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 40 }}>
+                    <TierCard
+                        title="Intimate Vows"
+                        price="From $3,800"
+                        features={['Up to 24 Guests', 'Private Beach Access', 'Minister & Music', 'Signature Cake']}
+                        onSelect={() => { setSelectedPackage('Intimate Vows'); setGuestCount('Intimate (2-30)'); document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' }) }}
+                    />
+                    <TierCard
+                        featured
+                        title="Royal Celebration"
+                        price="From $9,400"
+                        features={['Up to 150 Guests', 'Grand Estate Venue', 'Cultural Performers', '7-Course Banquet', 'Full Event Decor']}
+                        onSelect={() => { setSelectedPackage('Royal Celebration'); setGuestCount('Mid-Scale (30-150)'); document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' }) }}
+                    />
+                    <TierCard
+                        title="Bespoke Gala"
+                        price="Tailored"
+                        features={['Unlimited Guests', 'Multi-day Event', 'Global Artist Booking', 'Private Island Option', 'VIP Concierge']}
+                        onSelect={() => { setSelectedPackage('Bespoke Gala'); setGuestCount('Grand (150-500+)'); document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' }) }}
+                    />
+                </div>
+            </section>

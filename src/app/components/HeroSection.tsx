@@ -5,11 +5,11 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 /* ─── Slide data ─── */
 const slides = [
     {
-        src: '/assets/index-hero.webp',
-        alt: 'Sri Lanka Ancient Heritage',
-        label: 'Cultural Legacy',
-        headline: ['Timeless', 'Wonders'],
-        sub: 'Immerse Yourself in the Grandeur of Ancient Kingdoms and Sacred Cities',
+        src: '/assets/home-page-hero-image.jpg',
+        alt: "Luxury scenic train journey across Nine Arches Bridge Sri Lanka",
+        label: "Iconic Experiences",
+        headline: ["Scenic", "Journey"],
+        sub: "Journey through Sri Lanka’s emerald hills, where every rail tells a timeless story.",
         accent: '#C9A96E',
         posD: 'center center',
         posM: '65% center', /* Focus on people/pathway on mobile */
@@ -24,6 +24,17 @@ const slides = [
         posD: 'center center',
         posM: '70% center', /* Keep subject more centered for adventure vibe */
     },
+    {
+        src: '/assets/mirissa-home-page-hero.webp',
+        alt: 'Luxury Blue Whale Watching and Pristine Beaches in Mirissa, Sri Lanka',
+        label: 'Coastal Majesty',
+        headline: ['Oceanic', 'Wonders'],
+        sub: 'Sail the sapphire waters of Mirissa. Where majestic blue whales dance and golden shores invite pure, sun-kissed luxury.',
+        accent: '#00B4D8', // Next-level vibrant Azure Ocean Blue
+        posD: 'center center',
+        posM: 'center center',
+    },
+
     {
         src: '/assets/home-slide-03.webp',
         alt: 'Sigiriya Rock Fortress Sri Lanka',
@@ -207,11 +218,20 @@ export default function HeroSection() {
                 flex: 1,
                 display: 'flex',
                 alignItems: 'flex-start',
-                /* Clear navbar (72px) + breathing room; clamp keeps it sane on all heights */
+                /* Restored original padding since the inner box won't stretch unnecessarily now */
                 padding: 'clamp(88px,13vh,160px) clamp(20px,6vw,80px) 24px',
                 boxSizing: 'border-box',
             }}>
-                <div style={{ maxWidth: 720, width: '100%', flexShrink: 0 }}>
+                <div style={{ maxWidth: 720, width: '100%', flexShrink: 0, position: 'relative' }}>
+                    {/* Beautifully invisible, soft diffuse gradient mimicking natural shadows. 
+                        No square backgrounds, no hard edges, entirely unnoticeable! */}
+                    <div style={{
+                        position: 'absolute',
+                        top: '-100px', bottom: '-100px', left: '-100px', right: '-50px',
+                        background: 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%)',
+                        zIndex: -1,
+                        pointerEvents: 'none',
+                    }} />
 
                     {/* Eyebrow pill */}
                     <div style={{
@@ -236,6 +256,7 @@ export default function HeroSection() {
                         margin: '0 0 18px',
                         /* conservative clamp so it never overflows on small screens */
                         fontSize: 'clamp(2.8rem, 8vw, 7rem)',
+                        textShadow: '0 10px 40px rgba(0,0,0,0.4), 0 2px 10px rgba(0,0,0,0.5)', /* Raw invisible text overlay */
                     }}>
                         <span style={{
                             display: 'block', color: 'white',

@@ -217,8 +217,8 @@ export default function Navbar() {
                             }}>
                                 <div style={{
                                     position: 'relative',
-                                    width: scrolled ? '40px' : '48px',
-                                    height: scrolled ? '40px' : '48px',
+                                    width: scrolled ? '54px' : '64px',
+                                    height: scrolled ? '54px' : '64px',
                                     flexShrink: 0,
                                     transition: 'width 0.4s ease, height 0.4s ease',
                                 }}>
@@ -352,8 +352,8 @@ export default function Navbar() {
                                 {/* Logo image */}
                                 <div style={{
                                     position: 'relative',
-                                    width: scrolled ? '44px' : '52px',
-                                    height: scrolled ? '44px' : '52px',
+                                    width: scrolled ? '52px' : '72px',
+                                    height: scrolled ? '52px' : '72px',
                                     flexShrink: 0,
                                     transition: 'width 0.4s ease, height 0.4s ease',
                                 }}>

@@ -18,12 +18,12 @@ const packages = [
         title: 'Cultural Classic',
         subtitle: "Sri Lanka's Ancient Heart",
         image: '/assets/culture-package/sigiriya.webp',
-        price: 1290,
+        // price: 1290,
         duration: '7 Days / 6 Nights',
-        group: 'Up to 12',
+        // group: 'Up to 12',
         difficulty: 'Easy',
-        badge: 'Best Seller',
-        badgeColor: crimson,
+        // badge: 'Best Seller',
+        // badgeColor: crimson,
         highlights: ['Sigiriya Rock Fortress', 'Temple of the Tooth', 'Dambulla Cave Temple', 'Polonnaruwa Ruins'],
         accent: '#B97C3A',
         rating: 4.9,
@@ -35,12 +35,12 @@ const packages = [
         title: 'Coastal Escape',
         subtitle: 'Sun, Surf & Serenity',
         image: '/assets/hikkaduwa-beach-1.webp',
-        price: 980,
+        // price: 980,
         duration: '5 Days / 4 Nights',
-        group: 'Up to 10',
+        // group: 'Up to 10',
         difficulty: 'Easy',
-        badge: 'Popular',
-        badgeColor: '#2D9CDB',
+        // badge: 'Popular',
+        // badgeColor: '#2D9CDB',
         highlights: ['Hikkaduwa Reef Snorkelling', 'Mirissa Whale Watching', 'Unawatuna Sunset Beach', 'Galle Fort Walk'],
         accent: '#2D9CDB',
         rating: 4.8,
@@ -52,12 +52,12 @@ const packages = [
         title: 'Ultimate Safari',
         subtitle: 'Giants, Leopards & Wild Skies',
         image: '/assets/yala-national-park-1.webp',
-        price: 1490,
+        // price: 1490,
         duration: '6 Days / 5 Nights',
-        group: 'Up to 8',
+        // group: 'Up to 8',
         difficulty: 'Moderate',
-        badge: 'Premium',
-        badgeColor: '#D4842A',
+        // badge: 'Premium',
+        // badgeColor: '#D4842A',
         highlights: ['Yala Leopard Safari', 'Minneriya Elephant Gathering', 'Udawalawe Sunrise Drive', 'Expert Naturalist Guide'],
         accent: '#D4842A',
         rating: 4.9,
@@ -69,12 +69,12 @@ const packages = [
         title: 'Highland Retreat',
         subtitle: 'Tea, Mist & Mountain Trails',
         image: '/assets/horton-plains-1.webp',
-        price: 1150,
+        // price: 1150,
         duration: '6 Days / 5 Nights',
-        group: 'Up to 10',
+        // group: 'Up to 10',
         difficulty: 'Moderate',
-        badge: 'Scenic',
-        badgeColor: '#52B788',
+        // badge: 'Scenic',
+        // badgeColor: '#52B788',
         highlights: ["World's End Hike", 'Tea Factory Tour', 'Nine Arch Bridge', 'Nuwara Eliya Gardens'],
         accent: '#52B788',
         rating: 4.8,
@@ -86,12 +86,12 @@ const packages = [
         title: 'Adventure Rush',
         subtitle: 'Rapids, Peaks & Adrenaline',
         image: '/assets/kitulgala-1.webp',
-        price: 1080,
+        // price: 1080,
         duration: '5 Days / 4 Nights',
-        group: 'Up to 8',
+        // group: 'Up to 8',
         difficulty: 'Challenging',
-        badge: 'Thrilling',
-        badgeColor: '#A855F7',
+        // badge: 'Thrilling',
+        // badgeColor: '#A855F7',
         highlights: ['Kitulgala White Water Rafting', 'Rock Climbing Ella', 'Zip-line Adventures', 'Rain Forest Trekking'],
         accent: '#A855F7',
         rating: 4.7,
@@ -103,12 +103,12 @@ const packages = [
         title: 'Honeymoon Bliss',
         subtitle: 'Romance Across the Island',
         image: '/assets/honeymoon-in-beach.webp',
-        price: 2490,
+        // price: 2490,
         duration: '10 Days / 9 Nights',
-        group: 'Couple',
+        // group: 'Couple',
         difficulty: 'Easy',
-        badge: '✦ Luxury',
-        badgeColor: '#F0A0B8',
+        // badge: '✦ Luxury',
+        // badgeColor: '#F0A0B8',
         highlights: ['Private Beach Villa', 'Couples Spa Ritual', 'Sunset Sailing', 'Fine Dining by the Sea'],
         accent: '#C4687A',
         rating: 5.0,
@@ -222,7 +222,7 @@ function PackageCard({ pkg, delay }: { pkg: typeof packages[0]; delay: number })
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(20,14,10,0.6) 0%, transparent 55%)' }} />
 
                     {/* Badge */}
-                    <div style={{
+                    {/* <div style={{
                         position: 'absolute', top: '14px', left: '14px',
                         background: pkg.badgeColor,
                         color: 'white',
@@ -231,7 +231,7 @@ function PackageCard({ pkg, delay }: { pkg: typeof packages[0]; delay: number })
                         letterSpacing: '0.12em', textTransform: 'uppercase',
                         padding: '5px 12px', borderRadius: '50px',
                         boxShadow: `0 4px 12px ${pkg.badgeColor}55`,
-                    }}>{pkg.badge}</div>
+                    }}>{pkg.badge}</div> */}
 
                     {/* Rating */}
                     <div style={{
@@ -248,7 +248,7 @@ function PackageCard({ pkg, delay }: { pkg: typeof packages[0]; delay: number })
                     </div>
 
                     {/* Price tag */}
-                    <div style={{
+                    {/* <div style={{
                         position: 'absolute', bottom: '14px', right: '14px',
                         background: 'rgba(255,255,255,0.95)',
                         borderRadius: '12px', padding: '6px 14px',
@@ -256,7 +256,7 @@ function PackageCard({ pkg, delay }: { pkg: typeof packages[0]; delay: number })
                     }}>
                         <span style={{ fontFamily: 'var(--font-accent)', fontSize: '0.96rem', fontWeight: 700, letterSpacing: '0.1em', color: muted, textTransform: 'uppercase' }}>From </span>
                         <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1rem', fontWeight: 800, color: dark }}>${pkg.price}</span>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Content */}
@@ -269,7 +269,7 @@ function PackageCard({ pkg, delay }: { pkg: typeof packages[0]; delay: number })
                     <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '14px' }}>
                         {[
                             { icon: '🕐', text: pkg.duration },
-                            { icon: '👥', text: pkg.group },
+                            // { icon: '👥', text: pkg.group },
                             { icon: '⚡', text: pkg.difficulty },
                         ].map(m => (
                             <div key={m.text} style={{ display: 'flex', alignItems: 'center', gap: '5px', fontFamily: 'var(--font-body)', fontSize: '1.14rem', color: muted }}>

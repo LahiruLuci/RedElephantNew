@@ -69,7 +69,7 @@ export const packages: TourPackage[] = [
         heroImage: '/assets/culture-package/sigiriya.webp',
         galleryImages: [
             '/assets/culture-package/sigiriya.webp',
-            '/assets/negombo-1.webp',
+            '/assets/dambulla/dambulla-1.webp',
             '/assets/anuradhapura/ruwanweliseya-anuradhapura-gallery-1.webp',
             '/assets/kandy/kandy-gallery-1.webp',
         ],
@@ -122,7 +122,7 @@ export const packages: TourPackage[] = [
                 description: 'Your Red Elephant driver greets you at Bandaranaike International Airport and whisks you to the nearby coastal town of Negombo — just 15 minutes away. Settle into your beachfront boutique hotel, take a golden-hour stroll along the fishing-boat-dotted shoreline, and enjoy a welcome seafood dinner as the sun sets over the Indian Ocean.',
                 highlights: ['Airport meet & greet', 'Negombo beach sunset walk', 'Dutch Canal boat ride', 'Welcome seafood dinner'],
                 accommodation: 'Jetwing Beach, Negombo', meals: 'Dinner',
-                image: '/assets/negombo-1.webp', location: 'Negombo',
+                image: '/assets/negembo-destination/negombo-beach.webp', location: 'Negombo',
                 activity: 'Beach sunset walk',
             },
             {
@@ -170,7 +170,7 @@ export const packages: TourPackage[] = [
                 description: "Descend from the cool highlands to the dry southern lowlands and the wild heart of Yala — Sri Lanka's premier national park, famous for having the highest leopard density in the world. Settle into your safari camp tucked at the park boundary. An afternoon game drive reveals elephants, sloth bears, crocodiles, and exotic birdlife.",
                 highlights: ['Highland-to-lowland scenic drive', 'Afternoon jeep safari in Yala', 'Leopard & elephant spotting', 'Safari camp sundowner cocktails'],
                 accommodation: 'Wild Coast Tented Lodge, Yala', meals: 'Breakfast, Dinner',
-                image: '/assets/wild-life/yala-national-park-sri-lanka-1.webp', location: 'Yala National Park',
+                image: '/assets/tour-package-images/Yala-Luxury-Safari-Glamping.webp', location: 'Yala National Park',
                 activity: 'Wildlife safari',
             },
             {
@@ -186,7 +186,7 @@ export const packages: TourPackage[] = [
                 description: "A leisurely final morning — stroll the Galle Fort ramparts one last time, browse the independent bookshops and gem dealers, and enjoy a farewell brunch at a colonial café. Your driver then transfers you along the scenic expressway to Bandaranaike International Airport for your departure, carrying home the ancient, wild, and beautiful spirit of Sri Lanka.",
                 highlights: ['Morning Galle Fort stroll', 'Colonial-café farewell brunch', 'Scenic expressway transfer', 'Airport departure'],
                 accommodation: 'N/A (departure day)', meals: 'Breakfast, Brunch',
-                image: '/assets/bandaranaike-international-airport.webp', location: 'Galle / Airport',
+                image: '/assets/tour-package-images/katunayake-air-port.webp', location: 'Galle / Airport',
                 activity: 'Departure transfer',
             },
         ],
@@ -195,14 +195,14 @@ export const packages: TourPackage[] = [
         startLocation: 'Colombo Airport (CMB)',
         endLocation: 'Colombo Airport (CMB)',
         mapPoints: [
-            { id: 'airport', name: 'Airport', type: 'Arrival / Departure', cx: 21, cy: 90, description: 'Bandaranaike International Airport — your arrival & departure point.', image: '/assets/bandaranaike-international-airport.webp' },
+            { id: 'airport', name: 'Airport', type: 'Arrival / Departure', cx: 21, cy: 90, description: 'Bandaranaike International Airport — your arrival & departure point.', image: '/assets/tour-package-images/katunayake-air-port.webp' },
             { id: 'negombo', name: 'Negombo', type: 'Beach Town', cx: 20, cy: 89, description: 'Golden beaches, Dutch canals & the freshest seafood on the west coast.', image: '/assets/negombo-1.webp' },
             { id: 'anuradhapura', name: 'Anuradhapura', type: 'Sacred City', cx: 38, cy: 54, description: "Sri Lanka's first ancient capital — sacred Buddhist city dating to 4th century BC.", image: '/assets/anuradhapura/ruwanweliseya-anuradhapura-gallery-1.webp' },
             { id: 'dambulla', name: 'Dambulla', type: 'Cave Temple', cx: 46, cy: 69, description: '153 Buddha statues and vivid frescoes in five sacred caves.', image: '/assets/dambulla/dambulla-1.webp' },
             { id: 'polonnaruwa', name: 'Polonnaruwa', type: 'Ancient City', cx: 57, cy: 66, description: "11th-century medieval capital with perfectly preserved ruins.", image: '/assets/pollonnaruwa/galviharaya-polonnaruwa.webp' },
             { id: 'kandy', name: 'Kandy', type: 'Royal Capital', cx: 45, cy: 87, description: 'Last royal capital & home of the Sacred Tooth Relic.', image: '/assets/kandy/kandy-1.webp' },
             { id: 'hatton', name: 'Hatton', type: 'Hill Country', cx: 44, cy: 100, description: "Tea trails, World's End & misty highland beauty.", image: '/assets/hatton/hatton-1.webp' },
-            { id: 'yala', name: 'Yala', type: 'National Park', cx: 70, cy: 120, description: "Highest leopard density in the world — elephants, bears & exotic birdlife.", image: '/assets/wild-life/yala-national-park-sri-lanka-1.webp' },
+            { id: 'yala', name: 'Yala', type: 'National Park', cx: 70, cy: 120, description: "Highest leopard density in the world — elephants, bears & exotic birdlife.", image: '/assets/tour-package-images/Yala-Luxury-Safari-Glamping.webp' },
             { id: 'galle', name: 'Galle', type: 'Colonial Fort', cx: 32, cy: 127, description: '400-year-old Dutch fort — UNESCO gem on the southern coast.', image: '/assets/galle-1.webp' },
         ],
         mapRoutePoints: '21,90 20,89 38,54 46,69 57,66 45,87 44,100 70,120 32,127 21,90',
@@ -226,7 +226,7 @@ export const packages: TourPackage[] = [
             '/assets/bentota-beach.webp',
             '/assets/galle-1.webp',
             '/assets/unawatuna-beach-1.webp',
-            '/assets/hero-mirissa-whale.jpg',
+            '/assets/tour-package-images/blue-whale-watching.webp',
         ],
         price: 980,
         priceLabel: 'per person (twin share)',
@@ -295,7 +295,7 @@ export const packages: TourPackage[] = [
                 description: "Set sail at dawn on a 3-hour whale watching expedition — Mirissa is the world's premier blue whale site, with sightings almost guaranteed between November and April. Spot blue whales, sperm whales, spinner dolphins and flying fish before taking a short drive to relax on Unawatuna's golden crescent.",
                 highlights: ['Blue whale watching (3h boat trip)', 'Spinner dolphin encounters', 'Unawatuna beach afternoon', 'Fresh seafood dinner'],
                 accommodation: 'The Sun House, Galle (Unawatuna Area)', meals: 'Breakfast, Dinner',
-                image: '/assets/hero-mirissa-whale.jpg', location: 'Mirissa / Unawatuna',
+                image: '/assets/tour-package-images/whale-watching.webp', location: 'Mirissa / Unawatuna',
                 activity: 'Whale Watching Safari',
             },
             {
@@ -303,7 +303,7 @@ export const packages: TourPackage[] = [
                 description: 'A final morning at Unawatuna — arguably Sri Lanka\'s most beautiful cove, framed by jungle-clad headlands and shallow turquoise waters. Enjoy a final dip in the ocean and souvenir shopping before your transfer north to Colombo airport.',
                 highlights: ['Unawatuna golden beach morning', 'Souvenir shopping', 'Coastal market visit', 'Airport departure transfer'],
                 accommodation: 'N/A (departure day)', meals: 'Breakfast',
-                image: '/assets/unawatuna-beach-1.webp', location: 'Unawatuna / Colombo',
+                image: '/assets/tour-package-images/katunayake-air-port.webp', location: 'Unawatuna / Colombo',
                 activity: 'Departure',
             },
         ],
@@ -312,7 +312,7 @@ export const packages: TourPackage[] = [
         startLocation: 'Colombo Airport (CMB)',
         endLocation: 'Colombo Airport (CMB)',
         mapPoints: [
-            { id: 'colombo', name: 'Colombo / Airport', type: 'Arrival', cx: 21, cy: 90, description: 'Gateway city, your starting point.', image: '/assets/bandaranaike-international-airport.webp' },
+            { id: 'colombo', name: 'Colombo / Airport', type: 'Arrival', cx: 21, cy: 90, description: 'Gateway city, your starting point.', image: '/assets/tour-package-images/katunayake-air-port.webp' },
             { id: 'hikkaduwa', name: 'Hikkaduwa', type: 'Snorkelling', cx: 26, cy: 115, description: 'Vibrant coral reef and sea turtle encounters.', image: '/assets/hikkaduwa-beach-1.webp' },
             { id: 'galle', name: 'Galle', type: 'UNESCO Fort', cx: 32, cy: 127, description: 'Best-preserved colonial fortress in Asia.', image: '/assets/galle-1.webp' },
             { id: 'unawatuna', name: 'Unawatuna', type: 'Golden Beach', cx: 34, cy: 128, description: "Sri Lanka's most beautiful cove beach.", image: '/assets/unawatuna-beach-1.webp' },
@@ -332,9 +332,9 @@ export const packages: TourPackage[] = [
         title: 'Ultimate Safari',
         subtitle: 'Giants, Leopards & Wild Skies',
         tagline: "Sri Lanka's wilderness through the eyes of a naturalist",
-        heroImage: '/assets/yala-national-park-1.webp',
+        heroImage: '/assets/tour-package-images/Yala-Luxury-Safari-Glamping.webp',
         galleryImages: [
-            '/assets/yala-national-park-1.webp',
+            '/assets/tour-package-images/Yala-Luxury-Safari-Glamping.webp',
             '/assets/wild-life/minneriya-national-park-1.webp',
             '/assets/wild-life/gal-oya-national-park-sri-lanka-1.webp',
             '/assets/wild-life/wilpattu-national-park-sri-lanka-1.webp',
@@ -423,7 +423,7 @@ export const packages: TourPackage[] = [
                 description: 'The big day. Yala Block 1 has the world\'s highest density of leopards — approximately 30 per 100 sq km. Your expert naturalist knows the territory intimately. Dawn and dusk game drives maximise sightings: leopards, sloth bears, wild boar, crocodile, and painted storks.',
                 highlights: ['Dawn leopard tracking game drive (4h)', 'Block 1 — highest leopard density globally', 'Sunset game drive with naturalist'],
                 accommodation: 'Wild Coast Tented Lodge, Yala', meals: 'Breakfast, Lunch, Dinner',
-                image: '/assets/yala-national-park-1.webp', location: 'Yala',
+                image: '/assets/tour-package-images/Yala-Luxury-Safari-Glamping.webp', location: 'Yala',
                 activity: 'Intensive Jeep Safari',
             },
             {
@@ -431,7 +431,7 @@ export const packages: TourPackage[] = [
                 description: 'Leave the jungle behind and hit the southern coast. Settle into Mirissa and spend the afternoon at leisure. Tomorrow morning you trade the land giants for ocean giants on an expedition to find the elusive blue whale.',
                 highlights: ['Morning coastline drive', 'Leisure afternoon on Mirissa Beach', 'Fresh seafood dinner on the sand'],
                 accommodation: 'Paradise Beach Club, Mirissa', meals: 'Breakfast, Dinner',
-                image: '/assets/mirissa-1.webp', location: 'Mirissa',
+                image: '/assets/beach-activities/WhaleDolphinWatching.webp', location: 'Mirissa',
                 activity: 'Coastal Relaxation',
             },
             {
@@ -439,7 +439,7 @@ export const packages: TourPackage[] = [
                 description: 'Set sail at dawn on a 3-hour expedition. Mirissa is the world\'s premier blue whale site, with frequent sightings of sperm whales and spinner dolphins. After returning ashore, your naturalist transfers you to Colombo Airport, concluding an extraordinary 8 days of wildlife.',
                 highlights: ['Blue whale watching (3h boat trip)', 'Spinner dolphin encounters', 'Colombo airport transfer'],
                 accommodation: 'N/A (departure day)', meals: 'Breakfast',
-                image: '/assets/hero-mirissa-whale.jpg', location: 'Mirissa / Airport',
+                image: '/assets/tour-package-images/blue-whale-watching.webp', location: 'Mirissa / Airport',
                 activity: 'Ocean Expedition & Departure',
             },
         ],
@@ -448,13 +448,13 @@ export const packages: TourPackage[] = [
         startLocation: 'Colombo Airport (CMB)',
         endLocation: 'Colombo Airport (CMB)',
         mapPoints: [
-            { id: 'colombo', name: 'Colombo', type: 'Arrival', cx: 20, cy: 88, description: 'International gateway city.', image: '/assets/bandaranaike-international-airport.webp' },
+            { id: 'colombo', name: 'Colombo', type: 'Arrival', cx: 20, cy: 88, description: 'International gateway city.', image: '/assets/tour-package-images/katunayake-air-port.webp' },
             { id: 'wilpattu', name: 'Wilpattu', type: 'Sloth Bears', cx: 37, cy: 54, description: 'Dense forest, natural lakes & elusive wildlife.', image: '/assets/wild-life/wilpattu-national-park-sri-lanka-1.webp' },
             { id: 'minneriya', name: 'Minneriya', type: 'Elephant Gathering', cx: 50, cy: 70, description: 'Up to 300 elephants gather at the ancient reservoir.', image: '/assets/wild-life/minneriya-national-park-1.webp' },
             { id: 'galoya', name: 'Gal Oya', type: 'Boat Safari', cx: 68, cy: 85, description: 'Swimming elephants & untouched lakes.', image: '/assets/wild-life/gal-oya-national-park-sri-lanka-1.webp' },
             { id: 'udawalawe', name: 'Udawalawe', type: 'Elephant Safari', cx: 48, cy: 108, description: 'Best place to see wild elephant herds.', image: '/assets/wild-life/udawalawe-national-park-1.webp' },
-            { id: 'yala', name: 'Yala', type: 'Leopard Tracking', cx: 64, cy: 116, description: "World's highest density of leopards.", image: '/assets/yala-national-park-1.webp' },
-            { id: 'mirissa', name: 'Mirissa', type: 'Blue Whales', cx: 40, cy: 130, description: "Ocean giants off the southern coast.", image: '/assets/hero-mirissa-whale.jpg' },
+            { id: 'yala', name: 'Yala', type: 'Leopard Tracking', cx: 64, cy: 116, description: "World's highest density of leopards.", image: '/assets/tour-package-images/Yala-Luxury-Safari-Glamping.webp' },
+            { id: 'mirissa', name: 'Mirissa', type: 'Blue Whales', cx: 40, cy: 130, description: "Ocean giants off the southern coast.", image: '/assets/tour-package-images/blue-whale-watching.webp' },
         ],
         mapRoutePoints: '20,88 37,54 50,70 68,85 48,108 64,116 40,130 20,88',
         faq: [
@@ -474,8 +474,8 @@ export const packages: TourPackage[] = [
         galleryImages: [
             '/assets/horton-plains-1.webp',
             '/assets/kandy/kandy-1.webp',
-            '/assets/nuwara-eliya/nuwara-eliya-1.webp',
-            '/assets/ella/ella-1.webp',
+            '/assets/tour-package-images/nuwara-eliya.webp',
+            '/assets/tour-package-images/nine-arch-with-train.webp',
         ],
         price: 1350,
         priceLabel: 'per person (twin share)',
@@ -529,7 +529,7 @@ export const packages: TourPackage[] = [
                 description: 'The road from Kandy to Nuwara Eliya is one of Asia\'s great drives — climbing through rubber estates, waterfalls, and terraced tea gardens as the temperature drops. En route, stop at Ramboda Falls. Arrive at your colonial-era hotel in Nuwara Eliya, nicknamed "Little England".',
                 highlights: ['Peradeniya Botanical Gardens', 'Ramboda Falls', 'Scenic mountain drive', 'Colonial hotel check-in'],
                 accommodation: 'Grand Hotel, Nuwara Eliya', meals: 'Breakfast, Dinner',
-                image: '/assets/nuwara-eliya/nuwara-eliya-1.webp', location: 'Nuwara Eliya',
+                image: '/assets/tour-package-images/nuwara-eliya.webp', location: 'Nuwara Eliya',
                 activity: 'Scenic Drive & Sightseeing'
             },
             {
@@ -545,7 +545,7 @@ export const packages: TourPackage[] = [
                 description: "Board the famous blue train at Nanu Oya station for a mesmerising 3-hour journey to Ella. The train weaves through lush tea estates, dark tunnels, and pine forests, offering breathtaking valley views from the open windows. Arrive in the backpacker haven of Ella.",
                 highlights: ['First-class train journey', 'Unmatched tea country views', 'Ella village exploration', 'Cafe culture in the mountains'],
                 accommodation: '98 Acres Resort & Spa, Ella', meals: 'Breakfast, Dinner',
-                image: '/assets/ella/ella-1.webp', location: 'Ella',
+                image: '/assets/tour-package-images/nine-arch-with-train.webp', location: 'Ella',
                 activity: 'Iconic Train Journey'
             },
             {
@@ -553,7 +553,7 @@ export const packages: TourPackage[] = [
                 description: "Start the day with a gentle hike up Little Adam's Peak for a 360° panorama of the Ella Gap. Later, walk through the jungle to reach the spectacular Nine Arch Bridge just in time to watch a train curve across its colonial-era stone arches. Relax by the pool in the afternoon.",
                 highlights: ["Little Adam's Peak viewpoint hike", 'Nine Arch Bridge photography', 'Ravana Falls', 'Sunset views over Ella Gap'],
                 accommodation: '98 Acres Resort & Spa, Ella', meals: 'Breakfast, Dinner',
-                image: '/assets/ella/ella-1.webp', location: 'Ella',
+                image: '/assets/tour-package-images/ella-view-point.webp', location: 'Ella',
                 activity: 'Hiking & Photography'
             },
             {
@@ -561,7 +561,7 @@ export const packages: TourPackage[] = [
                 description: 'Begin your descent from the highlands back to the west coast. Stop briefly to admire the dramatic cascading waters of Ravana Falls before joining the highway to Colombo. Spend your final evening enjoying a farewell dinner overlooking the Indian Ocean.',
                 highlights: ['Descent from the hills', 'Ravana Falls', 'Galle Face Green sunset', 'Farewell seafood dinner'],
                 accommodation: 'Taj Samudra, Colombo', meals: 'Breakfast, Dinner',
-                image: '/assets/colombo-1.webp', location: 'Colombo',
+                image: '/assets/tour-package-images/colombo-night-view.webp', location: 'Colombo',
                 activity: 'Descent & City Evening'
             },
             {
@@ -569,7 +569,7 @@ export const packages: TourPackage[] = [
                 description: 'Enjoy a leisurely breakfast and some last-minute souvenir shopping at a local boutique or tea emporium. Your driver will then transfer you to Bandaranaike International Airport in time for your onward flight, carrying a treasury of highland memories.',
                 highlights: ['Leisurely breakfast', 'Last-minute tea shopping', 'Airport transfer'],
                 accommodation: 'N/A (departure day)', meals: 'Breakfast',
-                image: '/assets/bandaranaike-international-airport.webp', location: 'Airport',
+                image: '/assets/tour-package-images/katunayake-air-port.webp', location: 'Airport',
                 activity: 'Departure'
             },
         ],
@@ -578,11 +578,11 @@ export const packages: TourPackage[] = [
         startLocation: 'Colombo Airport (CMB)',
         endLocation: 'Colombo Airport (CMB)',
         mapPoints: [
-            { id: 'colombo', name: 'Colombo', type: 'Arrival', cx: 20, cy: 88, description: 'Your arrival gateway.', image: '/assets/bandaranaike-international-airport.webp' },
+            { id: 'colombo', name: 'Colombo', type: 'Arrival', cx: 20, cy: 88, description: 'Your arrival gateway.', image: '/assets/tour-package-images/katunayake-air-port.webp' },
             { id: 'kandy', name: 'Kandy', type: 'Sacred City', cx: 42, cy: 82, description: 'Temple of the Tooth & Botanical Gardens.', image: '/assets/kandy/kandy-1.webp' },
-            { id: 'nuwaraeliya', name: 'Nuwara Eliya', type: 'Tea Country', cx: 46, cy: 90, description: 'Colonial hill station inside emerald tea estates.', image: '/assets/nuwara-eliya/nuwara-eliya-1.webp' },
+            { id: 'nuwaraeliya', name: 'Nuwara Eliya', type: 'Tea Country', cx: 46, cy: 90, description: 'Colonial hill station inside emerald tea estates.', image: '/assets/tour-package-images/nuwara-eliya.webp' },
             { id: 'hortonplains', name: 'Horton Plains', type: "World's End Trek", cx: 44, cy: 93, description: "880m sheer cliff with views to infinity.", image: '/assets/horton-plains-1.webp' },
-            { id: 'ella', name: 'Ella', type: 'Mountain Village', cx: 58, cy: 98, description: 'Iconic train ride & Nine Arch Bridge.', image: '/assets/ella/ella-1.webp' },
+            { id: 'ella', name: 'Ella', type: 'Mountain Village', cx: 58, cy: 98, description: 'Iconic train ride & Nine Arch Bridge.', image: '/assets/tour-package-images/nine-arch-with-train.webp' },
         ],
         mapRoutePoints: '20,88 42,82 46,90 44,93 58,98 20,88',
         faq: [
@@ -598,12 +598,12 @@ export const packages: TourPackage[] = [
         title: 'Adventure Rush',
         subtitle: 'Rapids, Peaks & Adrenaline',
         tagline: 'Push your limits in the heart of Sri Lanka',
-        heroImage: '/assets/kitulgala-1.webp',
+        heroImage: '/assets/tour-package-images/kitulgala-jungle-camp.webp',
         galleryImages: [
-            '/assets/kitulgala-1.webp',
-            '/assets/dambulla/knuckles.webp',
-            '/assets/ella/ella-1.webp',
-            '/assets/sunandsand/weligama-beach-sri-lanka1.webp',
+            '/assets/tour-package-images/kitulgala-jungle-camp.webp',
+            '/assets/tour-package-images/The-Knuckles-Forest.webp',
+            '/assets/tour-package-images/nine-arch-with-train.webp',
+            '/assets/tour-package-images/weligama-surfing.webp',
         ],
         price: 1850,
         priceLabel: 'per person (twin share)',
@@ -649,7 +649,7 @@ export const packages: TourPackage[] = [
                 description: "Arrive and transfer to Kitulgala — Sri Lanka's adventure capital. Safety briefing from your certified guides, gear fitting, and an evening at the jungle camp with river sounds as your soundtrack.",
                 highlights: ['Adventure safety briefing', 'Jungle camp arrival', 'Campfire dinner'],
                 accommodation: 'Borderlands Adventure Camp, Kitulgala', meals: 'Dinner',
-                image: '/assets/kitulgala-1.webp', location: 'Kitulgala',
+                image: '/assets/tour-package-images/kitulgala-jungle-camp.webp', location: 'Kitulgala',
                 activity: 'Jungle Arrival'
             },
             {
@@ -657,7 +657,7 @@ export const packages: TourPackage[] = [
                 description: "The Kelani River offers Asia's most consistent white water — Grade 3–4 rapids through a jungle gorge. Leap from rock platforms into calm pools and zip-line over the river. Afternoon transfer to Kandy for a cultural evening.",
                 highlights: ['5km white-water rafting', 'Canyon rock jumping', 'Temple of the Tooth visit'],
                 accommodation: 'OZO Kandy', meals: 'Breakfast, Dinner',
-                image: '/assets/kitulgala-1.webp', location: 'Kitulgala / Kandy',
+                image: '/assets/tour-category/adventure1.webp', location: 'Kitulgala / Kandy',
                 activity: 'White-Water Rafting'
             },
             {
@@ -665,7 +665,7 @@ export const packages: TourPackage[] = [
                 description: 'Venture into the Knuckles UNESCO World Heritage site. A challenging full-day hike through rare cloud forests, crossing cascading streams and reaching panoramic viewpoints of the central massif. You will encounter endemic flora and unique birdlife.',
                 highlights: ['Knuckles full-day hike', 'Cloud forest exploration', 'Remote waterfall swimming'],
                 accommodation: 'Corbet\'s Rest, Knuckles', meals: 'Breakfast, Packed Lunch, Dinner',
-                image: '/assets/dambulla/knuckles.webp', location: 'Knuckles Range',
+                image: '/assets/tour-package-images/The-Knuckles-Forest.webp', location: 'Knuckles Range',
                 activity: 'Mountain Trekking'
             },
             {
@@ -673,7 +673,7 @@ export const packages: TourPackage[] = [
                 description: "Board the legendary hill-country train heading south to Ella. Wind through dense pine forests and endless tea estates on a 4-hour journey. Settle into the backpacker mountain town of Ella and rest up for tomorrow's climb.",
                 highlights: ['Iconic train journey', 'Ella village exploration', 'Cafe culture in the mountains'],
                 accommodation: '98 Acres Resort, Ella', meals: 'Breakfast',
-                image: '/assets/ella/ella-1.webp', location: 'Ella',
+                image: '/assets/tour-package-images/nine-arch-with-train.webp', location: 'Ella',
                 activity: 'Highland Train Journey'
             },
             {
@@ -681,7 +681,7 @@ export const packages: TourPackage[] = [
                 description: "Ella Rock (1,041m) offers genuine technical climbing on exposed ridges with epic valley views. After conquering the peak, fly across the tea estates on South Asia's longest zipline. Evening relaxation by the pool.",
                 highlights: ['Ella Rock summit', 'Ravana Mega Zipline', 'Afternoon pool recovery'],
                 accommodation: '98 Acres Resort, Ella', meals: 'Breakfast, Dinner',
-                image: '/assets/ella/ella-1.webp', location: 'Ella',
+                image: '/assets/tour-package-images/Ella-Rock-Climbing-Zipline.webp', location: 'Ella',
                 activity: 'Rock Climbing & Ziplining'
             },
             {
@@ -689,7 +689,7 @@ export const packages: TourPackage[] = [
                 description: 'Descend from the highlands to the plains of Yala. Switch to a 4WD open-top jeep for a thrilling afternoon wildlife safari tracking leopards, sloth bears, elephants, and crocodiles through dense scrub jungle.',
                 highlights: ['Descent to the coastal plains', 'Yala jeep safari (4h)', 'Leopard tracking'],
                 accommodation: 'Yala Safari Beach Camp', meals: 'Breakfast, Dinner',
-                image: '/assets/wild-life/yala-national-park-sri-lanka-1.webp', location: 'Yala National Park',
+                image: '/assets/tour-package-images/Yala-Luxury-Safari-Glamping.webp', location: 'Yala National Park',
                 activity: '4WD Wildlife Safari'
             },
             {
@@ -697,7 +697,7 @@ export const packages: TourPackage[] = [
                 description: 'Travel west along the gorgeous southern coast to Weligama, Sri Lanka\'s premier surf destination. Join expert instructors for a 2-hour surf lesson catching perfectly rolling waves on a sandy break.',
                 highlights: ['Southern coast drive', '2-hour surf lesson', 'Beachside seafood dinner', 'Weligama sunset'],
                 accommodation: 'Weligama Bay Resort', meals: 'Breakfast',
-                image: '/assets/sunandsand/weligama-beach-sri-lanka1.webp', location: 'Weligama Base',
+                image: '/assets/tour-package-images/weligama-surfing.webp', location: 'Weligama Base',
                 activity: 'Ocean Surfing'
              },
              {
@@ -705,7 +705,7 @@ export const packages: TourPackage[] = [
                 description: "Enjoy a final morning surf session or a relaxing walk on the golden sands. Later, transfer back to Colombo Airport via the Southern Expressway, concluding an epic 8-day island adventure.",
                 highlights: ['Morning beach relaxation', 'Expressway transfer', 'Colombo Airport departure'],
                 accommodation: 'N/A (departure day)', meals: 'Breakfast',
-                image: '/assets/bandaranaike-international-airport.webp', location: 'Airport',
+                image: '/assets/tour-package-images/weligama-beach.webp', location: 'Airport',
                 activity: 'Departure'
              },
         ],
@@ -714,12 +714,12 @@ export const packages: TourPackage[] = [
         startLocation: 'Colombo Airport (CMB)',
         endLocation: 'Colombo Airport (CMB)',
         mapPoints: [
-            { id: 'colombo', name: 'Colombo', type: 'Arrival', cx: 20, cy: 88, description: 'Gateway and departure point.', image: '/assets/kitulgala-1.webp' },
-            { id: 'kitulgala', name: 'Kitulgala', type: 'White Water Rafting', cx: 35, cy: 86, description: 'Grade 3-4 rapids on the wild Kelani River.', image: '/assets/kitulgala-1.webp' },
-            { id: 'knuckles', name: 'Knuckles Range', type: 'Mountain Trekking', cx: 46, cy: 74, description: 'UNESCO cloud forest hiking.', image: '/assets/dambulla/knuckles.webp' },
-            { id: 'ella', name: 'Ella', type: 'Rock Climbing', cx: 58, cy: 98, description: 'Technical climbing & epic ziplines.', image: '/assets/ella/ella-1.webp' },
-            { id: 'yala', name: 'Yala', type: 'Wildlife Safari', cx: 64, cy: 116, description: 'Leopard tracking in dense jungles.', image: '/assets/wild-life/yala-national-park-sri-lanka-1.webp' },
-            { id: 'weligama', name: 'Weligama', type: 'Ocean Surfing', cx: 37, cy: 130, description: 'World-class surf breaks on the south coast.', image: '/assets/sunandsand/weligama-beach-sri-lanka1.webp' },
+            { id: 'colombo', name: 'Colombo', type: 'Arrival', cx: 20, cy: 88, description: 'Gateway and departure point.', image: '/assets/tour-package-images/kitulgala-jungle-camp.webp' },
+            { id: 'kitulgala', name: 'Kitulgala', type: 'White Water Rafting', cx: 35, cy: 86, description: 'Grade 3-4 rapids on the wild Kelani River.', image: '/assets/tour-package-images/kitulgala-jungle-camp.webp' },
+            { id: 'knuckles', name: 'Knuckles Range', type: 'Mountain Trekking', cx: 46, cy: 74, description: 'UNESCO cloud forest hiking.', image: '/assets/tour-package-images/The-Knuckles-Forest.webp' },
+            { id: 'ella', name: 'Ella', type: 'Rock Climbing', cx: 58, cy: 98, description: 'Technical climbing & epic ziplines.', image: '/assets/tour-package-images/nine-arch-with-train.webp' },
+            { id: 'yala', name: 'Yala', type: 'Wildlife Safari', cx: 64, cy: 116, description: 'Leopard tracking in dense jungles.', image: '/assets/tour-package-images/Yala-Luxury-Safari-Glamping.webp' },
+            { id: 'weligama', name: 'Weligama', type: 'Ocean Surfing', cx: 37, cy: 130, description: 'World-class surf breaks on the south coast.', image: '/assets/tour-package-images/weligama-surfing.webp' },
         ],
         mapRoutePoints: '20,88 35,86 46,74 58,98 64,116 37,130 20,88',
         faq: [
@@ -804,7 +804,7 @@ export const packages: TourPackage[] = [
                 description: 'Rise before dawn to take to the skies in a hot air balloon, drifting silently over jungle canopies and ancient lakes as the sun rises. Celebrate landing with a champagne breakfast. Later, climb the magnificent Sigiriya Rock Palace.',
                 highlights: ['Sunrise Hot Air Balloon flight', 'Champagne landing breakfast', 'Sigiriya Rock Fortress climb'],
                 accommodation: 'Water Garden, Sigiriya', meals: 'Breakfast',
-                image: '/assets/culture-package/sigiriya.webp', location: 'Cultural Triangle',
+                image: '/assets/tour-package-images/hot-air-ballonning.webp', location: 'Cultural Triangle',
                 activity: 'Aerial Adventure'
             },
             {
@@ -820,7 +820,7 @@ export const packages: TourPackage[] = [
                 description: 'Wind your way up into the cool, misty highlands clothed in emerald tea estates. Arrive in Nuwara Eliya and enjoy a traditional British high tea at the Grand Hotel, followed by a romantic boat ride on Lake Gregory.',
                 highlights: ['Mountain switchback drive', 'Grand Hotel High Tea', 'Lake Gregory boat ride'],
                 accommodation: 'Heritance Tea Factory', meals: 'Breakfast',
-                image: '/assets/tea-plantation-1.webp', location: 'Nuwara Eliya',
+                image: '/assets/tour-package-images/nuwara-eliya.webp', location: 'Nuwara Eliya',
                 activity: 'Highland Serenity'
             },
             {
@@ -828,7 +828,7 @@ export const packages: TourPackage[] = [
                 description: 'Board Sri Lanka\'s most famous train in a first-class reserved carriage. Watch the world transform from tropical lowland to misty mountain passes. A pre-packed picnic hamper and wine make the journey uniquely yours.',
                 highlights: ['First-class reserved train carriage', 'Private picnic hamper & wine', 'Ella mountain arrival'],
                 accommodation: '98 Acres Resort & Spa', meals: 'Breakfast, Picnic Lunch',
-                image: '/assets/ella/ella-1.webp', location: 'Ella',
+                image: '/assets/tour-package-images/nine-arch-with-train.webp', location: 'Ella',
                 activity: 'Iconic Train Ride'
             },
             {
@@ -836,7 +836,7 @@ export const packages: TourPackage[] = [
                 description: 'A relaxed morning. Enjoy a couple\'s massage at the resort spa overlooking the Ella Gap. In the late afternoon, take a gentle walk to the Nine Arch Bridge to watch the evening train cross the colonial viaduct.',
                 highlights: ['Couples spa morning', 'Nine Arch Bridge', 'Romantic sunset at Ella Gap'],
                 accommodation: '98 Acres Resort & Spa', meals: 'Breakfast, Dinner',
-                image: '/assets/ella/ella-1.webp', location: 'Ella Mountain',
+                image: '/assets/tour-package-images/Ella-Mountain-Vistas.webp', location: 'Ella Mountain',
                 activity: 'Leisure & Vistas'
             },
             {
@@ -844,7 +844,7 @@ export const packages: TourPackage[] = [
                 description: 'Descend to the deep south and check into an ultra-luxury tented lodge on the edge of Yala National Park. Embark on a sunset open-top 4WD leopard safari, returning to a private bush dinner under the stars illuminated by lanterns.',
                 highlights: ['Luxury tented lodge check-in', 'Evening 4WD leopard safari', 'Lantern-lit bush dinner'],
                 accommodation: 'Wild Coast Tented Lodge', meals: 'Breakfast, Dinner',
-                image: '/assets/wild-life/yala-national-park-sri-lanka-1.webp', location: 'Yala',
+                image: '/assets/tour-package-images/Yala-Luxury-Safari-Glamping.webp', location: 'Yala',
                 activity: 'Wildlife Glamping'
             },
             {
@@ -860,7 +860,7 @@ export const packages: TourPackage[] = [
                 description: 'A private two-person sunrise catamaran sail to watch majestic blue whales in the deep Indian Ocean. Return for a champagne lunch and a full-body Ayurvedic couple\'s ritual under a palm-thatch pavilion.',
                 highlights: ['Private catamaran whale watching', 'Couples Ayurvedic ritual', 'Beachside champagne lunch'],
                 accommodation: 'Cape Weligama (Private Villa)', meals: 'Breakfast, Lunch',
-                image: '/assets/sunandsand/weligama-beach-sri-lanka1.webp', location: 'Indian Ocean',
+                image: '/assets/tour-package-images/whale-watching.webp', location: 'Indian Ocean',
                 activity: 'Ocean Majesty'
             },
             {
@@ -876,7 +876,7 @@ export const packages: TourPackage[] = [
                 description: 'A final breakfast in bed overlooking the ocean before your private chauffeur transfers you to Colombo airport via the expressway. Leave with twelve days of extraordinary memories.',
                 highlights: ['Breakfast in bed', 'Private chauffeur airport transfer', 'Complimentary anniversary gift'],
                 accommodation: 'N/A (departure day)', meals: 'Breakfast',
-                image: '/assets/bandaranaike-international-airport.webp', location: 'Airport',
+                image: '/assets/tour-package-images/katunayake-air-port.webp', location: 'Airport',
                 activity: 'Departure'
             },
         ],
@@ -889,8 +889,8 @@ export const packages: TourPackage[] = [
             { id: 'sigiriya', name: 'Sigiriya', type: 'Hot Air Balloon', cx: 44, cy: 68, description: 'Sunrise balloon flight over ancient jungles.', image: '/assets/culture-package/sigiriya.webp' },
             { id: 'kandy', name: 'Kandy', type: 'Temple & Romance', cx: 45, cy: 87, description: 'Lakeside dinners and candlelit temple rituals.', image: '/assets/kandy/kandy-1.webp' },
             { id: 'nuwaraeliya', name: 'Nuwara Eliya', type: 'Tea Country', cx: 46, cy: 90, description: 'High tea and misty emerald plantations.', image: '/assets/tea-plantation-1.webp' },
-            { id: 'ella', name: 'Ella', type: 'Highland Train', cx: 58, cy: 98, description: 'First-class carriage through the tea highlands.', image: '/assets/ella/ella-1.webp' },
-            { id: 'yala', name: 'Yala', type: 'Safari Glamping', cx: 70, cy: 120, description: 'Luxury tented bush camps and leopards.', image: '/assets/wild-life/yala-national-park-sri-lanka-1.webp' },
+            { id: 'ella', name: 'Ella', type: 'Highland Train', cx: 58, cy: 98, description: 'First-class carriage through the tea highlands.', image: '/assets/tour-package-images/nine-arch-with-train.webp' },
+            { id: 'yala', name: 'Yala', type: 'Safari Glamping', cx: 70, cy: 120, description: 'Luxury tented bush camps and leopards.', image: '/assets/tour-package-images/Yala-Luxury-Safari-Glamping.webp' },
             { id: 'mirissa', name: 'Mirissa', type: 'Private Villa', cx: 40, cy: 130, description: 'Indian Ocean terrace villa and whale watching.', image: '/assets/sunandsand/mirissa-sri-lanka-gallery-1.webp' },
             { id: 'galle', name: 'Galle Fort', type: 'Heritage Walk', cx: 32, cy: 127, description: 'Cobblestone streets and colonial boutique cafes.', image: '/assets/honeymoon-in-beach.webp' },
         ],

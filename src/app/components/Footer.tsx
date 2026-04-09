@@ -97,9 +97,9 @@ export default function Footer() {
                         {/* CONTACT INFO */}
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '28px' }}>
                             {[
-                                { icon: '📍', text: 'No. 123, Galle Road, Colombo 03, Sri Lanka' },
-                                { icon: '📞', text: '+94 77 362 4847' },
-                                { icon: '✉️', text: 'info@redelephanttravels.com' },
+                                { icon: '📍', text: '50/5 Rajamahavihara Road, Mirihana, Kotte.' },
+                                { icon: '📞', text: '+94 77 315 71 71' },
+                                { icon: '✉️', text: 'info@redelephanttravel.com' },
                             ].map((item) => (
                                 <div key={item.icon} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                                     <span style={{ fontSize: '1rem', flexShrink: 0, marginTop: '1px' }}>{item.icon}</span>
@@ -114,7 +114,7 @@ export default function Footer() {
                                 { label: 'Facebook', icon: 'f', href: '#' },
                                 { label: 'Instagram', icon: '◈', href: '#' },
                                 { label: 'TripAdvisor', icon: '✈', href: '#' },
-                                { label: 'WhatsApp', icon: '💬', href: 'https://wa.me/94773624847' },
+                                { label: 'WhatsApp', icon: '💬', href: 'https://wa.me/94773157171' },
                             ].map((s) => (
                                 <a
                                     key={s.label}

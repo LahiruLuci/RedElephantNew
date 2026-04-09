@@ -142,28 +142,6 @@ function PulseOrb({ size, top, left, delay, color }: { size: number; top: string
     );
 }
 
-/* ─── Stat counter ─── */
-function StatItem({ value, label, delay }: { value: string; label: string; delay: number }) {
-    const ref = useRef<HTMLDivElement>(null);
-    const [vis, setVis] = useState(false);
-    useEffect(() => {
-        const el = ref.current; if (!el) return;
-        const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(true); obs.disconnect(); } }, { threshold: 0.3 });
-        obs.observe(el); return () => obs.disconnect();
-    }, []);
-    return (
-        <div ref={ref} style={{
-            textAlign: 'center',
-            opacity: vis ? 1 : 0,
-            transform: vis ? 'translateY(0)' : 'translateY(20px)',
-            transition: `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`,
-        }}>
-            <div style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: gold, letterSpacing: '-0.02em', lineHeight: 1 }}>{value}</div>
-            <div style={{ fontFamily: 'var(--font-accent)', fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: muted, marginTop: '6px' }}>{label}</div>
-        </div>
-    );
-}
-
 /* ─── Experience card ─── */
 function SpaCard({ exp, delay }: { exp: typeof experiences[0]; delay: number }) {
     const ref = useRef<HTMLDivElement>(null);
@@ -302,9 +280,7 @@ function SpaCard({ exp, delay }: { exp: typeof experiences[0]; delay: number }) 
 /* ─── Main component ─── */
 export default function WellnessSpa() {
     const heroRef = useRef<HTMLDivElement>(null);
-    const statsRef = useRef<HTMLDivElement>(null);
     const [heroVis, setHeroVis] = useState(false);
-    const [statsVis, setStatsVis] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
 
@@ -319,13 +295,6 @@ export default function WellnessSpa() {
     useEffect(() => {
         const el = heroRef.current; if (!el) return;
         const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setHeroVis(true); obs.disconnect(); } }, { threshold: 0.1 });
-        obs.observe(el); return () => obs.disconnect();
-    }, []);
-
-    /* stats bar reveal */
-    useEffect(() => {
-        const el = statsRef.current; if (!el) return;
-        const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsVis(true); obs.disconnect(); } }, { threshold: 0.2 });
         obs.observe(el); return () => obs.disconnect();
     }, []);
 
@@ -381,10 +350,6 @@ export default function WellnessSpa() {
                 @keyframes spaQuotePulse {
                     0%, 100% { opacity: 0.55; }
                     50%       { opacity: 0.85; }
-                }
-                @keyframes spaLineGrow {
-                    from { transform: scaleX(0); }
-                    to   { transform: scaleX(1); }
                 }
             `}</style>
 
@@ -466,13 +431,7 @@ export default function WellnessSpa() {
                         transition: 'opacity 0.9s ease 0.2s, transform 0.9s cubic-bezier(0.23,1,0.32,1) 0.2s',
                     }}>
                         Restore.<br />
-                        <span style={{
-                            background: `linear-gradient(90deg, ${gold}, #E8C990, ${gold})`,
-                            backgroundSize: '200% auto',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            animation: 'shimmer 4s linear infinite',
-                        }}>
+                        <span style={{ color: 'white' }}>
                             Renew.
                         </span>{' '}
                         Reconnect.
@@ -553,198 +512,8 @@ export default function WellnessSpa() {
                 </div>
             </div>
 
-            {/* ══════════ PART 2 — STATS BAR ══════════ */}
-            <div ref={statsRef} style={{
-                background: dark,
-                padding: '48px 40px',
-                opacity: statsVis ? 1 : 0,
-                transform: statsVis ? 'translateY(0)' : 'translateY(28px)',
-                transition: 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.23,1,0.32,1)',
-            }}>
-                <div style={{
-                    maxWidth: '1280px', margin: '0 auto',
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                    gap: '40px',
-                    alignItems: 'center',
-                }}>
-                    <StatItem value="20+" label="Signature Therapies" delay={0} />
-                    <StatItem value="4" label="Expert Therapists" delay={100} />
-                    <StatItem value="98%" label="Guest Satisfaction" delay={200} />
-                    <StatItem value="∞" label="Moments of Calm" delay={300} />
-
-                    {/* Divider line */}
-                    <div style={{ display: 'none' }} />
-
-                    {/* Quote */}
-                    <div style={{
-                        gridColumn: 'span 1',
-                        borderLeft: `2px solid ${gold}44`,
-                        paddingLeft: '24px',
-                    }}>
-                        <p style={{
-                            fontFamily: 'var(--font-heading)',
-                            fontSize: '1rem',
-                            fontStyle: 'italic',
-                            color: 'rgba(255,255,255,0.55)',
-                            lineHeight: 1.7,
-                            margin: 0,
-                        }}>
-                            &quot;The greatest wealth is to live content with little.&quot;
-                        </p>
-                        <p style={{
-                            fontFamily: 'var(--font-accent)',
-                            fontSize: '1.14rem',
-                            letterSpacing: '0.15em',
-                            textTransform: 'uppercase',
-                            color: gold,
-                            marginTop: '8px',
-                        }}>— Plato</p>
-                    </div>
-                </div>
-            </div>
-
-            {/* ══════════ PART 3 — EXPERIENCE CARDS ══════════ */}
-            <div style={{ padding: '100px 0 80px', position: 'relative' }}>
-                {/* Botanicals */}
-                <BotanicalLeaf style={{ width: 220, top: '-40px', left: '-30px', opacity: 0.5, animation: 'floatLeaf 12s ease-in-out infinite' }} />
-                <BotanicalLeaf style={{ width: 160, bottom: '0', right: '-20px', opacity: 0.4, animation: 'floatLeaf 10s ease-in-out 3s infinite', transform: 'scaleX(-1) scaleY(-1)' }} />
-
-                <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-
-                    {/* Section heading */}
-                    <div style={{ textAlign: 'center', marginBottom: '72px' }}>
-                        {/* Ornamental line with circle */}
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '20px' }}>
-                            <div style={{ width: '60px', height: '1px', background: `linear-gradient(to right, transparent, ${sage})` }} />
-                            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: sage, opacity: 0.6 }} />
-                            <div style={{ width: '60px', height: '1px', background: `linear-gradient(to left, transparent, ${sage})` }} />
-                        </div>
-                        <div style={{
-                            fontFamily: 'var(--font-accent)',
-                            fontSize: '0.94rem', fontWeight: 700,
-                            letterSpacing: '0.24em', textTransform: 'uppercase',
-                            color: sage, marginBottom: '16px',
-                        }}>
-                            Our Signature Experiences
-                        </div>
-                        <h2 style={{
-                            fontFamily: 'var(--font-heading)',
-                            fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
-                            fontWeight: 800, color: dark,
-                            margin: '0 auto 16px',
-                            letterSpacing: '-0.02em', lineHeight: 1.15,
-                            maxWidth: '520px',
-                        }}>
-                            Rituals Crafted for{' '}
-                            <span style={{ color: sage, fontStyle: 'italic' }}>Deep Restoration</span>
-                        </h2>
-                        <p style={{
-                            fontFamily: 'var(--font-body)',
-                            fontSize: '1rem', color: muted,
-                            lineHeight: 1.7, maxWidth: '460px',
-                            margin: '0 auto',
-                        }}>
-                            Each treatment is a journey in itself — designed by our master therapists to harmonise your body, mind and spirit.
-                        </p>
-                    </div>
-
-                    {/* Cards grid */}
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                        gap: '28px',
-                    }}>
-                        {experiences.map((exp, i) => (
-                            <SpaCard key={exp.id} exp={exp} delay={i * 120} />
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-            {/* ══════════ PART 4 — FULL-WIDTH IMMERSIVE STRIP ══════════ */}
-            <div style={{
-                position: 'relative',
-                height: 'clamp(300px, 42vh, 480px)',
-                overflow: 'hidden',
-                margin: '0 0 0',
-            }}>
-                {/* Background image */}
-                <div style={{
-                    position: 'absolute', inset: '-8%',
-                    backgroundImage: 'url(/assets/spa-and-wellness/Yoga.webp)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center 30%',
-                }} />
-                {/* Overlay */}
-                <div style={{
-                    position: 'absolute', inset: 0,
-                    background: `linear-gradient(to right, rgba(14,20,18,0.88) 0%, rgba(14,20,18,0.55) 50%, rgba(14,20,18,0.7) 100%)`,
-                }} />
-                {/* Content */}
-                <div style={{
-                    position: 'absolute', inset: 0,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    flexDirection: 'column', textAlign: 'center',
-                    padding: '40px 24px',
-                }}>
-                    <div style={{
-                        fontFamily: 'var(--font-accent)',
-                        fontSize: '0.9rem', fontWeight: 700,
-                        letterSpacing: '0.28em', textTransform: 'uppercase',
-                        color: gold, marginBottom: '20px',
-                        animation: 'spaQuotePulse 3.5s ease-in-out infinite',
-                    }}>
-                        ✦ &nbsp; Begin Your Journey &nbsp; ✦
-                    </div>
-                    <h3 style={{
-                        fontFamily: 'var(--font-heading)',
-                        fontSize: 'clamp(1.8rem, 4vw, 3.2rem)',
-                        fontWeight: 800, color: 'white',
-                        margin: '0 0 20px', letterSpacing: '-0.02em', lineHeight: 1.1,
-                        maxWidth: '600px',
-                    }}>
-                        &quot;Silence is not empty.<br />
-                        <span style={{ color: gold, fontStyle: 'italic' }}>It is full of answers.</span>&quot;
-                    </h3>
-                    <p style={{
-                        fontFamily: 'var(--font-body)',
-                        fontSize: '1rem', color: 'rgba(255,255,255,0.6)',
-                        maxWidth: '400px', lineHeight: 1.7, margin: '0 0 32px',
-                    }}>
-                        Book your personalised wellness retreat and let our therapists guide you toward profound inner peace.
-                    </p>
-                    <a href="#contact" style={{
-                        display: 'inline-flex', alignItems: 'center', gap: '10px',
-                        background: 'transparent',
-                        border: `1.5px solid ${gold}`,
-                        color: gold,
-                        textDecoration: 'none',
-                        fontFamily: 'var(--font-accent)',
-                        fontSize: '0.96rem', fontWeight: 700,
-                        letterSpacing: '0.14em', textTransform: 'uppercase',
-                        padding: '14px 32px', borderRadius: '50px',
-                        transition: 'background 0.3s, color 0.3s',
-                    }}
-                        onMouseEnter={e => {
-                            const a = e.currentTarget as HTMLAnchorElement;
-                            a.style.background = gold; a.style.color = dark;
-                        }}
-                        onMouseLeave={e => {
-                            const a = e.currentTarget as HTMLAnchorElement;
-                            a.style.background = 'transparent'; a.style.color = gold;
-                        }}
-                    >
-                        Start My Retreat
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            {/* ══════════ PART 5 — AYURVEDA FEATURE ROW ══════════ */}
-            <div style={{ padding: '100px 0', background: cream }}>
+            {/* ══════════ PART 2 — AYURVEDA FEATURE ROW (MOVED HERE) ══════════ */}
+            <div style={{ padding: '80px 0 100px', background: cream }}>
                 <div style={{
                     maxWidth: '1280px', margin: '0 auto', padding: '0 40px',
                     display: 'grid',
@@ -822,7 +591,7 @@ export default function WellnessSpa() {
                             margin: '0 0 20px', letterSpacing: '-0.02em', lineHeight: 1.15,
                         }}>
                             5,000 Years of{' '}
-                            <span style={{ color: sage, fontStyle: 'italic' }}>Healing Knowledge</span>
+                            <span style={{ color: sage }}>Healing Knowledge</span>
                         </h2>
                         <p style={{
                             fontFamily: 'var(--font-body)',
@@ -848,30 +617,68 @@ export default function WellnessSpa() {
                                 <span style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: dark }}>{item}</span>
                             </div>
                         ))}
-                        <a href="#contact" style={{
-                            display: 'inline-flex', alignItems: 'center', gap: '10px',
-                            background: sage,
-                            color: 'white',
-                            textDecoration: 'none',
-                            fontFamily: 'var(--font-accent)',
-                            fontSize: '0.96rem', fontWeight: 700,
-                            letterSpacing: '0.12em', textTransform: 'uppercase',
-                            padding: '14px 28px', borderRadius: '50px',
-                            marginTop: '12px',
-                            boxShadow: `0 8px 28px ${sage}44`,
-                            transition: 'transform 0.25s, box-shadow 0.25s',
-                        }}
-                            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-2px)'; }}
-                            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.transform = ''; }}
-                        >
-                            Explore Ayurveda
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </a>
                     </div>
                 </div>
             </div>
+
+            {/* ══════════ PART 3 — EXPERIENCE CARDS ══════════ */}
+            <div style={{ padding: '80px 0 120px', position: 'relative' }}>
+                {/* Botanicals */}
+                <BotanicalLeaf style={{ width: 220, top: '-40px', left: '-30px', opacity: 0.5, animation: 'floatLeaf 12s ease-in-out infinite' }} />
+                <BotanicalLeaf style={{ width: 160, bottom: '0', right: '-20px', opacity: 0.4, animation: 'floatLeaf 10s ease-in-out 3s infinite', transform: 'scaleX(-1) scaleY(-1)' }} />
+
+                <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+
+                    {/* Section heading */}
+                    <div style={{ textAlign: 'center', marginBottom: '72px' }}>
+                        {/* Ornamental line with circle */}
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '20px' }}>
+                            <div style={{ width: '60px', height: '1px', background: `linear-gradient(to right, transparent, ${sage})` }} />
+                            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: sage, opacity: 0.6 }} />
+                            <div style={{ width: '60px', height: '1px', background: `linear-gradient(to left, transparent, ${sage})` }} />
+                        </div>
+                        <div style={{
+                            fontFamily: 'var(--font-accent)',
+                            fontSize: '0.94rem', fontWeight: 700,
+                            letterSpacing: '0.24em', textTransform: 'uppercase',
+                            color: sage, marginBottom: '16px',
+                        }}>
+                            Our Signature Experiences
+                        </div>
+                        <h2 style={{
+                            fontFamily: 'var(--font-heading)',
+                            fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
+                            fontWeight: 800, color: dark,
+                            margin: '0 auto 16px',
+                            letterSpacing: '-0.02em', lineHeight: 1.15,
+                            maxWidth: '520px',
+                        }}>
+                            Rituals Crafted for{' '}
+                            <span style={{ color: sage }}>Deep Restoration</span>
+                        </h2>
+                        <p style={{
+                            fontFamily: 'var(--font-body)',
+                            fontSize: '1rem', color: muted,
+                            lineHeight: 1.7, maxWidth: '460px',
+                            margin: '0 auto',
+                        }}>
+                            Each treatment is a journey in itself — designed by our master therapists to harmonise your body, mind and spirit.
+                        </p>
+                    </div>
+
+                    {/* Cards grid */}
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                        gap: '28px',
+                    }}>
+                        {experiences.map((exp, i) => (
+                            <SpaCard key={exp.id} exp={exp} delay={i * 120} />
+                        ))}
+                    </div>
+                </div>
+            </div>
+
         </section>
     );
 }

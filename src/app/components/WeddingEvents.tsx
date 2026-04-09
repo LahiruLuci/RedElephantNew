@@ -450,17 +450,14 @@ export default function WeddingEvents() {
                         fontFamily: 'var(--font-heading)',
                         fontSize: 'clamp(3rem, 7vw, 6.5rem)',
                         fontWeight: 800,
+                        color: 'white',
                         margin: '0 0 32px',
                         lineHeight: 1.0,
                         letterSpacing: '-0.03em',
                         maxWidth: '700px',
-                        background: `linear-gradient(90deg, ${gold} 0%, #F0D4A0 40%, ${gold} 80%)`,
-                        backgroundSize: '200% auto',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        animation: heroVis ? 'wdShimmer 5s linear infinite' : 'none',
                         opacity: heroVis ? 1 : 0,
-                        transition: 'opacity 0.9s ease 0.35s',
+                        transform: heroVis ? 'translateY(0)' : 'translateY(36px)',
+                        transition: 'opacity 0.9s ease 0.35s, transform 0.9s cubic-bezier(0.23,1,0.32,1) 0.35s',
                     }}>
                         Perfectly Told.
                     </h1>
@@ -542,7 +539,7 @@ export default function WeddingEvents() {
                     animation: 'wdFloat 6s ease-in-out infinite',
                     display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px',
                 }}>
-                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.2rem', fontWeight: 800, color: gold, lineHeight: 1 }}>500+</div>
+                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.2rem', fontWeight: 800, color: gold, lineHeight: 1 }}>20+</div>
                     <div style={{ fontFamily: 'var(--font-accent)', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)' }}>Celebrations</div>
                     <div style={{ fontFamily: 'var(--font-accent)', fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: `${gold}99` }}>crafted with love</div>
                 </div>
@@ -566,7 +563,7 @@ export default function WeddingEvents() {
                                 margin: 0, letterSpacing: '-0.02em', lineHeight: 1.1,
                             }}>
                                 Moments That<br />
-                                <span style={{ color: gold, fontStyle: 'italic' }}>Last Forever</span>
+                                Last Forever
                             </h2>
                         </div>
                         <Link href="/weddings#gallery" style={{
@@ -641,7 +638,7 @@ export default function WeddingEvents() {
                             letterSpacing: '-0.02em', lineHeight: 1.15, maxWidth: '540px',
                         }}>
                             Every Detail, Crafted with{' '}
-                            <span style={{ color: rose, fontStyle: 'italic' }}>Intention</span>
+                            <span style={{ color: rose }}>Intention</span>
                         </h2>
                         <p style={{
                             fontFamily: 'var(--font-body)',
@@ -727,7 +724,7 @@ export default function WeddingEvents() {
                         margin: '0 0 20px', letterSpacing: '-0.02em', lineHeight: 1.2,
                     }}>
                         Let's Plan Your <br />
-                        <span style={{ color: rose, fontStyle: 'italic' }}>Perfect Day</span>
+                        <span style={{ color: rose }}>Perfect Day</span>
                     </h2>
                     <p style={{
                         fontFamily: 'var(--font-body)',
@@ -807,9 +804,9 @@ export default function WeddingEvents() {
                     gap: '40px',
                 }}>
                     {[
-                        { value: '500+', label: 'Weddings Celebrated' },
+                        { value: '20+', label: 'Weddings Celebrated' },
                         { value: '12', label: 'Years of Excellence' },
-                        { value: '30+', label: 'Iconic Venues' },
+                        { value: '20+', label: 'Iconic Venues' },
                         { value: '100%', label: 'Bespoke & Tailored' },
                     ].map((s, i) => (
                         <div key={s.label} style={{

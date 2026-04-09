@@ -207,14 +207,10 @@ export default function CTASection() {
                     <h2 style={{
                         fontFamily: 'var(--font-heading)', fontWeight: 900,
                         fontSize: isMobile ? '2.4rem' : isTablet ? '2.8rem' : 'clamp(2.2rem, 3.8vw, 3.4rem)',
-                        color: 'white', lineHeight: 1.06, letterSpacing: '-0.025em',
+                        color: 'white', lineHeight: 1.15, letterSpacing: '-0.025em',
                         margin: '0 0 20px',
                     }}>
-                        Your Dream<br />
-                        <span style={{ background: `linear-gradient(90deg,${gold},#E8C990)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                            Sri Lanka
-                        </span>
-                        <br />Journey Awaits
+                        Your Dream Journey Awaits in Sri Lanka
                     </h2>
 
                     {/* Description */}

@@ -555,7 +555,7 @@ export default function WeddingsDetailPage() {
             <section style={{ height: '100vh', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
                     <Image
-                        src="/assets/wedding-new.webp"
+                        src="/assets/wedding-and-events/weddinggg.webp"
                         alt="Royal Ceremony"
                         fill
                         style={{
@@ -1182,8 +1182,8 @@ function TierCard({ title, price, features, featured = false, onSelect }: { titl
                 display: 'flex',
                 flexDirection: 'column'
             }}>
-                <h3 style={{ fontFamily: '"Playfair Display", var(--font-heading)', fontSize: '2rem', fontWeight: 400, marginBottom: 10 }}>{title}</h3>
-                <div style={{ color: featured ? goldLeaf : burgundy, fontSize: '1.35rem', marginBottom: 40, fontFamily: '"Playfair Display", var(--font-heading)', fontStyle: 'italic', fontWeight: 500 }}>{price}</div>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem', fontWeight: 300, marginBottom: 10 }}>{title}</h3>
+                <div style={{ color: featured ? goldLeaf : burgundy, fontSize: '1.3rem', marginBottom: 40, fontFamily: 'var(--font-heading)', fontStyle: 'italic' }}>{price}</div>
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 40 }}>
                     {features.map(f => (
                         <div key={f} style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: '1rem', opacity: 0.8 }}>
