@@ -193,7 +193,7 @@ export const destinations: Record<string, DestinationData> = {
         id: 'yala',
         name: 'Yala',
         type: 'National Park',
-        heroImage: '/assets/destination-new-images/yala/kumbukkan-oya.jpg',
+        heroImage: '/assets/destination-new-images/wildlife-page-hero-image.jpg',
         gallery: [
             '/assets/destination-new-images/yala/kumbukkan-oya.jpg',
             '/assets/destination-new-images/yala/magulmaha-viharaya.png',
