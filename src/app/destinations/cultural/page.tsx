@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import CollectionPage from '../_collection/CollectionPage';
+
+export const metadata: Metadata = {
+    title: 'Cultural Triangle Sri Lanka | Sigiriya, Dambulla & Kandy Tours',
+    description: "Discover Sri Lanka's ancient heartland. UNESCO heritage sites, sacred cities, and majestic rock fortresses. Personalized cultural tours with Red Elephant Travels.",
+    keywords: 'Cultural Triangle Sri Lanka, Sigiriya Rock, Dambulla Cave Temple, Kandy Temple of Tooth, Anuradhapura tours',
+};
 
 const culturalData = {
     id: 'cultural',
@@ -21,7 +28,7 @@ const culturalData = {
             name: 'Sigiriya',
             type: 'Ancient Fortress',
             tagline: 'The Eighth Wonder of the World',
-            image: '/assets/culture-package/sigiriya.webp',
+            image: '/assets/sigiriya/sigiriya-1.webp',
             description: 'A 200m-high sheer rock monolith with a sky-palace fortress built by a rogue king in the 5th century. Considered Sri Lanka\'s greatest single architectural treasure.',
             bestTime: 'Jan – Apr',
             famousFor: 'The Lion Rock Fortress',

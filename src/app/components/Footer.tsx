@@ -34,28 +34,40 @@ const footerLinks = {
         { label: 'Booking Policy', href: '/booking-policy' },
         { label: 'Privacy Policy', href: '/privacy-policy' },
         { label: 'Terms & Conditions', href: '/terms-and-conditions' },
-        { label: 'Sitemap', href: '/sitemap' },
+        { label: 'Sitemap', href: '/site-map' },
     ],
 };
 
+import { useState, useEffect } from 'react';
+
 export default function Footer() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth <= 1024);
+        check();
+        window.addEventListener('resize', check);
+        return () => window.removeEventListener('resize', check);
+    }, []);
+
     return (
         <footer style={{
             background: 'var(--color-dark)',
             borderTop: '1px solid rgba(255,255,255,0.06)',
+            overflow: 'hidden',
         }}>
             {/* MAIN FOOTER */}
-            <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '80px 32px 40px' }}>
+            <div style={{ maxWidth: '1400px', margin: '0 auto', padding: isMobile ? '60px 20px 40px' : '80px 32px 40px' }}>
                 <div className="footer-grid" style={{
                     display: 'grid',
-                    gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr',
-                    gap: '48px',
+                    gridTemplateColumns: isMobile ? '1fr' : '2fr 1fr 1fr 1fr 1fr',
+                    gap: isMobile ? '40px' : '48px',
                     marginBottom: '60px',
                 }}>
                     {/* BRAND COLUMN */}
                     <div>
                         {/* Logo */}
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
                             <div style={{
                                 width: '48px',
                                 height: '48px',
@@ -272,7 +284,7 @@ export default function Footer() {
                         {[
                             { label: 'Privacy Policy', href: '/privacy-policy' },
                             { label: 'Terms & Conditions', href: '/terms-and-conditions' },
-                            { label: 'Sitemap', href: '/sitemap' }
+                            { label: 'Sitemap', href: '/site-map' }
                         ].map((item) => (
                             <Link
                                 key={item.label}

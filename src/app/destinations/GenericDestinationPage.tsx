@@ -10,10 +10,10 @@ const gold = '#C9A96E';
 const subtleBorder = 'rgba(255, 255, 255, 0.04)';
 const glassBg = 'rgba(255, 255, 255, 0.02)';
 
-export default function GenericDestinationPage() {
+export default function GenericDestinationPage({ destinationId }: { destinationId?: string }) {
     const params = useParams();
     const router = useRouter();
-    const id = params?.id as string;
+    const id = destinationId || (params?.id as string);
 
     const [scrolled, setScrolled] = useState(0);
     const [isMobile, setIsMobile] = useState(false);

@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import CollectionPage from '../_collection/CollectionPage';
+
+export const metadata: Metadata = {
+    title: 'Sri Lanka Culture & Heritage | Colombo, Galle Fort & Heritage Hubs',
+    description: "Experience the living legacy of Sri Lanka. From the colonial charm of Galle Fort to the vibrant energy of Colombo. Bespoke heritage tours with Red Elephant Travels.",
+    keywords: 'Sri Lanka heritage, Galle Fort tours, Colombo city guide, colonial Sri Lanka, spice route history',
+};
 
 const heritageData = {
     id: 'heritage',

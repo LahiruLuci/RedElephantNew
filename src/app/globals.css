@@ -83,6 +83,8 @@
     html {
         scroll-behavior: smooth;
         scroll-padding-top: var(--nav-height);
+        overflow-x: hidden;
+        width: 100%;
     }
 
     body {
@@ -91,6 +93,9 @@
         font-family: var(--font-body);
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
     }
 
     /* === CUSTOM SCROLLBAR === */
@@ -271,6 +276,23 @@
 
     .stagger-5 {
         transition-delay: 0.5s;
+    }
+
+    /* === RESPONSIVE CONTAINER === */
+    .container-custom {
+        width: 100%;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .container-custom {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
     }
 }
 

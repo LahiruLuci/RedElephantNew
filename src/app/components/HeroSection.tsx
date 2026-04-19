@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useRef, useState, useCallback } from 'react';
 
 /* ─── Slide data ─── */
@@ -72,9 +73,17 @@ export default function HeroSection() {
     const [phase, setPhase] = useState<'idle' | 'wipe'>('idle');
     const [textOut, setTextOut] = useState(false);
     const [mouse, setMouse] = useState({ x: 0.5, y: 0.5 });
+    const [isMobile, setIsMobile] = useState(false);
     const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const wipeRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const heroRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const slide = slides[current];
     const nextSlide = nextIdx !== null ? slides[nextIdx] : null;
@@ -158,24 +167,24 @@ export default function HeroSection() {
             }}
         >
             {/* ══ BACKGROUND (current slide) ══ */}
-            <img
-                key={`bg-${current}`}
-                className="hero-anim-bg"
-                src={slide.src}
-                alt=""
-                style={{
-                    position: 'absolute', inset: 0,
-                    width: '100%', height: '100%',
-                    objectFit: 'cover',
-                    '--pos-d': slide.posD,
-                    '--pos-m': slide.posM,
-                    /* Increased scale for immersive parallax filling */
-                    transform: `scale(1.12) translate(${px}px,${py}px)`,
-                    transition: 'transform .1s linear',
-                    zIndex: 1,
-                    animation: `kb-hero ${DURATION + 1000}ms ease-out forwards`,
-                } as React.CSSProperties}
-            />
+            <div style={{ position: 'absolute', inset: 0, zIndex: 1, overflow: 'hidden' }}>
+                <Image
+                    key={`bg-${current}`}
+                    src={slide.src}
+                    alt={slide.alt}
+                    fill
+                    priority
+                    quality={90}
+                    style={{
+                        objectFit: 'cover',
+                        objectPosition: isMobile ? slide.posM : slide.posD,
+                        /* Subtle scale-up for parallax and Ken Burns effect */
+                        transform: `scale(1.15) translate(${px}px,${py}px)`,
+                        transition: 'transform 0.1s linear',
+                    }}
+                    className="hero-image-animate"
+                />
+            </div>
 
             {/* ══ WIPE-IN (next slide) ══ */}
             {nextSlide && phase === 'wipe' && (
@@ -187,13 +196,15 @@ export default function HeroSection() {
                         animation: 'wipe-in 0.86s cubic-bezier(.76,0,.24,1) forwards',
                     }}
                 >
-                    <img className="hero-anim-bg" src={nextSlide.src} alt="" style={{
-                        position: 'absolute', inset: 0,
-                        width: '100%', height: '100%',
-                        objectFit: 'cover',
-                        '--pos-d': nextSlide.posD,
-                        '--pos-m': nextSlide.posM,
-                    } as React.CSSProperties} />
+                    <Image
+                        src={nextSlide.src}
+                        alt=""
+                        fill
+                        style={{
+                            objectFit: 'cover',
+                            objectPosition: isMobile ? nextSlide.posM : nextSlide.posD,
+                        }}
+                    />
                     {/* Darkening overlay removed for raw image look */}
                 </div>
             )}
@@ -344,43 +355,48 @@ export default function HeroSection() {
             </div>
 
             {/* ══ BOTTOM STRIP: stats + dots — fixed height, no overlap ══ */}
-            <div style={{
+            <div className="bottom-strip" style={{
                 position: 'relative', zIndex: 10,
                 flexShrink: 0,
                 padding: '0 clamp(20px,5vw,64px)',
-                paddingBottom: 'max(18px, env(safe-area-inset-bottom, 18px))',
+                paddingBottom: 'max(14px, env(safe-area-inset-bottom, 14px))',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 10,
+                gap: 12,
             }}>
                 {/* Stats bar */}
-                <div style={{
-                    display: 'flex', alignItems: 'stretch',
-                    background: 'rgba(8,8,8,.6)', backdropFilter: 'blur(20px) saturate(1.4)',
-                    border: '1px solid rgba(255,255,255,.1)',
-                    borderRadius: 14,
+                <div className="stats-bar" style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(var(--stats-cols, 4), 1fr)',
+                    background: 'rgba(8,8,8,.65)', backdropFilter: 'blur(24px) saturate(1.6)',
+                    border: '1px solid rgba(255,255,255,0.12)',
+                    borderRadius: 16,
                     overflow: 'hidden',
-                    boxShadow: '0 8px 40px rgba(0,0,0,.5)',
+                    boxShadow: '0 8px 40px rgba(0,0,0,.55)',
                 }}>
                     {STATS.map((s, i) => (
-                        <div key={i} style={{
-                            flex: 1, padding: 'clamp(10px,1.5vh,16px) 8px',
+                        <div key={i} className="stat-item" style={{
+                            padding: 'clamp(10px,1.5vh,18px) 12px',
                             textAlign: 'center',
-                            borderRight: i < STATS.length - 1 ? '1px solid rgba(255,255,255,.08)' : 'none',
+                            borderRight: (i + 1) % 4 === 0 ? 'none' : '1px solid rgba(255,255,255,.08)',
+                            borderBottom: i < 0 ? '1px solid rgba(255,255,255,.08)' : 'none', /* Dynamic later */
                             minWidth: 0,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
                         }}>
                             <div style={{
                                 fontFamily: 'var(--font-heading)',
-                                fontSize: 'clamp(.95rem,2vw,1.35rem)',
+                                fontSize: 'clamp(1rem,2.2vw,1.4rem)',
                                 fontWeight: 900, color: 'white',
                                 letterSpacing: '-.01em', lineHeight: 1,
                                 whiteSpace: 'nowrap',
                             }}>{s.value}</div>
-                            <div style={{
+                            <div className="stat-label" style={{
                                 fontFamily: 'var(--font-accent)',
-                                fontSize: 'clamp(.42rem,.9vw,.56rem)',
-                                fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase',
-                                color: 'rgba(255,255,255,.4)', marginTop: 4,
+                                fontSize: 'clamp(.44rem,.95vw,.58rem)',
+                                fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase',
+                                color: 'rgba(255,255,255,.45)', marginTop: 5,
                                 whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
                             }}>{s.label}</div>
                         </div>
@@ -389,8 +405,8 @@ export default function HeroSection() {
 
                 {/* Dots + counter row */}
                 <div style={{
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-                    paddingBottom: 4,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10,
+                    paddingBottom: 6,
                 }}>
                     {slides.map((s, i) => (
                         <button
@@ -398,18 +414,18 @@ export default function HeroSection() {
                             onClick={() => { goTo(i); startTimer(); }}
                             aria-label={`Slide ${i + 1}`}
                             style={{
-                                width: i === current ? 24 : 7, height: 7,
+                                width: i === current ? 26 : 8, height: 8,
                                 borderRadius: 4, border: 'none', cursor: 'pointer', padding: 0,
                                 background: i === current ? slide.accent : 'rgba(255,255,255,.3)',
                                 transition: 'all .4s cubic-bezier(.4,0,.2,1)',
-                                boxShadow: i === current ? `0 0 10px ${slide.accent}88` : 'none',
+                                boxShadow: i === current ? `0 0 12px ${slide.accent}99` : 'none',
                                 flexShrink: 0,
                             }}
                         />
                     ))}
                     <span style={{
-                        fontFamily: 'var(--font-accent)', fontSize: '0.68rem', fontWeight: 600,
-                        letterSpacing: '.1em', color: 'rgba(255,255,255,.32)', marginLeft: 4,
+                        fontFamily: 'var(--font-accent)', fontSize: '0.72rem', fontWeight: 600,
+                        letterSpacing: '.12em', color: 'rgba(255,255,255,.35)', marginLeft: 6,
                         whiteSpace: 'nowrap',
                     }}>
                         {String(current + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
@@ -489,8 +505,11 @@ export default function HeroSection() {
                     to   { clip-path: inset(0 0% 0 0); }
                 }
                 @keyframes kb-hero {
-                    from { transform: scale(1.0); }
-                    to   { transform: scale(1.1); }
+                    from { transform: scale(1.15); }
+                    to   { transform: scale(1.25); }
+                }
+                .hero-image-animate {
+                    animation: kb-hero ${DURATION + 1000}ms ease-out forwards;
                 }
                 @keyframes progress-fill {
                     from { width: 0%; }
@@ -532,6 +551,24 @@ export default function HeroSection() {
                 @supports (padding-bottom: env(safe-area-inset-bottom)) {
                     #hero .bottom-strip {
                         padding-bottom: calc(18px + env(safe-area-inset-bottom));
+                    }
+                }
+
+                /* ── Stats Bar Responsiveness ── */
+                @media (max-width: 600px) {
+                    .stats-bar {
+                        --stats-cols: 2;
+                        grid-template-rows: repeat(2, 1fr);
+                    }
+                    .stat-item {
+                        border-right: none !important;
+                        border-bottom: 1px solid rgba(255,255,255,.08);
+                    }
+                    .stat-item:nth-child(odd) {
+                        border-right: 1px solid rgba(255,255,255,.08) !important;
+                    }
+                    .stat-item:nth-child(3), .stat-item:nth-child(4) {
+                        border-bottom: none !important;
                     }
                 }
             `}</style>

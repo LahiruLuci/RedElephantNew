@@ -31,7 +31,7 @@ const SECTIONS = [
     },
     {
         title: "5. Your Rights",
-        p: "You have the right to access, correct, or delete your personal information. You also have the right to object to or restrict certain types of data processing. To exercise these rights, please contact our data protection officer at hello@redelephant.com."
+        p: "You have the right to access, correct, or delete your personal information. You also have the right to object to or restrict certain types of data processing. To exercise these rights, please contact our data protection officer at info@redelephanttravel.com."
     }
 ];
 

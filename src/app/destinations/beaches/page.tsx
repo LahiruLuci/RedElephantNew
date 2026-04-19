@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import CollectionPage from '../_collection/CollectionPage';
+
+export const metadata: Metadata = {
+    title: 'Luxury Beach Destinations Sri Lanka | Sun & Sand Tours',
+    description: "Explore Sri Lanka's finest shores from Hikkaduwa to Trincomalee. Pristine beaches, whale watching, and bespoke coastal experiences with Red Elephant Travels.",
+    keywords: 'Sri Lanka beaches, whale watching Mirissa, surfing Hikkaduwa, Galle Fort, Trincomalee beach',
+};
 
 const beachesData = {
     id: 'beaches',
@@ -11,11 +18,22 @@ const beachesData = {
     accentGradient: 'linear-gradient(135deg, #0E4D8C 0%, #3B9ED4 100%)',
     stats: [
         { value: '1,340', label: 'km of Coastline' },
-        { value: '7', label: 'Beach Destinations' },
-        { value: '12', label: 'Surf Breaks' },
+        { value: '8', label: 'Beach Destinations' },
+        { value: '15', label: 'Surf Breaks' },
         { value: '365', label: 'Days of Sun' },
     ],
     destinations: [
+        {
+            id: 'arugambay',
+            name: 'Arugam Bay',
+            type: 'Surf Capital',
+            tagline: 'World-Class Waves & Coastal Wild',
+            image: '/assets/arugam-bay-1.webp',
+            description: 'One of the top surf spots globally. A crescent sand bay with a laid-back vibe, vibrant nightlife, and proximity to wild national parks where elephants roam.',
+            bestTime: 'Apr – Oct',
+            famousFor: 'Surfing & Wildlife',
+            highlights: ['Main Point Surf', 'Pottuvil Lagoon', 'Elephant Safaris'],
+        },
         {
             id: 'hikkaduwa',
             name: 'Hikkaduwa',

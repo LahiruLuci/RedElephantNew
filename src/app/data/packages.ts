@@ -220,9 +220,9 @@ export const packages: TourPackage[] = [
         title: 'Coastal Escape',
         subtitle: 'Sun, Surf & Serenity',
         tagline: 'Five days of turquoise seas, whale songs & golden sands',
-        heroImage: '/assets/hikkaduwa-beach-1.webp',
+        heroImage: '/assets/mirissa-home-page-hero.webp',
         galleryImages: [
-            '/assets/hikkaduwa-beach-1.webp',
+            '/assets/mirissa-home-page-hero.webp',
             '/assets/bentota-beach.webp',
             '/assets/galle-1.webp',
             '/assets/unawatuna-beach-1.webp',

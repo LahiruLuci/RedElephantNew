@@ -19,7 +19,7 @@ const packages = [
         subtitle: "Sri Lanka's Ancient Heart",
         image: '/assets/culture-package/sigiriya.webp',
         // price: 1290,
-        duration: '7 Days / 6 Nights',
+        duration: '9 Days / 8 Nights',
         // group: 'Up to 12',
         difficulty: 'Easy',
         // badge: 'Best Seller',
@@ -34,7 +34,7 @@ const packages = [
         category: 'beach',
         title: 'Coastal Escape',
         subtitle: 'Sun, Surf & Serenity',
-        image: '/assets/hikkaduwa-beach-1.webp',
+        image: '/assets/mirissa-home-page-hero.webp',
         // price: 980,
         duration: '5 Days / 4 Nights',
         // group: 'Up to 10',
@@ -53,7 +53,7 @@ const packages = [
         subtitle: 'Giants, Leopards & Wild Skies',
         image: '/assets/yala-national-park-1.webp',
         // price: 1490,
-        duration: '6 Days / 5 Nights',
+        duration: '8 Days / 7 Nights',
         // group: 'Up to 8',
         difficulty: 'Moderate',
         // badge: 'Premium',
@@ -70,7 +70,7 @@ const packages = [
         subtitle: 'Tea, Mist & Mountain Trails',
         image: '/assets/horton-plains-1.webp',
         // price: 1150,
-        duration: '6 Days / 5 Nights',
+        duration: '7 Days / 6 Nights',
         // group: 'Up to 10',
         difficulty: 'Moderate',
         // badge: 'Scenic',
@@ -87,7 +87,7 @@ const packages = [
         subtitle: 'Rapids, Peaks & Adrenaline',
         image: '/assets/kitulgala-1.webp',
         // price: 1080,
-        duration: '5 Days / 4 Nights',
+        duration: '8 Days / 7 Nights',
         // group: 'Up to 8',
         difficulty: 'Challenging',
         // badge: 'Thrilling',
@@ -104,7 +104,7 @@ const packages = [
         subtitle: 'Romance Across the Island',
         image: '/assets/honeymoon-in-beach.webp',
         // price: 2490,
-        duration: '10 Days / 9 Nights',
+        duration: '12 Days / 11 Nights',
         // group: 'Couple',
         difficulty: 'Easy',
         // badge: '✦ Luxury',
@@ -203,7 +203,7 @@ function PackageCard({ pkg, delay }: { pkg: typeof packages[0]; delay: number })
                     overflow: 'hidden',
                     willChange: 'transform',
                     boxShadow: hovered
-                        ? `0 32px 64px rgba(0,0,0,0.13), 0 0 0 1.5px ${pkg.accent}44`
+                        ? `0 32px 64px rgba(0,0,0,0.13), 0 0 0 1.5px ${crimson}44`
                         : '0 4px 24px rgba(0,0,0,0.07)',
                     transition: 'box-shadow 0.4s ease',
                     cursor: 'pointer',
@@ -212,13 +212,17 @@ function PackageCard({ pkg, delay }: { pkg: typeof packages[0]; delay: number })
             >
                 {/* Photo */}
                 <div style={{ position: 'relative', height: '230px', overflow: 'hidden', flexShrink: 0 }}>
-                    <div style={{
-                        position: 'absolute', inset: 0,
-                        backgroundImage: `url(${pkg.image})`,
-                        backgroundSize: 'cover', backgroundPosition: 'center',
-                        transition: 'transform 0.7s cubic-bezier(0.23,1,0.32,1)',
-                        transform: hovered ? 'scale(1.07)' : 'scale(1)',
-                    }} />
+                    <img
+                        src={pkg.image}
+                        alt={`${pkg.title} - ${pkg.duration} Sri Lanka Tour Package`}
+                        style={{
+                            position: 'absolute', inset: 0,
+                            width: '100%', height: '100%',
+                            objectFit: 'cover',
+                            transition: 'transform 0.7s cubic-bezier(0.23,1,0.32,1)',
+                            transform: hovered ? 'scale(1.07)' : 'scale(1)',
+                        }}
+                    />
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(20,14,10,0.6) 0%, transparent 55%)' }} />
 
                     {/* Badge */}
@@ -262,7 +266,7 @@ function PackageCard({ pkg, delay }: { pkg: typeof packages[0]; delay: number })
                 {/* Content */}
                 <div style={{ padding: '22px 22px 20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                     {/* Label */}
-                    <div style={{ fontFamily: 'var(--font-accent)', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: pkg.accent, marginBottom: '5px' }}>{pkg.subtitle}</div>
+
                     <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 800, color: dark, margin: '0 0 12px', letterSpacing: '-0.01em' }}>{pkg.title}</h3>
 
                     {/* Meta row */}
@@ -270,7 +274,6 @@ function PackageCard({ pkg, delay }: { pkg: typeof packages[0]; delay: number })
                         {[
                             { icon: '🕐', text: pkg.duration },
                             // { icon: '👥', text: pkg.group },
-                            { icon: '⚡', text: pkg.difficulty },
                         ].map(m => (
                             <div key={m.text} style={{ display: 'flex', alignItems: 'center', gap: '5px', fontFamily: 'var(--font-body)', fontSize: '1.14rem', color: muted }}>
                                 <span style={{ fontSize: '1rem' }}>{m.icon}</span>{m.text}
@@ -289,7 +292,7 @@ function PackageCard({ pkg, delay }: { pkg: typeof packages[0]; delay: number })
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
                             {pkg.highlights.slice(0, 3).map(h => (
                                 <div key={h} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                    <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: pkg.accent, flexShrink: 0 }} />
+                                    <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: crimson, flexShrink: 0 }} />
                                     <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: muted }}>{h}</span>
                                 </div>
                             ))}
@@ -299,9 +302,9 @@ function PackageCard({ pkg, delay }: { pkg: typeof packages[0]; delay: number })
                     <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                         <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.96rem', color: muted }}>{pkg.reviews} reviews</span>
                         <span style={{
-                            background: hovered ? pkg.accent : 'transparent',
-                            border: `1.5px solid ${pkg.accent}`,
-                            color: hovered ? 'white' : pkg.accent,
+                            background: hovered ? crimson : 'transparent',
+                            border: `1.5px solid ${crimson}`,
+                            color: hovered ? 'white' : crimson,
                             fontFamily: 'var(--font-accent)', fontSize: '1rem', fontWeight: 800,
                             letterSpacing: '0.1em', textTransform: 'uppercase',
                             padding: '9px 20px', borderRadius: '50px', cursor: 'pointer',

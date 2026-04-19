@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import CollectionPage from '../_collection/CollectionPage';
+
+export const metadata: Metadata = {
+    title: 'Sri Lanka Hill Country Tours | Ella, Nuwara Eliya & Tea Estates',
+    description: "Explore the misty mountains of Sri Lanka. Iconic train journeys, Nine Arch Bridge, and luxury tea estate bungalows. Bespoke highland tours with Red Elephant Travels.",
+    keywords: 'Sri Lanka hill country, Ella tours, Nuwara Eliya sightseeing, Nine Arch Bridge, Ceylon tea trails, Horton Plains',
+};
 
 const hillcountryData = {
     id: 'hillcountry',
@@ -11,7 +18,7 @@ const hillcountryData = {
     accentGradient: 'linear-gradient(135deg, #1A3A2A 0%, #66BB6A 100%)',
     stats: [
         { value: '2,524', label: 'Metres Highest Peak' },
-        { value: '4', label: 'Major Destinations' },
+        { value: '6', label: 'Major Destinations' },
         { value: '185,000', label: 'Hectares of Tea' },
         { value: '100+', label: 'Waterfalls' },
     ],
@@ -70,6 +77,17 @@ const hillcountryData = {
             bestTime: 'Jan – May',
             famousFor: 'World\'s End & Baker\'s Falls',
             highlights: ['World\'s End Viewpoint', 'Baker\'s Falls', 'Highland Wildlife'],
+        },
+        {
+            id: 'badulla',
+            name: 'Badulla',
+            type: 'Hidden Highland Capital',
+            tagline: 'The Gateway to the Uva Highlands',
+            image: '/assets/badulla/badulla-1.webp',
+            description: 'A historic city cradled by misty peaks, home to the roaring Dunhinda Falls and ancient spiritual monuments. It marks the spectacular end of the historic Main Line railway.',
+            bestTime: 'Jan – May',
+            famousFor: 'Dunhinda Falls & Ancient Temples',
+            highlights: ['Dunhinda Falls', 'Muthiyangana Temple', 'Nine Arch Bridge Descent'],
         },
     ],
     relatedTour: { label: 'Highland Retreat Package', href: '/tours/highland-retreat' },

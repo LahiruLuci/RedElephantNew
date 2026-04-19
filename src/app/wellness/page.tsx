@@ -505,8 +505,8 @@ export default function AdvancedWellnessPage() {
                             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '3.5rem', fontWeight: 300, marginBottom: 30 }}>Begin the <br />Journey.</h2>
                             <p style={{ lineHeight: 1.8, color: inkSecondary, marginBottom: 40 }}>Our wellness concierge will contact you within 24 hours to personalize your itinerary.</p>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                                <ContactInfo icon="☏" text="+94 11 234 5678" />
-                                <ContactInfo icon="✉" text="sanctuary@redelephant.com" />
+                                <ContactInfo icon="📞" text="+94 77 315 71 71" />
+                                <ContactInfo icon="✉" text="info@redelephanttravel.com" />
                             </div>
                         </Revealer>
                     </div>

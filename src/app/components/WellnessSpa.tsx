@@ -195,14 +195,17 @@ function SpaCard({ exp, delay }: { exp: typeof experiences[0]; delay: number }) 
                 >
                     {/* Photo area */}
                     <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
-                        <div style={{
-                            position: 'absolute', inset: 0,
-                            backgroundImage: `url(${exp.image})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            transition: 'transform 0.8s cubic-bezier(0.23,1,0.32,1)',
-                            transform: hovered ? 'scale(1.07)' : 'scale(1)',
-                        }} />
+                        <Image
+                            src={exp.image}
+                            alt={exp.title}
+                            fill
+                            style={{
+                                objectFit: 'cover',
+                                objectPosition: 'center',
+                                transition: 'transform 0.8s cubic-bezier(0.23,1,0.32,1)',
+                                transform: hovered ? 'scale(1.1)' : 'scale(1)',
+                            }}
+                        />
                         {/* Soft gradient overlay */}
                         <div style={{
                             position: 'absolute', inset: 0,
@@ -283,6 +286,15 @@ export default function WellnessSpa() {
     const [heroVis, setHeroVis] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
+    const [isMobile, setIsMobile] = useState(false);
+
+    /* screen resize check */
+    useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth <= 768);
+        check();
+        window.addEventListener('resize', check);
+        return () => window.removeEventListener('resize', check);
+    }, []);
 
     /* scroll for parallax */
     useEffect(() => {
@@ -366,15 +378,18 @@ export default function WellnessSpa() {
                 }}
             >
                 {/* Parallax photo — scroll + mouse */}
-                <div style={{
-                    position: 'absolute', inset: '-12%',
-                    backgroundImage: 'url(/assets/spa-and-wellness/wellness.webp)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    transform: `translateY(${parallaxY}px) translate(${(mousePos.x - 0.5) * -16}px, ${(mousePos.y - 0.5) * -10}px)`,
-                    transition: 'transform 0.9s cubic-bezier(0.23,1,0.32,1)',
-                    willChange: 'transform',
-                }} />
+                <Image
+                    src="/assets/spa-and-wellness/wellness.webp"
+                    alt="Wellness Sanctuary"
+                    fill
+                    priority
+                    style={{
+                        objectFit: 'cover',
+                        objectPosition: isMobile ? '70% center' : 'center',
+                        transform: `scale(1.2) translateY(${parallaxY}px) translate(${(mousePos.x - 0.5) * -16}px, ${(mousePos.y - 0.5) * -10}px)`,
+                        transition: 'transform 0.9s cubic-bezier(0.23,1,0.32,1)',
+                    }}
+                />
 
                 {/* Dark veil */}
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(110deg, rgba(14,20,18,0.82) 0%, rgba(14,20,18,0.55) 55%, transparent 100%)' }} />
@@ -396,10 +411,10 @@ export default function WellnessSpa() {
                 <BotanicalLeaf style={{ width: 120, bottom: '6%', right: '28%', opacity: 0.5, animation: 'floatLeaf 11s ease-in-out 2s infinite', transform: 'scaleX(-1)' }} />
 
                 {/* Hero copy */}
-                <div style={{ position: 'relative', zIndex: 2, maxWidth: '1280px', margin: '0 auto', width: '100%', padding: '0 40px' }}>
+                <div style={{ position: 'relative', zIndex: 2, maxWidth: '1280px', margin: '0 auto', width: '100%', padding: isMobile ? '0 24px' : '0 40px' }}>
 
                     {/* Breathing circle accent */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '28px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '24px' }}>
                         <div style={{
                             width: '10px', height: '10px', borderRadius: '50%',
                             background: gold,
@@ -408,18 +423,18 @@ export default function WellnessSpa() {
                         }} />
                         <span style={{
                             fontFamily: 'var(--font-accent)',
-                            fontSize: '0.94rem', fontWeight: 700,
+                            fontSize: isMobile ? '0.8rem' : '0.94rem', fontWeight: 700,
                             letterSpacing: '0.28em', textTransform: 'uppercase',
                             color: gold,
                         }}>
-                            Wellness &amp; Spa Sanctuary
+                            Wellness &amp; Sanctuary
                         </span>
                         <div style={{ flex: 1, height: '1px', background: `linear-gradient(to right, ${gold}55, transparent)` }} />
                     </div>
 
                     <h2 style={{
                         fontFamily: 'var(--font-heading)',
-                        fontSize: 'clamp(2.8rem, 6vw, 5.2rem)',
+                        fontSize: isMobile ? 'clamp(2.4rem, 8vw, 3.5rem)' : 'clamp(2.8rem, 6vw, 5.2rem)',
                         fontWeight: 800,
                         color: 'white',
                         margin: '0 0 24px',

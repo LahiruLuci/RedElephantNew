@@ -30,17 +30,12 @@ const megaCols = [
         title: 'Sun and Sand',
         links: [
             { label: 'All Beaches', href: '/destinations/beaches' },
-            { label: 'Ahangama/Ahungalla', href: '/destinations/beaches' },
             { label: 'Arugam Bay', href: '/destinations/arugambay' },
-            { label: 'Bentota', href: '/destinations/bentota' },
             { label: 'Galle & Unawatuna', href: '/destinations/galle' },
             { label: 'Negombo', href: '/destinations/negombo' },
-            { label: 'Kalpitiya', href: '/destinations/kalpitiya' },
             { label: 'Mirissa/Weligama', href: '/destinations/mirissa' },
-            { label: 'Koggala', href: '/destinations/beaches' },
-            { label: 'Pasikuda/Trinco', href: '/destinations/beaches' },
-            { label: 'Hikkaduwa', href: '/destinations/hikkaduwa' },
-            { label: 'Hiriketiya', href: '/destinations/beaches' }
+            { label: 'Pasikuda/Trinco', href: '/destinations/trincomalee' },
+            { label: 'Hikkaduwa', href: '/destinations/hikkaduwa' }
         ],
     },
     {
@@ -50,26 +45,16 @@ const megaCols = [
             { label: 'Yala National Park', href: '/destinations/yala' },
             { label: 'Udawalawe National Park', href: '/destinations/udawalawe' },
             { label: 'Minneriya National Park', href: '/destinations/minneriya' },
-            { label: 'Bundala National Park', href: '/destinations/wildlife' },
-            { label: 'Kumana National Park', href: '/destinations/wildlife' },
-            { label: 'Kaudulla National Park', href: '/destinations/wildlife' },
+            { label: 'Kumana National Park', href: '/destinations/kumana' },
+            { label: 'Kaudulla National Park', href: '/destinations/kaudulla' },
             { label: 'Galoya National Park', href: '/destinations/galoya' },
             { label: 'Habarana', href: '/destinations/wildlife' },
-            { label: 'Wilpattu National Park', href: '/destinations/wilpattu' },
-            { label: 'Sinharaja Forest', href: '/destinations/wildlife' }
+            { label: 'Wilpattu National Park', href: '/destinations/wilpattu' }
         ],
     },
     {
-        title: 'Culture & Heritage',
+        title: 'Air/Sea Ports',
         links: [
-            { label: 'All Heritage', href: '/destinations/heritage' },
-            { label: 'Galle Fort', href: '/destinations/galle' },
-            { label: 'Jaffna', href: '/destinations/heritage' },
-            { label: 'Colombo', href: '/destinations/colombo' },
-            { label: 'Chilaw', href: '/destinations/heritage' }
-        ],
-        subTitle: 'Air/Sea Ports',
-        subLinks: [
             { label: 'Global Access Overview', href: '/destinations/all-ports' },
             { label: 'Sky Portals (Airports)', href: '/destinations/airports' },
             { label: 'Maritime Gates (Ports)', href: '/destinations/seaports' }

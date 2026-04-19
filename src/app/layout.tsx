@@ -7,16 +7,26 @@ import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTopButton from './components/ScrollToTopButton';
 
 export const metadata: Metadata = {
-  title: "Red Elephant Travels & Tours | Premium Sri Lanka Experiences",
+  metadataBase: new URL('https://redelephanttravels.com'),
+  title: {
+    default: "Red Elephant Travels & Tours | Premium Sri Lanka Experiences",
+    template: "%s | Red Elephant Travels"
+  },
   description:
     "Discover Sri Lanka's most extraordinary destinations with Red Elephant Travels & Tours. Award-winning luxury tours, honeymoon packages, cultural journeys, wildlife safaris and more. Est. 2009.",
   keywords:
-    "Sri Lanka tours, luxury travel Sri Lanka, Red Elephant Travels, Sri Lanka holidays, honeymoon Sri Lanka, cultural tours Sri Lanka",
+    "Sri Lanka tours, luxury travel Sri Lanka, Red Elephant Travels, Sri Lanka holidays, honeymoon Sri Lanka, cultural tours Sri Lanka, private tours Sri Lanka",
   openGraph: {
     title: "Red Elephant Travels & Tours",
     description:
       "Sri Lanka's most loved premium travel specialist. 15+ years crafting extraordinary journeys.",
     type: "website",
+    siteName: "Red Elephant Travels",
+    locale: 'en_LK',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

@@ -555,7 +555,7 @@ export default function WeddingsDetailPage() {
             <section style={{ height: '100vh', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
                     <Image
-                        src="/assets/wedding-new.webp"
+                        src="/assets/weddingpage-hero.jpg"
                         alt="Royal Ceremony"
                         fill
                         style={{
@@ -966,8 +966,8 @@ function VenueScrollPanel({ venue, index, onClick }: { venue: typeof venues[0], 
                 transform: hovered ? 'scale(1.008)' : 'scale(1)',
                 transition: 'transform 1.2s cubic-bezier(0.2,0.8,0.2,1)',
                 boxShadow: hovered
-                    ? '0 60px 140px rgba(0,0,0,0.7), 0 0 0 1px rgba(212,175,55,0.15)'
-                    : '0 30px 80px rgba(0,0,0,0.5)',
+                    ? '0 40px 100px rgba(0,0,0,0.3), 0 0 0 1px rgba(212,175,55,0.15)'
+                    : '0 15px 40px rgba(0,0,0,0.15)',
             }}
         >
             {/* ── base image ── */}
@@ -981,8 +981,8 @@ function VenueScrollPanel({ venue, index, onClick }: { venue: typeof venues[0], 
                         objectPosition: 'center 30%',
                         transform: hovered ? 'scale(1.05)' : 'scale(1)',
                         transition: 'transform 3s cubic-bezier(0.2, 0.8, 0.2, 1)',
-                        // CINEMATIC: higher brightness, slight desaturate
-                        filter: 'brightness(0.72) saturate(0.75)',
+                        // removed brightness filter for natural look
+                        filter: 'none',
                     }}
                 />
             </div>
@@ -994,13 +994,12 @@ function VenueScrollPanel({ venue, index, onClick }: { venue: typeof venues[0], 
             <div style={{
                 position: 'absolute', inset: 0,
                 background: isEven
-                    ? 'linear-gradient(105deg, rgba(10,8,6,0.82) 0%, rgba(10,8,6,0.35) 55%, transparent 100%)'
-                    : 'linear-gradient(255deg, rgba(10,8,6,0.82) 0%, rgba(10,8,6,0.35) 55%, transparent 100%)',
+                    ? 'linear-gradient(to right, rgba(0,0,0,0.4) 0%, transparent 70%)'
+                    : 'linear-gradient(to left, rgba(0,0,0,0.4) 0%, transparent 70%)',
             }} />
 
             {/* ── CinemaScope: top & bottom letterbox bands ── */}
-            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 'clamp(28px, 4vh, 48px)', background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(1px)' }} />
-            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 'clamp(38px, 5.5vh, 64px)', background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(1px)' }} />
+            {/* removed letterslot bands */}
 
             {/* ── Film counter badge — top right ── */}
             <div style={{
