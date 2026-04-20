@@ -48,7 +48,6 @@ const megaCols = [
             { label: 'Kumana National Park', href: '/destinations/kumana' },
             { label: 'Kaudulla National Park', href: '/destinations/kaudulla' },
             { label: 'Galoya National Park', href: '/destinations/galoya' },
-            { label: 'Habarana', href: '/destinations/wildlife' },
             { label: 'Wilpattu National Park', href: '/destinations/wilpattu' }
         ],
     },

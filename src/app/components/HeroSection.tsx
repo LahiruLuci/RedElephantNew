@@ -63,7 +63,7 @@ const DURATION = 5500;
 const STATS = [
     { value: '15+', label: 'Years Experience' },
     { value: '4.9★', label: 'Guest Rating' },
-    { value: '2,400+', label: 'Happy Travellers' },
+    { value: '3,000+', label: 'Happy Travellers' },
     { value: '50+', label: 'Curated Routes' },
 ];
 

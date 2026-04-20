@@ -69,7 +69,7 @@ const StarIcon = () => (
 
 const stats = [
     { value: 15, suffix: '+', label: 'Years of Excellence', Icon: AwardIcon, description: 'Since 2009, crafting unforgettable Sri Lanka experiences' },
-    { value: 5000, suffix: '+', label: 'Happy Travelers', Icon: GlobeIcon, description: 'Guests from 60+ countries who chose to explore with us' },
+    { value: 3000, suffix: '+', label: 'Happy Travelers', Icon: GlobeIcon, description: 'Guests from 60+ countries who chose to explore with us' },
     { value: 50, suffix: '+', label: 'Curated Tours', Icon: CompassIcon, description: 'Carefully designed packages for every travel style' },
     { value: 98, suffix: '%', label: 'Satisfaction Rate', Icon: StarIcon, description: 'Our guests consistently rate their experience 5 stars' },
 ];

@@ -214,7 +214,7 @@ const CSS = `
   /* ── Body layout ── */
   .ph-body {
     display:grid;
-    grid-template-columns:280px 1fr;
+    grid-template-columns:1fr;
     gap:32px;
     max-width:1340px;
     margin:0 auto;
@@ -271,7 +271,7 @@ const CSS = `
 
   /* ── TABLET 768–1100 ── */
   @media screen and (max-width:1100px) {
-    .ph-body { grid-template-columns:230px 1fr; gap:22px; padding:32px 24px 80px; }
+    .ph-body { grid-template-columns:1fr; gap:22px; padding:32px 24px 80px; }
     .ph-cat-strip { padding:0 24px clamp(24px,3vw,40px); }
     .ph-hero-content { padding:0 24px 32px; }
   }
@@ -398,29 +398,21 @@ function PackageCard({ pkg, delay }: { pkg: typeof packages[0]; delay: number })
         <div className="ph-card-img">
           <div className="ph-card-img-bg" style={{ backgroundImage:`url(${pkg.heroImage})` }} />
           <div className="ph-card-img-grad" />
-          {/* Badge */}
-          <div style={{ position:'absolute', top:12, left:12, background:pkg.badgeColor, color:'#fff', fontFamily:'var(--font-accent)', fontSize:'0.88rem', fontWeight:800, letterSpacing:'.09em', textTransform:'uppercase', padding:'5px 13px', borderRadius:50, boxShadow:`0 3px 10px ${pkg.badgeColor}55` }}>{pkg.badge}</div>
+
           {/* Rating */}
           <div style={{ position:'absolute', top:12, right:12, background:'rgba(0,0,0,.52)', backdropFilter:'blur(8px)', border:'1px solid rgba(255,255,255,.14)', borderRadius:50, padding:'4px 11px', fontFamily:'var(--font-accent)', fontSize:'1.12rem', color:C.gold, fontWeight:700, display:'flex', alignItems:'center', gap:5 }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill={C.gold}><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             {pkg.rating}
           </div>
-          {/* Price */}
-          <div style={{ position:'absolute', bottom:12, right:12, background:'rgba(255,255,255,.96)', borderRadius:10, padding:'6px 14px' }}>
-            <span style={{ fontFamily:'var(--font-accent)', fontSize:'0.9rem', fontWeight:700, color:C.muted, textTransform:'uppercase' }}>From </span>
-            <span style={{ fontFamily:'var(--font-heading)', fontSize:'1.22rem', fontWeight:800, color:C.dark }}>${pkg.price.toLocaleString()}</span>
-          </div>
-          {/* Difficulty */}
-          <div style={{ position:'absolute', bottom:12, left:12, background:'rgba(0,0,0,.48)', backdropFilter:'blur(8px)', border:'1px solid rgba(255,255,255,.16)', borderRadius:50, padding:'4px 12px', fontFamily:'var(--font-accent)', fontSize:'0.84rem', fontWeight:600, color:'rgba(255,255,255,.88)', textTransform:'uppercase', letterSpacing:'.07em' }}>{pkg.difficulty}</div>
+
+
         </div>
         {/* Body */}
         <div className="ph-card-body">
           <div style={{ fontFamily:'var(--font-accent)', fontSize:'0.86rem', fontWeight:700, letterSpacing:'.14em', textTransform:'uppercase', color:pkg.accent, marginBottom:5 }}>{pkg.subtitle}</div>
           <h3 style={{ fontFamily:'var(--font-heading)', fontSize:'1.35rem', fontWeight:800, color:C.dark, margin:'0 0 11px', letterSpacing:'-.01em' }}>{pkg.title}</h3>
           <div style={{ display:'flex', gap:12, flexWrap:'wrap', marginBottom:11 }}>
-            {[{ i:'🕐', t:pkg.duration },{ i:'👥', t:pkg.group }].map(m => (
-              <span key={m.t} style={{ display:'flex', alignItems:'center', gap:5, fontFamily:'var(--font-body)', fontSize:'1rem', color:C.muted }}>{m.i} {m.t}</span>
-            ))}
+            <span style={{ display:'flex', alignItems:'center', gap:5, fontFamily:'var(--font-body)', fontSize:'1rem', color:C.muted }}>🕐 {pkg.duration}</span>
           </div>
           <div style={{ display:'flex', flexDirection:'column', gap:5, marginBottom:15 }}>
             {pkg.highlights.slice(0,3).map(h => (
@@ -477,11 +469,7 @@ export default function PackagesPage() {
   const [drawer,     setDrawer]     = useState(false);
   const [heroBg,     setHeroBg]     = useState(CATS[0].img);
 
-  /* Lock body scroll while drawer open */
-  useEffect(() => {
-    document.body.style.overflow = drawer ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [drawer]);
+
 
   /* Update hero bg when category changes */
   useEffect(() => {
@@ -516,52 +504,7 @@ export default function PackagesPage() {
   if (search)               chips.push({ label: `"${search}"`,  clear: () => setSearch('') });
 
   /* Sidebar content reusable */
-  const SidebarContent = ({ onClose }: { onClose?: () => void }) => (
-    <>
-      {/* Search */}
-      <div className="ph-sb-search">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={C.muted} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input
-          type="text" placeholder="Search packages…" value={search}
-          onChange={e => setSearch(e.target.value)}
-          autoFocus={!!onClose}
-        />
-      </div>
 
-      {/* Difficulty */}
-      <p className="ph-section-lbl">Difficulty</p>
-      <div className="ph-pills" style={{ marginBottom:18 }}>
-        {DIFFS.map(d => (
-          <button key={d} className={`ph-pill${difficulty===d?' active':''}`} onClick={() => setDifficulty(d)}>{d}</button>
-        ))}
-      </div>
-
-      {/* Sort */}
-      <div className="ph-sep" />
-      <p className="ph-section-lbl">Sort By</p>
-      <div className="ph-sort-btns">
-        {SORTS.map(s => (
-          <button key={s.key} className={`ph-sort-btn${sortBy===s.key?' active':''}`} onClick={() => setSortBy(s.key)}>
-            {s.label}
-            {sortBy===s.key && (
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={C.crimson} strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            )}
-          </button>
-        ))}
-      </div>
-
-      {onClose && (
-        <>
-          <div className="ph-sep"/>
-          <button onClick={onClose} style={{ width:'100%', padding:'13px', background:`linear-gradient(135deg,${C.darkRed},${C.crimson})`, color:C.white, border:'none', borderRadius:50, fontFamily:'var(--font-accent)', fontSize:'0.92rem', fontWeight:800, letterSpacing:'.12em', textTransform:'uppercase', cursor:'pointer', boxShadow:'0 6px 20px rgba(196,30,58,.3)' }}>
-            Show {filtered.length} Package{filtered.length!==1?'s':''}
-          </button>
-        </>
-      )}
-    </>
-  );
 
   return (
     <>
@@ -602,7 +545,7 @@ export default function PackagesPage() {
             {[
               { to:50, suffix:'+', label:'Curated Packages' },
               { to:15, suffix:'+', label:'Years Experience' },
-              { to:5000, suffix:'+', label:'Happy Travellers' },
+              { to:3000, suffix:'+', label:'Happy Travellers' },
               { to:98, suffix:'%', label:'Satisfaction Rate' },
             ].map(s => (
               <div key={s.label}>
@@ -644,40 +587,8 @@ export default function PackagesPage() {
       ══════════════════════════════════════ */}
       <div style={{ background: C.ivory }}>
 
-        {/* Mobile top bar — shown/hidden purely via CSS media query */}
-        <div className="ph-mob-bar" style={{ background:C.white, borderBottom:'1px solid rgba(0,0,0,.08)', padding:'10px 16px', gap:10, position:'sticky', top:0, zIndex:90, boxShadow:'0 2px 16px rgba(0,0,0,.06)', alignItems:'center' }}>
-          <div style={{ position:'relative', flex:1 }}>
-            <svg style={{ position:'absolute', left:11, top:'50%', transform:'translateY(-50%)', pointerEvents:'none' }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={C.muted} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-            <input type="text" placeholder="Search packages…" value={search} onChange={e => setSearch(e.target.value)}
-              style={{ width:'100%', padding:'9px 12px 9px 33px', border:'1.5px solid rgba(0,0,0,.1)', borderRadius:50, fontFamily:'var(--font-body)', fontSize:'0.96rem', color:C.dark, background:C.ivory, outline:'none', boxSizing:'border-box' }} />
-          </div>
-          {/* ph-filter-fab: CSS controls display – no inline display style here */}
-          <button className="ph-filter-fab" onClick={() => setDrawer(true)} style={{
-            alignItems:'center', gap:6, padding:'9px 16px', borderRadius:50, border:'none', cursor:'pointer', flexShrink:0,
-            background: hasFilters ? C.crimson : C.dark, color:C.white,
-            fontFamily:'var(--font-accent)', fontSize:'0.84rem', fontWeight:700, letterSpacing:'.09em', textTransform:'uppercase',
-          }}>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/>
-            </svg>
-            Filters{hasFilters?' ●':''}
-          </button>
-        </div>
-
+        {/* ── Results ── */}
         <div className="ph-body">
-
-          {/* ── Desktop Sidebar ── */}
-          <aside className="ph-sidebar">
-            <div className="ph-sidebar-card">
-              <div className="ph-sidebar-title">
-                Filters
-                {hasFilters && <button className="ph-sidebar-clear" onClick={clearAll}>Clear all</button>}
-              </div>
-              <SidebarContent />
-            </div>
-          </aside>
 
           {/* ── Results ── */}
           <div>
@@ -749,20 +660,7 @@ export default function PackagesPage() {
         </div>
       </div>
 
-      {/* ── Mobile Filter Drawer ── */}
-      {drawer && (
-        <div style={{ position:'fixed', inset:0, zIndex:400 }}>
-          <div onClick={() => setDrawer(false)} style={{ position:'absolute', inset:0, background:'rgba(0,0,0,.55)', backdropFilter:'blur(4px)' }} />
-          <div onClick={e => e.stopPropagation()} style={{ position:'absolute', bottom:0, left:0, right:0, background:C.white, borderRadius:'22px 22px 0 0', padding:'20px 20px 40px', animation:'slideUp .28s cubic-bezier(.2,.8,.2,1)', boxShadow:'0 -8px 40px rgba(0,0,0,.15)', maxHeight:'85svh', overflowY:'auto' }}>
-            <div style={{ width:36, height:4, borderRadius:2, background:'rgba(0,0,0,.13)', margin:'0 auto 20px' }} />
-            <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:22 }}>
-              <span style={{ fontFamily:'var(--font-heading)', fontSize:'1.3rem', fontWeight:800, color:C.dark }}>Filters</span>
-              {hasFilters && <button onClick={clearAll} style={{ fontFamily:'var(--font-accent)', fontSize:'0.82rem', fontWeight:700, letterSpacing:'.1em', textTransform:'uppercase', color:C.crimson, background:'none', border:'none', cursor:'pointer' }}>Clear All</button>}
-            </div>
-            <SidebarContent onClose={() => setDrawer(false)} />
-          </div>
-        </div>
-      )}
+
 
     </>
   );

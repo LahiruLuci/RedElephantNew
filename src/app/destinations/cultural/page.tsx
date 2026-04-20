@@ -19,7 +19,7 @@ const culturalData = {
     stats: [
         { value: '8', label: 'UNESCO Sites' },
         { value: '2,500+', label: 'Years of History' },
-        { value: '6', label: 'Ancient Cities' },
+        { value: '5', label: 'Ancient Cities' },
         { value: '1,000+', label: 'Rock Caves' },
     ],
     destinations: [

@@ -114,7 +114,7 @@ export default function AboutPage() {
                                 <div style={{ fontFamily: 'var(--font-accent)', fontSize: '0.87rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', marginTop: '8px' }}>Years Experience</div>
                             </div>
                             <div>
-                                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 900, color: 'var(--color-gold)' }}>5000+</div>
+                                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 900, color: 'var(--color-gold)' }}>3000+</div>
                                 <div style={{ fontFamily: 'var(--font-accent)', fontSize: '0.87rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', marginTop: '8px' }}>Happy Travelers</div>
                             </div>
                         </div>

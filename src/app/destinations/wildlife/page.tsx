@@ -11,7 +11,7 @@ const wildlifeData = {
     id: 'wildlife',
     title: 'Wild Sri Lanka',
     subtitle: 'National Parks & Reserves',
-    headline: 'Where Giants Roam Free',
+    headline: 'The Realm of the Leopard',
     description: 'Sri Lanka is a wildlife paradise—one of Asia\'s premier biodiversity hotspots. With the world\'s highest leopard density, the largest Asian elephant gathering on Earth, swimming elephants, and extraordinary birdlife, the island\'s national parks deliver jaw-dropping wilderness encounters.',
     heroImage: '/assets/destination-new-images/wildlife-page-hero-image.jpg',
     accentColor: '#4CAF50',
@@ -20,7 +20,7 @@ const wildlifeData = {
         { value: '26', label: 'Protected Areas' },
         { value: '407', label: 'Bird Species' },
         { value: '127', label: 'Mammal Species' },
-        { value: '5', label: 'Major Safaris' },
+        { value: '7', label: 'Major Safaris' },
     ],
     destinations: [
         {

@@ -114,7 +114,7 @@ export default function AdvancedWellnessPage() {
                                 <PhilosophyPoint
                                     num="01"
                                     title="Ancestral Roots"
-                                    text="Drawing from 5,000 years of Hela Wedakama—the traditional Sri Lankan healing art."
+                                    text="Drawing from 3,000 years of Hela Wedakama—the traditional Sri Lankan healing art."
                                 />
                                 <PhilosophyPoint
                                     num="02"

@@ -28,7 +28,7 @@ const beachesData = {
             name: 'Arugam Bay',
             type: 'Surf Capital',
             tagline: 'World-Class Waves & Coastal Wild',
-            image: '/assets/arugam-bay-1.webp',
+            image: '/assets/destination-new-images/arugam%20bay/arugam-bay-hero-image.jpg',
             description: 'One of the top surf spots globally. A crescent sand bay with a laid-back vibe, vibrant nightlife, and proximity to wild national parks where elephants roam.',
             bestTime: 'Apr – Oct',
             famousFor: 'Surfing & Wildlife',

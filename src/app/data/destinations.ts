@@ -73,7 +73,7 @@ export const destinations: Record<string, DestinationData> = {
         ],
         cultural_insights: [
             { id: 'monastic-life', title: 'Ancient Monastic Disciplines', subtitle: 'Spiritual Heritage', description: 'Gain profound insights into the austere disciplines of the early monks who lived within these vast complexes, dedicating their lives to meditation, study, and the preservation of the Dhamma.', image: '/assets/anuradhapura/abhayagiri-dagoba-anuradhapura.webp', highlights: ['Meditation Practices', 'Ancient Scriptural Study', 'Monastic Architecture'] },
-            { id: 'irrigation-marvels', title: 'Hydraulic Masterpieces', subtitle: 'Engineering Feats', description: 'Discover the incredibly advanced ancient irrigation networks built by early kings, featuring massive interconnected reservoirs that transformed dry lands into thriving agricultural hubs.', image: '/assets/anuradhapura/kuttam-pokuna.webp', highlights: ['Advanced Water Management', 'Royal Reservoirs', 'Agricultural Innovations'] }
+            { id: 'irrigation-marvels', title: 'Hydraulic Masterpieces', subtitle: 'Engineering Feats', description: 'Discover the incredibly advanced ancient irrigation networks built by early kings, featuring massive interconnected reservoirs that transformed dry lands into thriving agricultural hubs.', image: '/assets/destination-new-images/anuradhapura/Hydraulic-Masterpieces.webp', highlights: ['Advanced Water Management', 'Royal Reservoirs', 'Agricultural Innovations'] }
         ]
     },
     'negombo': {
@@ -223,7 +223,7 @@ export const destinations: Record<string, DestinationData> = {
         ],
         cultural_insights: [
             { id: 'jungle-shrines', title: 'Hidden Monasteries', subtitle: 'Ancient Wilderness Ruins', description: 'Hidden deep within the leopard-dominated jungles are ancient Buddhist monastic settlements like Sithulpawwa, proving that spirituality thrived alongside wild nature for millennia.', image: '/assets/wild-life/yala-national-park-sri-lanka-2.webp', highlights: ['Rock Temples', 'Ancient Pilgrimage Paths', 'Jungle Ascetics'] },
-            { id: 'conservation', title: 'Leopard Conservation', subtitle: 'Protecting the Apex', description: 'Learn about the critical conservation efforts and research underway to protect the Sri Lankan leopard, an endemic apex predator, ensuring a sustainable balance in the ecosystem.', image: '/assets/wild-life/yala-national-park-sri-lanka-1.webp', highlights: ['Wildlife Tracking', 'Anti-Poaching Efforts', 'Eco-Tourism Impact'] }
+            { id: 'conservation', title: 'Leopard Conservation', subtitle: 'Protecting the Apex', description: 'Learn about the critical conservation efforts and research underway to protect the Sri Lankan leopard, an endemic apex predator, ensuring a sustainable balance in the ecosystem.', image: '/assets/wild-life-sri-lanka-home-1.webp', highlights: ['Wildlife Tracking', 'Anti-Poaching Efforts', 'Eco-Tourism Impact'] }
         ]
     },
     'dambulla': {
@@ -264,7 +264,7 @@ export const destinations: Record<string, DestinationData> = {
         type: 'Ancient City',
         heroImage: '/assets/destination-new-images/polonnaruwa/polonnaruwa-hero-image.jpg',
         gallery: [
-            '/assets/pollonnaruwa/galviharaya-polonnaruwa.webp'
+            '/assets/destination-new-images/polonnaruwa-new/gal-viharaya.webp'
         ],
         tagline: 'The Medieval Capital',
         description: 'Polonnaruwa rose to prominence after the destruction of Anuradhapura in 993. It reached its zenith under King Parakramabahu I in the 12th century. The ruins are incredibly well-preserved, showcasing a compact and brilliant cluster of ancient Sinhalese art and architecture.',
@@ -274,9 +274,9 @@ export const destinations: Record<string, DestinationData> = {
             famousFor: 'Rock Buddhas & Cycling Tours'
         },
         attractions: [
-            { name: 'Gal Vihara', image: '/assets/destination-new-images/polonnaruwa/The-Art-of-Sculpture.png', description: 'A staggeringly beautiful rock shrine featuring four Buddha statues carved continuously from a single granite wall.' },
-            { name: 'The Vatadage', image: '/assets/pollonnaruwa/galviharaya-polonnaruwa.webp', description: 'An exquisitely carved circular relic house measuring 18 meters in diameter, representing the pinnacle of Polonnaruwa architecture.' },
-            { name: 'Parakrama Samudra', image: '/assets/pollonnaruwa/galviharaya-polonnaruwa.webp', description: 'A colossal artificial irrigation lake so vast the ancients named it the "Sea of Parakrama".' },
+            { name: 'Gal Vihara', image: '/assets/destination-new-images/polonnaruwa-new/gal-viharaya.webp', description: 'A staggeringly beautiful rock shrine featuring four Buddha statues carved continuously from a single granite wall.' },
+            { name: 'The Vatadage', image: '/assets/destination-new-images/polonnaruwa-new/the-vatadage.webp', description: 'An exquisitely carved circular relic house measuring 18 meters in diameter, representing the pinnacle of Polonnaruwa architecture.' },
+            { name: 'Parakrama Samudra', image: '/assets/destination-new-images/polonnaruwa-new/parakrama-samudraya.webp', description: 'A colossal artificial irrigation lake so vast the ancients named it the "Sea of Parakrama".' },
             { name: 'The Royal Palace Complex', image: '/assets/destination-new-images/polonnaruwa/Royal-Palace-of-King-Parakramabahu.png', description: 'The ruins of King Parakramabahu\'s palace, which originally stood seven stories tall and contained 1,000 rooms.' }
         ],
         activities: [
@@ -286,8 +286,8 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Visit the Archaeological Museum', desc: 'Start your journey at the museum to see models of the ancient buildings as they once stood, along with well-preserved artifacts from the kingdom.' }
         ],
         cultural_insights: [
-            { id: 'stone-masonry', title: 'Granite Masterpieces', subtitle: 'Architectural Genius', description: 'Stand in awe before the Gal Vihara, where four immense, remarkably emotive Buddha statues were masterfully chiseled directly out of a single, solid piece of granite.', image: '/assets/pollonnaruwa/galviharaya-polonnaruwa.webp', highlights: ['Stone Carving Tools', 'Expressions of Serenity', 'Monolithic Construction'] },
-            { id: 'royal-palaces', title: 'Medieval Grandeur', subtitle: 'The Royal Court', description: 'Visualize the former glory of King Parakramabahu’s reign by exploring the imposing brick ruins of his seven-story palace and the intricately carved Royal Council Chamber.', image: '/assets/pollonnaruwa/galviharaya-polonnaruwa.webp', highlights: ['Palace Layouts', 'Moonstone Carvings', 'Council Chamber Pillars'] }
+            { id: 'stone-masonry', title: 'Granite Masterpieces', subtitle: 'Architectural Genius', description: 'Stand in awe before the Gal Vihara, where four immense, remarkably emotive Buddha statues were masterfully chiseled directly out of a single, solid piece of granite.', image: '/assets/destination-new-images/polonnaruwa-new/gal-viharaya.webp', highlights: ['Stone Carving Tools', 'Expressions of Serenity', 'Monolithic Construction'] },
+            { id: 'royal-palaces', title: 'Medieval Grandeur', subtitle: 'The Royal Court', description: 'Visualize the former glory of King Parakramabahu’s reign by exploring the imposing brick ruins of his seven-story palace and the intricately carved Royal Council Chamber.', image: '/assets/destination-new-images/polonnaruwa/Royal-Palace-of-King-Parakramabahu.png', highlights: ['Palace Layouts', 'Moonstone Carvings', 'Council Chamber Pillars'] }
         ]
     },
     'hatton': {
@@ -428,7 +428,7 @@ export const destinations: Record<string, DestinationData> = {
             famousFor: 'Blue Whales & Coconut Tree Hill'
         },
         attractions: [
-            { name: 'Coconut Tree Hill', description: 'An iconic dome of red earth jutting into the sea, covered entirely in soaring palm trees.', image: '/assets/mirissa-1.webp' },
+            { name: 'Coconut Tree Hill', description: 'An iconic dome of red earth jutting into the sea, covered entirely in soaring palm trees.', image: '/assets/mirissa-home-page-hero.webp' },
             { name: 'Secret Beach', description: 'A tiny, beautiful cove tucked away from the main stretch.', image: '/assets/destination-new-images/mirissa/secrete-beach.webp' }
         ],
         activities: [
@@ -708,12 +708,12 @@ export const destinations: Record<string, DestinationData> = {
         id: 'arugambay',
         name: 'Arugam Bay',
         type: 'Surf Capital & Coastal Haven',
-        heroImage: '/assets/destination-new-images/arugam bay/arugam-bay-hero-image.jpg',
+        heroImage: '/assets/destination-new-images/arugam%20bay/arugam-bay-hero-image.jpg',
         gallery: [
-            '/assets/destination-new-images/arugam bay/arugam-bay-hero-image.jpg',
-            '/assets/destination-new-images/arugam bay/whiskey-point.png',
-            '/assets/destination-new-images/arugam bay/muhudu-maha-viharaya.png',
-            '/assets/destination-new-images/arugam bay/pottuvil-lagoon.png',
+            '/assets/destination-new-images/arugam%20bay/arugam-bay-hero-image.jpg',
+            '/assets/destination-new-images/arugam%20bay/whiskey-point.png',
+            '/assets/destination-new-images/arugam%20bay/muhudu-maha-viharaya.png',
+            '/assets/destination-new-images/arugam%20bay/pottuvil-lagoon.png',
             '/assets/arugam-bay-1.webp'
         ],
         tagline: 'Where the Waves Meet the Wilderness',
@@ -725,9 +725,9 @@ export const destinations: Record<string, DestinationData> = {
         },
         attractions: [
             { name: 'Main Point', description: 'The legendary right-hand reef break that draws surfers from across the globe, offering long, peeling waves in a stunning tropical setting.', image: '/assets/arugam-bay-1.webp' },
-            { name: 'Muhudu Maha Viharaya', description: 'Centuries-old seaside ruins of a Buddhist temple quietly encroached upon by sand dunes, marking a site of ancient royalty and spiritual significance.', image: '/assets/destination-new-images/arugam bay/muhudu-maha-viharaya.png' },
-            { name: 'Whiskey Point', description: 'A scenic spot north of the main bay, perfect for beginners and longboarders, known for its consistent swell and vibrant beach parties.', image: '/assets/destination-new-images/arugam bay/whiskey-point.png' },
-            { name: 'Pottuvil Lagoon', description: 'A serene waterway where you can take a canoe trip to spot crocodiles, monitor lizards, and a vast array of exotic birdlife amidst the mangroves.', image: '/assets/destination-new-images/arugam bay/pottuvil-lagoon.png' }
+            { name: 'Muhudu Maha Viharaya', description: 'Centuries-old seaside ruins of a Buddhist temple quietly encroached upon by sand dunes, marking a site of ancient royalty and spiritual significance.', image: '/assets/destination-new-images/arugam%20bay/muhudu-maha-viharaya.png' },
+            { name: 'Whiskey Point', description: 'A scenic spot north of the main bay, perfect for beginners and longboarders, known for its consistent swell and vibrant beach parties.', image: '/assets/destination-new-images/arugam%20bay/whiskey-point.png' },
+            { name: 'Pottuvil Lagoon', description: 'A serene waterway where you can take a canoe trip to spot crocodiles, monitor lizards, and a vast array of exotic birdlife amidst the mangroves.', image: '/assets/destination-new-images/arugam%20bay/pottuvil-lagoon.png' }
         ],
         activities: [
             { title: 'Chasing the Perfect Wave', desc: 'Whether a pro or a beginner, take to the water at Main Point or Baby Point for an unforgettable surf session in the Indian Ocean.' },
@@ -735,7 +735,7 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Kumana National Park Excursion', desc: 'A short drive away, this park is a birder’s paradise and offers excellent chances to see leopards, elephants, and bears in a raw, untamed landscape.' }
         ],
         cultural_insights: [
-            { id: 'arugam-culture', title: 'The Surf & Soul Connection', subtitle: 'Global Gathering', description: 'Arugam Bay has evolved from a small fishing village into a global melting pot where surf culture blends seamlessly with local hospitality and traditional eastern coastal life.', image: '/assets/destination-new-images/arugam bay/The-Surf-Soul-Connection.png', highlights: ["Surf Culture", "East Coast Vibe", "Coastal Wildlife"] }
+            { id: 'arugam-culture', title: 'The Surf & Soul Connection', subtitle: 'Global Gathering', description: 'Arugam Bay has evolved from a small fishing village into a global melting pot where surf culture blends seamlessly with local hospitality and traditional eastern coastal life.', image: '/assets/destination-new-images/arugam%20bay/The-Surf-Soul-Connection.png', highlights: ["Surf Culture", "East Coast Vibe", "Coastal Wildlife"] }
         ]
     },
     'kitulgala': {
