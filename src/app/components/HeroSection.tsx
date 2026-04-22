@@ -16,7 +16,7 @@ const slides = [
         posM: '65% center', /* Focus on people/pathway on mobile */
     },
     {
-        src: '/assets/tour-category/adventure1.webp',
+        src: '/assets/tour-category/adventure.webp',
         alt: 'Sri Lanka Adventure Exploration',
         label: 'Spirit of Adventure',
         headline: ['Epic', 'Journeys'],
@@ -47,7 +47,7 @@ const slides = [
         posM: 'center center',
     },
     {
-        src: '/assets/home-slide-04.webp',
+        src: '/assets/new-hero-img.webp',
         alt: 'Sri Lanka Luxury Retreat',
         label: 'Luxury Escapes',
         headline: ['Refined', 'Luxury'],

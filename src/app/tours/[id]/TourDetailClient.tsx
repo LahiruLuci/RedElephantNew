@@ -245,9 +245,8 @@ export default function TourDetailClient({ pkg }: { pkg: any }) {
         const update = () => {
             const sy = window.scrollY;
             if (heroBgRef.current) {
-                const tx = (mouseX.current - 0.5) * -16;
-                const ty = (mouseY.current - 0.5) * -8;
-                heroBgRef.current.style.transform = `translateY(${sy * 0.28}px) translate(${tx}px,${ty}px)`;
+                // Parallax disabled to avoid 'zoomed' look
+                heroBgRef.current.style.transform = 'none';
             }
             lastScrollY.current = sy;
             rafId.current = null;
@@ -264,7 +263,7 @@ export default function TourDetailClient({ pkg }: { pkg: any }) {
         if (mouseRaf.current === null) {
             mouseRaf.current = requestAnimationFrame(() => {
                 if (heroBgRef.current) {
-                    heroBgRef.current.style.transform = `translateY(${lastScrollY.current * 0.28}px) translate(${(mouseX.current - 0.5) * -16}px,${(mouseY.current - 0.5) * -8}px)`;
+                    heroBgRef.current.style.transform = 'none';
                 }
                 mouseRaf.current = null;
             });
@@ -288,7 +287,7 @@ export default function TourDetailClient({ pkg }: { pkg: any }) {
 
             {/* ══ HERO ══ */}
             <div ref={heroRef} onMouseMove={onHeroMouse} style={{ position: 'relative', height: heroH, minHeight: heroMinH, overflow: 'hidden', width: '100%', boxSizing: 'border-box' }}>
-                <div ref={heroBgRef} style={{ position: 'absolute', top: '-18%', bottom: '-18%', left: 0, right: 0, willChange: 'transform' }}>
+                <div ref={heroBgRef} style={{ position: 'absolute', inset: 0, willChange: 'transform' }}>
                     {Array.from(new Set([pkg.heroImage, ...pkg.galleryImages])).map((img: string, i: number) => (
                         <div key={i} style={{
                             position: 'absolute', inset: 0,

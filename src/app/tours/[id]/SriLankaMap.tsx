@@ -38,7 +38,9 @@ export default function SriLankaMapSection({ mapPoints, mapRoutePoints, accent, 
             overflow: 'hidden',
             marginBottom: isMobile ? 36 : 60,
             position: 'relative',
-            height: isMobile ? 'auto' : '100vh'
+            height: isMobile ? 'auto' : '100vh',
+            width: '100%',
+            boxSizing: 'border-box'
         }}>
             <style>{`
                 .map-scroll::-webkit-scrollbar { width: 6px; }
@@ -49,7 +51,7 @@ export default function SriLankaMapSection({ mapPoints, mapRoutePoints, accent, 
             {/* header row */}
             <div style={{
                 display: 'grid',
-                gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+                gridTemplateColumns: isMobile ? 'minmax(0, 1fr)' : '1fr 1fr',
                 gap: 0,
                 height: '100%'
             }}>
@@ -106,7 +108,7 @@ export default function SriLankaMapSection({ mapPoints, mapRoutePoints, accent, 
                                 <div style={{ width: 38, height: 38, borderRadius: '50%', background: accent, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                                     <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 900, color: 'white' }}>{i + 1}</span>
                                 </div>
-                                <div style={{ minWidth: 0 }}>
+                                <div style={{ minWidth: 0, wordWrap: 'break-word', overflowWrap: 'break-word' }}>
                                     <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem', fontWeight: 700, color: 'white' }}>{pt.name}</div>
                                     <div style={{ fontFamily: 'var(--font-body)', fontSize: '1.17rem', color: 'rgba(255,255,255,.65)' }}>{pt.type}</div>
                                 </div>
@@ -208,7 +210,7 @@ export default function SriLankaMapSection({ mapPoints, mapRoutePoints, accent, 
                         position: 'fixed', inset: 0, zIndex: 9000,
                         background: 'rgba(0,0,0,.65)',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        padding: 20,
+                        padding: '100px 24px 24px', /* Increased top padding to safely clear the navigation header */
                         backdropFilter: 'blur(4px)',
                         animation: 'tdFadeUp .3s ease',
                     }}
@@ -221,12 +223,15 @@ export default function SriLankaMapSection({ mapPoints, mapRoutePoints, accent, 
                             overflow: 'hidden',
                             width: '100%',
                             maxWidth: 420,
+                            maxHeight: '100%', /* Confine to screen boundaries safely */
+                            display: 'flex',
+                            flexDirection: 'column',
                             boxShadow: '0 32px 80px rgba(0,0,0,.35)',
                         }}
                     >
                         {/* img */}
                         {popup.point.image && (
-                            <div style={{ height: 220, overflow: 'hidden', position: 'relative' }}>
+                            <div style={{ flexShrink: 0, height: 220, overflow: 'hidden', position: 'relative' }}>
                                 <img
                                     src={popup.point.image}
                                     alt={popup.point.name}
@@ -250,7 +255,7 @@ export default function SriLankaMapSection({ mapPoints, mapRoutePoints, accent, 
                         )}
 
                         {/* body */}
-                        <div style={{ padding: '22px 24px 26px' }}>
+                        <div style={{ padding: '22px 24px 26px', overflowY: 'auto' }}>
                             <div style={{ display: 'inline-block', background: `${accent}18`, border: `1px solid ${accent}40`, borderRadius: 50, padding: '4px 12px', marginBottom: 10 }}>
                                 <span style={{ fontFamily: 'var(--font-accent)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: accent }}>
                                     {popup.point.type}

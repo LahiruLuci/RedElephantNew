@@ -352,6 +352,12 @@ export default function WeddingEvents() {
                     from { opacity: 0; transform: translateX(-40px); }
                     to   { opacity: 1; transform: translateX(0); }
                 }
+                /* Hide badge on mobile as requested */
+                @media (max-width: 768px) {
+                    .wd-badge-float {
+                        display: none !important;
+                    }
+                }
             `}</style>
 
             {/* ══════════════ PART 1 — CINEMATIC HERO ══════════════ */}
@@ -524,25 +530,26 @@ export default function WeddingEvents() {
                             Request a Quote
                         </a>
                     </div>
+
+                    {/* Floating corner badge (moved into flow here to sit under CTAs on mobile) */}
+                    <div className="wd-badge-float" style={{
+                        position: 'absolute', bottom: '48px', right: 'clamp(24px, 6vw, 80px)', /* Ignored on mobile via CSS */
+                        background: 'rgba(255,255,255,0.1)',
+                        backdropFilter: 'blur(16px)',
+                        border: `1.5px solid ${gold}40`,
+                        borderRadius: '20px',
+                        padding: '20px 24px',
+                        textAlign: 'center',
+                        zIndex: 3,
+                        animation: 'wdFloat 6s ease-in-out infinite',
+                        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px',
+                    }}>
+                        <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.2rem', fontWeight: 800, color: gold, lineHeight: 1 }}>20+</div>
+                        <div style={{ fontFamily: 'var(--font-accent)', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)' }}>Celebrations</div>
+                        <div style={{ fontFamily: 'var(--font-accent)', fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: `${gold}99` }}>crafted with love</div>
+                    </div>
                 </div>
 
-                {/* Floating corner badge */}
-                <div style={{
-                    position: 'absolute', bottom: '48px', right: 'clamp(24px, 6vw, 80px)',
-                    background: 'rgba(255,255,255,0.1)',
-                    backdropFilter: 'blur(16px)',
-                    border: `1.5px solid ${gold}40`,
-                    borderRadius: '20px',
-                    padding: '20px 24px',
-                    textAlign: 'center',
-                    zIndex: 3,
-                    animation: 'wdFloat 6s ease-in-out infinite',
-                    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px',
-                }}>
-                    <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.2rem', fontWeight: 800, color: gold, lineHeight: 1 }}>20+</div>
-                    <div style={{ fontFamily: 'var(--font-accent)', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)' }}>Celebrations</div>
-                    <div style={{ fontFamily: 'var(--font-accent)', fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: `${gold}99` }}>crafted with love</div>
-                </div>
             </div>
 
             {/* ══════════════ PART 2 — EXPANDABLE GALLERY STRIP ══════════════ */}
@@ -652,7 +659,7 @@ export default function WeddingEvents() {
                     {/* Cards */}
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
                         gap: '24px',
                     }}>
                         {features.map((f, i) => <FeatureCard key={f.title} feat={f} delay={i * 110} />)}
@@ -663,7 +670,7 @@ export default function WeddingEvents() {
             {/* ══════════════ PART 4 — SPLIT VISION SECTION ══════════════ */}
             <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
                 minHeight: '560px',
             }}>
                 {/* Left — Photo */}
@@ -800,7 +807,7 @@ export default function WeddingEvents() {
                 <div style={{
                     maxWidth: '1280px', margin: '0 auto',
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 160px), 1fr))',
                     gap: '40px',
                 }}>
                     {[

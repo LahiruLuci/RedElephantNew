@@ -530,9 +530,9 @@ export default function WellnessSpa() {
             {/* ══════════ PART 2 — AYURVEDA FEATURE ROW (MOVED HERE) ══════════ */}
             <div style={{ padding: '80px 0 100px', background: cream }}>
                 <div style={{
-                    maxWidth: '1280px', margin: '0 auto', padding: '0 40px',
+                    maxWidth: '1280px', margin: '0 auto', padding: '0 clamp(20px, 4vw, 40px)',
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
                     gap: '60px',
                     alignItems: 'center',
                 }}>
@@ -684,7 +684,7 @@ export default function WellnessSpa() {
                     {/* Cards grid */}
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
                         gap: '28px',
                     }}>
                         {experiences.map((exp, i) => (

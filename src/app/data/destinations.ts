@@ -34,6 +34,7 @@ export interface DestinationData {
     attractions: Attraction[];
     activities?: Activity[];
     cultural_insights?: CulturalInsight[];
+    storyDescription?: string[];
 }
 
 export const destinations: Record<string, DestinationData> = {
@@ -48,6 +49,10 @@ export const destinations: Record<string, DestinationData> = {
         ],
         tagline: 'The First Capital of Ancient Kings',
         description: 'Anuradhapura is the spiritual heart of Sri Lanka. Serving as the capital for over a millennium, it is a vast network of ancient palaces, giant stupas glistening white against the sky, and serene monasteries. Walking its grounds is traversing centuries of Buddhist history.',
+        storyDescription: [
+            'Anuradhapura is the cradle of Sri Lankan civilization, once serving as the island’s first royal capital for over a millennium. Founded in the 4th century BCE, this sacred city remains a monumental landscape of colossal white stupas and ancient monasteries that rise like spiritual mountains above the emerald plains.',
+            'Today, it is a living sanctuary where pilgrims gather around the Jaya Sri Maha Bodhi, the oldest historically documented tree on Earth. Walking through its ruins of intricate bathing pools and royal palaces offers a profound journey into the origins of Sinhalese Buddhism and ancient engineering.'
+        ],
         stats: {
             bestTime: 'May to September',
             elevation: '81 m',
@@ -97,7 +102,7 @@ export const destinations: Record<string, DestinationData> = {
             famousFor: 'Seafood, Dutch Canals & Beaches'
         },
         attractions: [
-            { name: 'Negombo Beach Park', image: '/assets/destination-new-images/negombo/beach-park.webp', description: 'The golden sandy strip that runs alongside the resort hotels, spectacular for sunset walks.' },
+            { name: 'Negombo Beach Park', image: '/assets/negembo-destination/hero-new-img.webp', description: 'The golden sandy strip that runs alongside the resort hotels, spectacular for sunset walks.' },
             { name: 'Hamilton Canal', image: '/assets/destination-new-images/negombo/hamilton-canel.webp', description: 'A 100km waterway constructed by the British in 1802, perfect for a slow boat ride viewing local life.' },
             { name: 'Negombo Fish Market', image: '/assets/destination-new-images/negombo/fish-market.webp', description: 'A vibrant and chaotic morning auction where giant tuna and thousands of fish of every shape and colour are traded.' },
             { name: 'St. Mary\'s Church', image: '/assets/destination-new-images/negombo/st.marys-church.webp', description: 'A massive pastel-pink cathedral featuring stunning European-style ceiling frescoes.' },
@@ -108,6 +113,10 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Exclusive Lagoon Dining', desc: 'Experience a romantic, private 5-star dinner arranged right on the banks of the Negombo lagoon beneath the tropical night sky.' },
             { title: 'Boat Rides', desc: 'Explore the tranquil waters of Negombo Lagoon on scenic boat rides, offering opportunities for birdwatching, photography, and glimpses of traditional fishing villages.' },
             { title: 'Water Sports', desc: 'From jet skiing to kite surfing, Negombo offers a range of thrilling water sports activities for adventure enthusiasts looking to make a splash.' }
+        ],
+        storyDescription: [
+            'Negombo serves as a vibrant coastal gateway to Sri Lanka, affectionately known as "Little Rome" for its deep-rooted Catholic heritage and pastel-hued churches. Its golden shoreline stretches alongside centuries-old Dutch canals and a bustling fish market that pulses with early morning energy.',
+            'Beyond its colonial architecture, the town offers a perfect blend of relaxation and authentic coastal life. Whether cruising the lagoon at sunset or savoring incredibly fresh seafood, Negombo provides an immersive introduction to the island\'s coastal charm.'
         ],
         cultural_insights: [
             { id: 'catholic-heritage', title: 'The Little Rome', subtitle: 'Colonial History', description: 'Trace the deep roots of Catholicism brought by the Portuguese, visible in the magnificent, pastel-hued churches and shrines that dot every corner of the town.', image: '/assets/destination-new-images/negombo/The-Little-Rome.webp', highlights: ['Portuguese Influence', 'Cathedral Architecture', 'Local Festivities'] },
@@ -127,6 +136,10 @@ export const destinations: Record<string, DestinationData> = {
         ],
         tagline: 'The Last Kingdom of Sri Lanka',
         description: 'Nestled deep in the central mountains and wrapped around a serene lake, Kandy is the cultural capital of Sri Lanka. It was the last independent stronghold of the Sinhalese Kings, resisting colonial powers for centuries. Today, it remains the spiritual centre of the island.',
+        storyDescription: [
+            'Nestled within misty highlands, Kandy is the spiritual heart of the nation and the site of its final independent kingdom. It is defined by the serene Kandy Lake and the Temple of the Sacred Tooth Relic, which houses the most hallowed object in the Buddhist world—the tooth of the Lord Buddha.',
+            'The city is a vibrant center of tradition, famous for the annual Esala Perahera where adorned elephants and drummers parade through the streets. Whether witnessing evening rituals or exploring the lush botanical gardens, Kandy offers an authentic look at the soul of Sri Lankan heritage.'
+        ],
         stats: {
             bestTime: 'January to April',
             elevation: '500 m',
@@ -136,8 +149,11 @@ export const destinations: Record<string, DestinationData> = {
             { name: 'Temple of the Sacred Tooth Relic', image: '/assets/kandy/kandy-1.webp', description: 'A heavily fortified temple guarding the most sacred object in the Buddhist world: a tooth of the Buddha.' },
             { name: 'Kandy Lake (Kiri Muhuda)', image: '/assets/destination-new-images/kandy/kandy-lake.png', description: 'An artificial lake built in 1807 by the last Sinhalese king, offering a peaceful promenade in the city center.' },
             { name: 'Peradeniya Botanical Gardens', image: '/assets/destination-new-images/kandy/peradeniya-botanical-garden.png', description: '147 acres of incredible flora, originally built for Kandyan royalty, featuring giant Javan fig trees and 4,000 plant species.' },
-            { name: 'Bahirawakanda Buddha Statue', image: '/assets/destination-new-images/kandy/Bahirawakanda-Buddha-Statue.png', description: 'An 88-foot high white Buddha statue perched on a hill, visible from everywhere in the city.' },
-            { name: 'Udawattakele Forest Reserve', image: '/assets/destination-new-images/kandy/udawattekele-forest.png', description: 'A historic forest sanctuary directly behind the Tooth Temple, once the exclusive pleasure garden of the Kings.' }
+            { name: 'Bahirawakanda Buddha Statue', image: '/assets/kandy/bahirawakanda-buddha-statue.webp', description: 'An 88-foot high white Buddha statue perched on a hill, visible from everywhere in the city.' },
+            { name: 'Gem Museum & Gallery', image: '/assets/kandy/gem-museum.webp', description: 'Explore the world-famous gems of Sri Lanka, including the legendary Ceylon Sapphire. Learn about mining, cutting, and polishing techniques that have been passed down through generations.' },
+            { name: 'Wood Carving Center', image: '/assets/destination-new-images/kandy/Arts-Crafts-Heritage.png', description: 'Witness the intricate artistry of Kandyan woodcarvers. From traditional masks to ornate furniture, these craftsmen keep alive a heritage that dates back to the royal era.' },
+            { name: 'Batik Factory and Outlet', image: '/assets/shopping-sri-lanka.webp', description: 'Discover the vibrant art of Batik, a traditional fabric-dyeing technique. Watch artists create elaborate patterns by hand and browse a collection of unique, handcrafted textiles.' },
+            { name: 'Spice Garden (Mawanella)', image: '/assets/dambulla/spice-garden-matale-gallery-1.webp', description: 'Immerse yourself in the aromas of Ceylon cinnamon, cardamom, and clove. Learn about the diverse spices that made Sri Lanka the "Spice Island" and their many uses.' }
         ],
         activities: [
             { title: 'Viceroy Luxury Train Journey', desc: 'Experience the timeless colonial charm of a vintage luxury train carriage as you glide into the misty mountains of the tea country.' },
@@ -147,7 +163,7 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Cultural Dance Performances', desc: 'Enjoy authentic Kandyan cultural dance shows featuring traditional drumming, ceremonial costumes, and performances rooted in centuries-old heritage.' }
         ],
         cultural_insights: [
-            { id: 'esala-perahera', title: 'The Grand Perahera', subtitle: 'Sacred Spectacle', description: 'Learn about the Esala Perahera, an ancient, breathtaking ten-day festival featuring fire-dancers, whip-crackers, and beautifully adorned elephants parading the sacred tooth relic.', image: '/assets/destination-new-images/kandy/kandy-asala-perahera.png', highlights: ['Traditional Costumes', 'Sacred Rituals', 'Royal Drumming'] },
+            { id: 'esala-perahera', title: 'The Grand Perahera', subtitle: 'Sacred Spectacle', description: 'Learn about the Esala Perahera, an ancient, breathtaking ten-day festival featuring fire-dancers, whip-crackers, and beautifully adorned elephants parading the sacred tooth relic.', image: '/assets/kandy/the-grand-perahera.webp', highlights: ['Traditional Costumes', 'Sacred Rituals', 'Royal Drumming'] },
             { id: 'kandyan-art', title: 'Arts & Crafts Heritage', subtitle: 'Royal Artisans', description: 'Delve into the intricate world of Kandyan craftsmanship, from exquisite silver filigree and brasswork to the vibrant, symbolic motifs of traditional lacquer and handloom.', image: '/assets/destination-new-images/kandy/Arts-Crafts-Heritage.png', highlights: ['Silver Filigree', 'Traditional Lacquerwork', 'Handloom Textiles'] }
         ]
     },
@@ -175,6 +191,7 @@ export const destinations: Record<string, DestinationData> = {
             { name: 'Galle Lighthouse', image: '/assets/destination-new-images/galle/galle-light-house.png', description: 'An iconic white lighthouse sitting gracefully beneath the shade of towering coconut palms.' },
             { name: 'Dutch Reformed Church', image: '/assets/destination-new-images/galle/dutch-reformed-chrurch.png', description: 'Built in 1755, its floor is paved entirely with gravestones from the old Dutch cemetery.' },
             { name: 'Pedlar Street', image: '/assets/destination-new-images/galle/pedlar-street.png', description: 'Narrow lanes bursting with luxury boutique shops, intimate cafes, colonial villas, and art galleries.' },
+            { name: 'Galle National Museum', image: '/assets/galle/Galle_Museum.webp', description: 'Housed in the oldest Dutch building in the fort, this museum displays artifacts from the Portuguese, Dutch, and British periods, offering a deep dive into the maritime history of the region.' },
             { name: 'Flag Rock', image: '/assets/destination-new-images/galle/flag-rock.png', description: 'Historically a Portuguese bastion where sailors swung warnings to incoming ships, now a prime spot for sunset watching and cliff-diving locals.' }
         ],
         activities: [
@@ -183,6 +200,10 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'VIP Spa & Wellness Retreat', desc: 'Indulge in an afternoon of absolute serenity at a world-class luxury spa combining ancient Ayurvedic techniques with modern pampering.' },
             { title: 'Explore Galle Fort on Foot', desc: 'Walk through the UNESCO-listed Galle Fort to discover colonial streets, boutiques, museums, cafés, and scenic ramparts overlooking the Indian Ocean.' },
             { title: 'Sunset at the Ramparts', desc: 'Enjoy golden-hour views along the fort walls, where ocean breezes and historic architecture create one of the most iconic sunset experiences in southern Sri Lanka.' }
+        ],
+        storyDescription: [
+            'Galle is a captivating collision of European colonial architecture and vibrant South Asian traditions. The centerpiece of this coastal city is the UNESCO-listed Galle Fort, a living, breathing 400-year-old fortress originally built by the Portuguese and later fortified by the Dutch.',
+            'Wandering through the fort’s cobblestone streets reveals a curated world of luxury boutiques, art galleries, and restored villas. It is a place where history feels tangible, offering spectacular sunsets from the ramparts and an effortlessly chic coastal lifestyle.'
         ],
         cultural_insights: [
             { id: 'dutch-architecture', title: 'Colonial Architecture', subtitle: 'Living History', description: 'Wander through the beautifully preserved grid pattern of streets within the fort, noting the distinct Dutch-colonial style characterized by thick walls, large verandas, and terracotta roofs.', image: '/assets/destination-new-images/galle/Colonial-Architecture.png', highlights: ['Dutch Vernacular Construction', 'Restored Villas', 'Historical Fortifications'] },
@@ -221,6 +242,10 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Jeep Safari', desc: 'Embark on a thrilling morning or afternoon jeep safari with experienced trackers to chase sightings of leopards, elephants, and bears.' },
             { title: 'Luxury Tented Camping', desc: 'Stay overnight in a luxury tented camp on the park\'s border to fall asleep to the sounds of the jungle and wake up to nature\'s symphony.' }
         ],
+        storyDescription: [
+            'Yala National Park is a sprawling sanctuary of forests, grassy plains, and brackish lagoons, commanding the title of the realm of the leopard. It is world-renowned for boasting the highest density of these elusive apex predators anywhere on the planet.',
+            'The park offers an incredibly cinematic safari experience, populated by tremendous herds of elephants, sloth bears, and crocodiles. Deep within this leopard-dominated wilderness lie hidden ancient ruins and monasteries, proving that spirituality and raw nature have coexisted here for millennia.'
+        ],
         cultural_insights: [
             { id: 'jungle-shrines', title: 'Hidden Monasteries', subtitle: 'Ancient Wilderness Ruins', description: 'Hidden deep within the leopard-dominated jungles are ancient Buddhist monastic settlements like Sithulpawwa, proving that spirituality thrived alongside wild nature for millennia.', image: '/assets/wild-life/yala-national-park-sri-lanka-2.webp', highlights: ['Rock Temples', 'Ancient Pilgrimage Paths', 'Jungle Ascetics'] },
             { id: 'conservation', title: 'Leopard Conservation', subtitle: 'Protecting the Apex', description: 'Learn about the critical conservation efforts and research underway to protect the Sri Lankan leopard, an endemic apex predator, ensuring a sustainable balance in the ecosystem.', image: '/assets/wild-life-sri-lanka-home-1.webp', highlights: ['Wildlife Tracking', 'Anti-Poaching Efforts', 'Eco-Tourism Impact'] }
@@ -230,12 +255,17 @@ export const destinations: Record<string, DestinationData> = {
         id: 'dambulla',
         name: 'Dambulla',
         type: 'Cave Temple',
-        heroImage: '/assets/destination-new-images/polonnaruwa/the-golden-temple.png',
+        heroImage: '/assets/dambulla/dambulla-hero-image.webp',
         gallery: [
+            '/assets/dambulla/dambulla-hero-image.webp',
             '/assets/dambulla/dambulla-1.webp'
         ],
         tagline: 'A Masterpiece of Buddhist Art',
         description: 'Dambulla is the largest and best-preserved cave temple complex in Sri Lanka. The towering rock, rising 160m over the surrounding plains, is heavily carved with over 80 documented caves. Five of these caves contain breathtaking statues and paintings tracking the life of Gautama Buddha.',
+        storyDescription: [
+            'The Dambulla Cave Temple is a subterranean masterpiece of Buddhist art, carved into a massive granite outcrop that towers over the plains. For over two millennia, these five caverns have served as a sacred sanctuary, housing over 150 statues and thousands of square meters of intricate mural paintings.',
+            'Stepping inside reveals a silent, gilded world where vibrant frescoes depict the life of the Buddha across undulating stone ceilings. As an active site of pilgrimage, the scent of lotuses and the murmur of prayers create a profound spiritual experience that has remained unchanged for centuries.'
+        ],
         stats: {
             bestTime: 'January to May',
             elevation: '340 m',
@@ -244,8 +274,9 @@ export const destinations: Record<string, DestinationData> = {
         attractions: [
             { name: 'Cave of the Great Kings', image: '/assets/destination-new-images/polonnaruwa/cave-of-the-divine-king.png', description: 'The largest cave, dominated by a magnificent 15-meter reclining Buddha statue carved straight out of the bedrock.' },
             { name: 'The Golden Temple', image: '/assets/destination-new-images/polonnaruwa/the-golden-temple.png', description: 'A modern, massive golden Buddha statue that greets visitors at the base of the mountain.' },
-            { name: 'Cave of the Divine King', image: '/assets/destination-new-images/polonnaruwa/cave-of-the-divine-king.png', description: 'The first and oldest cave, preserving original 2,000-year-old rock-paintings across the undulating ceiling.' },
-            { name: 'Dambulla Produce Market', image: '/assets/destination-new-images/polonnaruwa/dambulla-produce-market.png', description: 'One of the largest vegetable distribution centres in Sri Lanka, offering a dizzying glimpse into local agriculture.' }
+            { name: 'Cave of the Divine King', image: '/assets/dambulla/dambulla-1.webp', description: 'The first and oldest cave, preserving original 2,000-year-old rock-paintings across the undulating ceiling.' },
+            { name: 'Matale Spice Garden', image: '/assets/dambulla/spice-garden-matale.webp', description: "A sensory journey through the heart of Sri Lanka's spice country. Discover the secrets of cinnamon, cardamom, and pepper in their natural habitat, and learn about the healing power of Ayurvedic herbs." },
+            { name: 'Habarana Elephant Rides', image: '/assets/dambulla/elephant-ride.webp', description: "Experience the majesty of the island's gentle giants. Enjoy a serene ride through the lush jungles and lakeside trails of Habarana, offering a unique perspective on the tropical landscape and local wildlife." }
         ],
         activities: [
             { title: 'VIP Sunrise Jet Flight', desc: 'Take a mesmerizing private sunrise balloon flight drifting silently above ancient ruins, vast emerald jungles, and the iconic Sigiriya Rock.' },
@@ -268,6 +299,10 @@ export const destinations: Record<string, DestinationData> = {
         ],
         tagline: 'The Medieval Capital',
         description: 'Polonnaruwa rose to prominence after the destruction of Anuradhapura in 993. It reached its zenith under King Parakramabahu I in the 12th century. The ruins are incredibly well-preserved, showcasing a compact and brilliant cluster of ancient Sinhalese art and architecture.',
+        storyDescription: [
+            'Polonnaruwa stands as the island’s medieval jewel, reaching its zenith in the 12th century as a masterpiece of ancient urban planning. It is best known for its compact and impeccably preserved ruins, showcasing a brilliant fusion of Sinhalese and South Indian architectural influences centered around vast man-made reservoirs.',
+            'The soul of the city is found at the Gal Vihara, where magnificent Buddha statues are carved directly into a single granite rock face. From the ornate Vatadage to the towering ruins of the Royal Palace, Polonnaruwa offers a cinematic glimpse into a golden era of Sri Lankan culture.'
+        ],
         stats: {
             bestTime: 'May to September',
             elevation: '60 m',
@@ -294,7 +329,7 @@ export const destinations: Record<string, DestinationData> = {
         id: 'hatton',
         name: 'Hatton',
         type: 'Hill Country',
-        heroImage: '/assets/destination-new-images/hatton/hatton-hero-image.jpg',
+        heroImage: '/assets/hatton/hero-image.webp',
         gallery: [
             '/assets/destination-new-images/hatton/hatton-hero-image.jpg',
             '/assets/destination-new-images/hatton/horton-plains.png',
@@ -309,16 +344,20 @@ export const destinations: Record<string, DestinationData> = {
             famousFor: 'Ceylon Tea & Cool Climate'
         },
         attractions: [
-            { name: 'Castlereagh Reservoir', image: '/assets/hatton/hatton-1.webp', description: 'A mirror-like lake hidden in a deep valley, wrapped by dense pine forests and the finest tea estates.' },
-            { name: 'Horton Plains National Park', image: '/assets/destination-new-images/hatton/horton-plains.png', description: 'A bleak but beautiful highland plateau leading to the dramatic 880-meter vertical drop known as World\'s End.' },
             { name: 'Adam\'s Peak (Sri Pada)', image: '/assets/destination-new-images/hatton/adams-peak.png', description: 'A towering, sharply pointed holy mountain. It is a major pilgrimage site due to a footprint rock formation at its summit.' },
+            { name: 'Castlereagh Reservoir', image: '/assets/hatton/hatton-1.webp', description: 'A mirror-like lake hidden in a deep valley, wrapped by dense pine forests and the finest tea estates.' },
             { name: 'Working Tea Factories', image: '/assets/destination-new-images/hatton/working-tea-factory.png', description: 'Step inside 19th-century colonial machines that withered, rolled, and fermented the leaves that conquered the globe.' }
         ],
         activities: [
+            { title: 'Adam\'s Peak Sunrise Pilgrimage', desc: 'Embark on a soul-stirring night ascent up the 5,500 steps to reach the summit as dawn breaks, witnessing the legendary triangular shadow.' },
             { title: 'Exclusive Heritage High Tea', desc: 'Partake in an exceptionally luxurious, multi-course high tea served by personal butlers on the rolling lawns of a restored 19th-century planter’s mansion.' },
             { title: 'Private Leopard Trail Trek', desc: 'Join an expert naturalist for an exclusive hike deep through the cloud forests identifying rare highland flora and tracking the elusive mountain leopard.' },
             { title: 'Scenic Tea Walks', desc: 'Wander through manicured tea gardens, breathe in the fresh mountain air, and watch tea pluckers at work in their vibrant attire.' },
             { title: 'Tea Factory Tours', desc: 'Visit a functioning tea factory to learn about the fermentation, rolling, and drying processes, followed by a fresh cup of world-class tea.' }
+        ],
+        storyDescription: [
+            'Hatton is the heart of Sri Lanka’s tea country, a misty landscape of rolling emerald hills and plunging waterfalls. It serves as the gateway to Adam’s Peak and is home to some of the island’s oldest tea estates, where the legendary Ceylon Tea has been harvested for generations.',
+            'The region is defined by its colonial charm, featuring restored planter bungalows and historic factories where vintage machinery still processes the leaves. Exploring Hatton offers a serene escape into a world of high-altitude beauty and rich plantation heritage.'
         ],
         cultural_insights: [
             { id: 'tea-history', title: 'The Ceylon Tea Story', subtitle: 'Colonial Era Legacy', description: 'Trace the fascinating history of how British planters replaced devastated coffee crops with tea bushes in the 1860s, creating an industry that still defines Sri Lanka globally.', image: '/assets/destination-new-images/hatton/The-Ceylon-Tea-Story.png', highlights: ['James Taylor\'s Legacy', 'Vintage Machinery', 'Planter Lifestyle'] },
@@ -372,15 +411,22 @@ export const destinations: Record<string, DestinationData> = {
             famousFor: 'Coral Reefs & Sea Turtles'
         },
         attractions: [
-            { name: 'Hikkaduwa Coral Sanctuary', description: 'A marine national park boasting colorful corals and schools of tropical fish.', image: '/assets/hikkaduwa-beach-1.webp' },
+            { name: 'Snorkeling', description: 'Explore the vibrant marine life of Hikkaduwa, where colorful coral reefs and schools of tropical fish are just a short swim from the shore.', image: '/assets/destination-new-images/hikkaduwa/Snorkeling.webp' },
+            { name: 'Scuba Diving', description: 'Dive into the deep blue to discover historical shipwrecks and intricate reef systems with experienced diving centers.', image: '/assets/destination-new-images/hikkaduwa/Scuba-Diving.webp' },
+            { name: 'Surfing', description: 'Catch consistent waves at Hikkaduwa’s famous surf breaks, perfect for both beginners and experienced surfers looking for a thrill.', image: '/assets/beach-activities/Surfing.webp' },
+            { name: 'Night Party Life', description: 'Experience the energetic nightlife of Hikkaduwa, known for its vibrant beach parties, eclectic bars, and music that lasts until dawn.', image: '/assets/mirissa/mirissa-night-party.webp' },
             { name: 'Narigama Beach', description: 'A wide stretch of golden sand, perfect for long walks and surfing.', image: '/assets/destination-new-images/hikkaduwa/narigama-beach.jpg' }
         ],
         activities: [
             { title: 'Snorkeling with Turtles', desc: 'Swim alongside gentle sea turtles in their natural coral reef habitat.' },
             { title: 'Surfing', desc: 'Catch consistent breaks perfect for both beginner and intermediate surfers.' }
         ],
+        storyDescription: [
+            'Hikkaduwa is the original heartbeat of Sri Lanka’s surf and beach party culture, offering a deeply relaxed, bohemian lifestyle. It is renowned for its vibrant, shallow coral sanctuaries where sea turtles swim right up to the golden shoreline.',
+            'Beyond the reef, the town draws surfers and sun-seekers with its consistent waves and eclectic array of beachside shacks. As the sun sets, Hikkaduwa transforms into a lively coastal hub, bringing together travelers from across the globe into the night.'
+        ],
         cultural_insights: [
-            { id: 'hikkaduwa-culture', title: 'The Surfing Pioneer', subtitle: 'Beach Lifestyle', description: 'Hikkaduwa pioneered Sri Lanka’s surf and beach party culture, fostering a deeply relaxed, bohemian lifestyle.', image: '/assets/destination-new-images/hikkaduwa/The-Surfing-Pioneer.jpg', highlights: ["Surf Culture", "Beach Shacks", "Turtle Conservation"] }
+            { id: 'hikkaduwa-culture', title: 'The Surfing Pioneer', subtitle: 'Beach Lifestyle', description: 'Hikkaduwa pioneered Sri Lanka’s surf and beach party culture, fostering a deeply relaxed, bohemian lifestyle.', image: '/assets/sunandsand/hikkaduwa-beach-sri-lanka.webp', highlights: ["Surf Culture", "Beach Shacks", "Turtle Conservation"] }
         ]
     },
     'unawatuna': {
@@ -406,6 +452,10 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Scuba Diving', desc: 'Dive historical wrecks and deep reefs with experienced PADI centers.' },
             { title: 'Rope Swings', desc: 'Experience the iconic Instagram-famous palm tree rope swings overlooking the water.' }
         ],
+        storyDescription: [
+            'Unawatuna is a universally beloved golden bay, famously shaped like a banana and framed by leaning palms and a protective coral reef. This vibrant stretch of coast offers exceptionally calm, turquoise waters that are perfect for swimming and relaxed afternoons.',
+            'The area effortlessly blends traditional southern fishing culture with a thriving contemporary beach scene. From iconic rope swings to the stunning Japanese Peace Pagoda overlooking the ocean, Unawatuna remains a picturesque haven for every traveler.'
+        ],
         cultural_insights: [
             { id: 'unawatuna-culture', title: 'Laid-back Horizons', subtitle: 'Southern Coast Vibe', description: 'A hub of Southern coastal culture mixing local fishing traditions with a thriving contemporary beach scene.', image: '/assets/unawatuna-beach-1.webp', highlights: ["Historical Myths", "Sunset Dining", "Coastal Community"] }
         ]
@@ -429,11 +479,18 @@ export const destinations: Record<string, DestinationData> = {
         },
         attractions: [
             { name: 'Coconut Tree Hill', description: 'An iconic dome of red earth jutting into the sea, covered entirely in soaring palm trees.', image: '/assets/mirissa-home-page-hero.webp' },
-            { name: 'Secret Beach', description: 'A tiny, beautiful cove tucked away from the main stretch.', image: '/assets/destination-new-images/mirissa/secrete-beach.webp' }
+            { name: 'Secret Beach', description: 'A tiny, beautiful cove tucked away from the main stretch.', image: '/assets/destination-new-images/mirissa/secrete-beach.webp' },
+            { name: 'Parrot Rock', description: 'A small rocky island located just off the Mirissa beach, offering panoramic views of the coastline and spectacular sunsets.', image: '/assets/sunandsand/mirissa-sri-lanka-gallery-2.webp' },
+            { name: 'Jungle Beach (Mirissa)', description: 'A secluded, pristine beach hidden within thick coastal vegetation, perfect for those seeking a quiet escape from the main bay.', image: '/assets/mirissa/jungle-beach.webp' },
+            { name: 'Night Party Life', description: 'Mirissa is famous for its energetic beach parties, seaside bars, and a thriving nightlife scene that comes alive after sunset.', image: '/assets/mirissa/mirissa-night-party.webp' }
         ],
         activities: [
             { title: 'Blue Whale Safari', desc: 'Set sail into the deep Indian Ocean to encounter the largest animal to ever exist.' },
             { title: 'Surfing the Point', desc: 'Catch waves alongside local and international surfers at Mirissa’s right-hand point break.' }
+        ],
+        storyDescription: [
+            'Mirissa is a stunning crescent beach renowned globally as one of the ultimate destinations to witness the awe-inspiring Blue Whale in its natural habitat. The town exudes a highly relaxed, tropical surfer vibe that instantly captivates anyone stepping onto its sandy shores.',
+            'The rhythm of Mirissa is entirely dictated by the ocean, offering everything from legendary left-hand surf breaks to the iconic, palm-covered dome of Coconut Tree Hill. It is the perfect blend of marine adventure by day and vibrant beachside energy by night.'
         ],
         cultural_insights: [
             { id: 'mirissa-culture', title: 'Oceanic Giants', subtitle: 'Marine Deep', description: 'The town’s entire rhythm is dictated by the ocean and the awe-inspiring marine giants that pass just offshore.', image: '/assets/mirissa-1.webp', highlights: ["Marine Biology", "Stilt Fishing", "Tropical Lifestyle"] }
@@ -492,6 +549,10 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Remote Wildlife Tracking', desc: 'Embark on a quiet, extended jeep safari far from any crowds to track leopards and bears.' },
             { title: 'Birdwatching Expedition', desc: 'Spot endemic and migratory birds thriving around the unique Villu ecosystems.' }
         ],
+        storyDescription: [
+            'Wilpattu is Sri Lanka’s largest and oldest national park, uniquely characterized by its "Villus"—stunning natural, sand-rimmed water basins that fill with rainwater. It offers an exceptionally authentic and uncrowded safari experience in the heart of the dry zone.',
+            'The park is deeply woven with mythological history, matching its rich biodiversity with legendary tales of ancient royalty. Tracking leopards and sloth bears through Wilpattu’s dense forests and tranquil lakes feels like a true, isolated expedition into an untouched world.'
+        ],
         cultural_insights: [
             { id: 'wilpattu-culture', title: 'Ancient Origins', subtitle: 'Historical Landfalls', description: 'Legend states Prince Vijaya, the founder of the Sinhalese race, landed near Wilpattu in 543 BC.', image: '/assets/destination-new-images/wilpattu/Ancient-Origins.png', highlights: ["Mythological History", "Kudiramalai Lore", "Conservation"] }
         ]
@@ -517,6 +578,10 @@ export const destinations: Record<string, DestinationData> = {
         ],
         activities: [
             { title: 'The Gathering Safari', desc: 'Witness up to 300 elephants feeding, bathing, and socializing on the exposed grassy banks.' }
+        ],
+        storyDescription: [
+            'Minneriya National Park provides the stage for one of the greatest wildlife spectacles on Earth. Centered around a massive 3rd-century reservoir engineered by an ancient king, the receding waters during the dry season reveal lush, fresh grass.',
+            'This phenomenon draws up to 300 wild elephants from the surrounding jungles, known as "The Gathering"—the largest meeting of Asian elephants in the world. It is a stunning visual representation of the centuries-old harmony between ancient hydraulic engineering and thriving nature.'
         ],
         cultural_insights: [
             { id: 'minneriya-culture', title: 'Symbiosis of Man & Nature', subtitle: 'Ancient Engineering', description: 'The ancient reservoir that sustains this wildlife was engineered by King Mahasen, proving centuries of harmonious coexistence.', image: '/assets/wild-life/minneriya-national-park-sri-lanka.webp', highlights: ["Hydraulic Heritage", "Elephant Herds", "Eco-tourism"] }
@@ -548,6 +613,10 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Boat Safari', desc: 'Glide silently on the water to watch elephants grazing on the shores or swimming across the lake.' },
             { title: 'Vedda Village Visit', desc: 'Walk with the Chief of the Veddas (Sri Lanka’s indigenous people) to learn ancient foraging techniques.' }
         ],
+        storyDescription: [
+            'Gal Oya is one of Sri Lanka’s most secluded and untouched national parks, famous for offering the only boat safari experience in the country. The park centers around the enormous Senanayake Samudraya reservoir, where elephants can be witnessed swimming gracefully from island to island.',
+            'This virgin canopy is incredibly peaceful and remains largely undiscovered by mass tourism. It is also the historic homeland of the Veddas, Sri Lanka’s indigenous people, offering a rare glimpse into prehistoric living alongside pristine wildlife.'
+        ],
         cultural_insights: [
             { id: 'galoya-culture', title: 'The Indigenous Veddas', subtitle: 'Ancient Hunter-Gatherers', description: 'The region is home to the last remaining groups of Sri Lanka’s aboriginal people, offering a glimpse into prehistoric living.', image: '/assets/destination-new-images/galoya/The-Indigenous-Veddas.jpeg', highlights: ["Aboriginal History", "Forest Survival Skills", "Untouched Jungles"] }
         ]
@@ -577,6 +646,10 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Open Top Jeep Safari', desc: 'Cruise the expansive savannahs tracking elephants, water buffalo, and raptors.' },
             { title: 'Calf Milk Feeding', desc: 'Watch from a distance as orphaned elephant calves eagerly rush down for their scheduled milk feeding at the Transit Home.' }
         ],
+        storyDescription: [
+            'Udawalawe National Park is a massive expanse of open plains and scrub jungle that strongly resembles the African savannah. It is an absolute paradise for spotting wild elephants, guaranteeing incredible sightings of large, roaming herds year-round.',
+            'The park is at the forefront of ethical wildlife conservation, closely tied to the Elephant Transit Home, which rehabilitates orphaned calves before releasing them back into the wild. Cruising these expansive plains provides an uplifting and unforgettable encounter with nature.'
+        ],
         cultural_insights: [
             { id: 'udawalawe-culture', title: 'Ethical Conservation', subtitle: 'Wildlife Rescue', description: 'Udawalawe represents the forefront of ethical elephant conservation on the island, strictly prioritizing the rehabilitation and wild release of orphans.', image: '/assets/destination-new-images/udawalawe/hero-image.jpg', highlights: ["Orphan Rehabilitation", "Anti-captivity Stance", "Savannah Ecosystems"] }
         ]
@@ -585,7 +658,7 @@ export const destinations: Record<string, DestinationData> = {
         id: 'nuwaraeliya',
         name: 'Nuwara Eliya',
         type: 'Hill Station',
-        heroImage: '/assets/destination-new-images/nuwara-eliya/Colonial-Retreats.png',
+        heroImage: '/assets/nuwara-eliya/hero-image.webp',
         gallery: [
             '/assets/destination-new-images/nuwara-eliya/Colonial-Retreats.png',
             '/assets/destination-new-images/nuwara-eliya/lake-gregory.png',
@@ -601,12 +674,24 @@ export const destinations: Record<string, DestinationData> = {
             famousFor: 'Cool Climate & Tea Estates'
         },
         attractions: [
+            { name: 'Horton Plains National Park', description: 'A UNESCO World Heritage site featuring montane grasslands and cloud forests. Home to the dramatic World\'s End precipice and Baker\'s Falls.', image: '/assets/nuwara-eliya/horton-plains-nuwara-eliya.webp' },
+            { name: 'Eagle\'s Viewpoint (Shanthipura)', description: 'Located in Shanthipura, the highest village in Sri Lanka, this point offers breathtaking 360-degree views of the central highlands.', image: '/assets/nuwara-eliya/eagles-viewpoint.png' },
+            { name: 'Tea Factory Visit', description: 'Experience the journey of Ceylon tea from leaf to cup. Tour a historic factory to see vintage machinery in action.', image: '/assets/destination-new-images/hatton/working-tea-factory.png' },
             { name: 'Lake Gregory', description: 'A picturesque lake in the center of town surrounded by blooming flowers and Victorian houses.', image: '/assets/destination-new-images/nuwara-eliya/lake-gregory.png' },
-            { name: 'Hakgala Botanical Gardens', description: 'The second-largest botanical garden in Sri Lanka, boasting immense collections of roses and orchids.', image: '/assets/destination-new-images/nuwara-eliya/hakgala-botanical-gardern.png' }
+            { name: 'Hakgala Botanical Gardens', description: 'The second-largest botanical garden in Sri Lanka, boasting immense collections of roses and orchids.', image: '/assets/hakgala-botanical-garden.webp' },
+            { name: 'Single Tree Hill', description: 'Rising to 2,100m, Single Tree Hill offers one of the most stunning panoramic views of Nuwara Eliya and Lake Gregory.', image: '/assets/nuwara-eliya/single-tree-hill.webp' },
+            { name: 'Moon Plains Jeep Safari', description: 'Famous for its 360-degree "Mini World\'s End" vista. A rugged jeep safari across high-altitude plains.', image: '/assets/nuwara-eliya/moon-plains.webp' },
+            { name: 'Victoria Golf & Country Resort', description: 'Ranked among the most beautiful golf courses in the world, offering a world-class experience amidst scenic hills.', image: '/assets/nuwara-eliya/golf.webp' }
         ],
         activities: [
+            { title: 'Golfing at Victoria Golf Club', desc: 'Enjoy a round of golf at one of the world’s most scenic courses, featuring rolling fairways and breathtaking mountain views.' },
             { title: 'Tea Estate Tours', desc: 'Wander exactly where the world’s finest tea is grown and engage in professional tea tasting sessions.' },
+            { title: 'Boating on Gregory Lake', desc: 'Enjoy a leisurely boat ride on the serene Gregory Lake, surrounded by the lush hills of Nuwara Eliya.' },
             { title: 'Victorian High Tea', desc: 'Soak in the colonial elegance at The Grand Hotel with a traditional afternoon high tea served on the lawn.' }
+        ],
+        storyDescription: [
+            'Nuwara Eliya, often called "Little England," is a charming hill station nestled at the highest point of Sri Lanka’s central highlands. It is famous for its crisp mountain air, Tudor-style architecture, and perfectly manicured gardens that reflect its colonial past.',
+            'Surrounded by sprawling tea plantations and cascading falls like Ramboda, the town is a base for exploring Horton Plains and Lake Gregory. It remains the island’s premier retreat for those seeking a cool climate and the timeless elegance of the tea country.'
         ],
         cultural_insights: [
             { id: 'nuwaraeliya-culture', title: 'Colonial Retreats', subtitle: 'British Heritage', description: 'Once the premier escape for British planters seeking a cooler climate, the town still meticulously preserves its colonial sporting clubs and Tudor architecture.', image: '/assets/destination-new-images/nuwara-eliya/Colonial-Retreats.png', highlights: ["Tudor Architecture", "Horse Racing", "Tea Planter Elite"] }
@@ -622,6 +707,10 @@ export const destinations: Record<string, DestinationData> = {
         ],
         tagline: 'The Edge of the World',
         description: 'A beautifully bleak, windswept highland plateau of montane grasslands and cloud forests. It offers some of the most dramatic and rewarding trekking paths in the country, culminating in a precipitous 880-meter drop.',
+        storyDescription: [
+            'Horton Plains is a beautifully bleak, windswept highland plateau of montane grasslands and ancient cloud forests. Standing at over 2,000 meters above sea level, it offers some of the most dramatic and rewarding trekking paths in the country, culminating in the sheer 880-meter precipice known as World\'s End.',
+            'This unique montane ecosystem is a sanctuary for endemic wildlife and towering cascades like Baker\'s Falls. Hiking across these misty plains at dawn provides an otherworldly experience, revealing a rugged, isolated side of Sri Lanka entirely distinct from its tropical shores.'
+        ],
         stats: {
             bestTime: 'January to March',
             elevation: '2,100 m',
@@ -660,11 +749,20 @@ export const destinations: Record<string, DestinationData> = {
         attractions: [
             { name: 'Nine Arch Bridge', description: 'A soaring, photogenic railway viaduct totally constructed from bricks and stone without a single piece of steel.', image: '/assets/destination-new-images/ella/ella-hero-image.jpg' },
             { name: 'Little Adam\'s Peak', description: 'A rewarding, relatively easy hike culminating in narrow ridges and sweeping panoramas of the Ella gap.', image: '/assets/destination-new-images/ella/Little-Adam\'sPeak.png' },
-            { name: 'Ella Rock', description: 'A dramatic, towering rock formation challenging hikers with a steep ascent.', image: '/assets/destination-new-images/ella/ella-roxk.png' }
+            { name: 'Ella Rock', description: 'A dramatic, towering rock formation challenging hikers with a steep ascent.', image: '/assets/destination-new-images/ella/ella-roxk.png' },
+            { name: 'Ravana Adventure Park', description: 'Sri Lanka\'s first international-standard mega adventure park, featuring the famous Flying Ravana zipline.', image: '/assets/ella/ravana-adventure-park.webp' },
+            { name: 'Ravana Pool Club', description: 'A premium Balinese-style day club with a heated infinity pool and stunning views of the Ella Gap.', image: '/assets/ella/ravana-adventure-pool-club.webp' }
         ],
         activities: [
+            { title: 'Mega Zip-Line Adventure', desc: 'Soar over lush tea estates and capture breathtaking views of the Ella Gap on Sri Lanka’s first ever mega zip-line.' },
+            { title: 'ATV Off-Track Exploration', desc: 'Navigate rugged highland terrain on a powerful quad bike for an adrenaline-pumping off-road expedition.' },
+            { title: 'Abseiling & Tower Rappelling', desc: 'Challenge your limits with a thrilling vertical descent, offering a unique perspective of Ella\'s landscape.' },
             { title: 'Hiking & Trekking', desc: 'Navigate tea plantation trails to reach the summits of iconic peaks.' },
             { title: 'Chasing Waterfalls', desc: 'Swim in the cool, crystal pools at the base of the massive Ravana Falls.' }
+        ],
+        storyDescription: [
+            'Ella is a breathtaking mountain village perched on a gap in the central hills, offering some of the most spectacular vistas in Sri Lanka. It has become a vibrant hub for adventurers, known for the iconic Nine Arch Bridge and the vertical heights of Ella Rock and Little Adam’s Peak.',
+            'The village is a base for trekking through tea estates and cooling off in the spray of Ravana Falls. With its laid-back atmosphere and cloud-forest trails, Ella captures the raw, natural beauty of the highlands like nowhere else.'
         ],
         cultural_insights: [
             { id: 'ella-culture', title: 'The Ramayana Trail', subtitle: 'Myth & Legend', description: 'Ella is deeply connected to the ancient Indian epic, the Ramayana, with many caves and falls named after the demon-king Ravana.', image: '/assets/destination-new-images/ella/The-Ramayana-Trail.png', highlights: ["Ravana Mythology", "Backpacker Culture", "Tea Country Views"] }
@@ -674,7 +772,7 @@ export const destinations: Record<string, DestinationData> = {
         id: 'badulla',
         name: 'Badulla',
         type: 'Hidden Highland Capital',
-        heroImage: '/assets/destination-new-images/badulla/badulla-hero-image.jpg',
+        heroImage: '/assets/badulla/hero-image.webp',
         gallery: [
             '/assets/destination-new-images/badulla/badulla-hero-image.jpg',
             '/assets/destination-new-images/badulla/dunhinda-falls.png',
@@ -700,6 +798,10 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Spiritual Heritage Walk', desc: 'Explore the ancient carvings and serene atmosphere of the Muthiyangana temple, a pinnacle of Uva architecture.' },
             { title: 'The Ultimate Rail Descent', desc: 'Experience the final, most breathtaking leg of the Main Line rail from Ella to Badulla, crossing the iconic Nine Arch Bridge.' }
         ],
+        storyDescription: [
+            'Badulla is the historic capital of the Uva highlands, a city cradled by misty peaks and ancient Buddhist heritage. It is home to the Muthiyangana Raja Maha Viharaya, a sacred site visited by the Buddha, and the roaring Dunhinda Falls, one of the island\'s most beautiful cascades.',
+            'As the terminus of the famous Main Line railway, Badulla marks the end of one of the world\'s most scenic train journeys. It offers a quieter, more authentic glimpse into highland life, where tea-covered hills meet ancient spiritual landmarks.'
+        ],
         cultural_insights: [
             { id: 'uva-heritage', title: 'The Heart of Uva', subtitle: 'Regional Legacy', description: 'Badulla has served as a critical administrative and spiritual hub for the Uva people for centuries, preserving a distinct regional identity and dialects.', image: '/assets/destination-new-images/badulla/The-Heart -of-Uva.png', highlights: ["Uva Architecture", "Spiritual Pilgrimages", "Highland Traditions"] }
         ]
@@ -724,7 +826,9 @@ export const destinations: Record<string, DestinationData> = {
             famousFor: 'World-Class Surfing & Wildlife'
         },
         attractions: [
-            { name: 'Main Point', description: 'The legendary right-hand reef break that draws surfers from across the globe, offering long, peeling waves in a stunning tropical setting.', image: '/assets/arugam-bay-1.webp' },
+            { name: 'Surfing Point', description: 'The legendary right-hand reef break that draws surfers from across the globe, offering long, peeling waves in a stunning tropical setting.', image: '/assets/arugambay-surfing.webp' },
+            { name: 'Kumana National Park', description: 'Renowned for its vast mangrove swamp and bird sanctuary, this park is a haven for migratory birds, leopards, and elephants.', image: '/assets/kumana-national-park.webp' },
+            { name: 'Peanut Beach', description: 'A secluded, laid-back beach south of Arugam Bay, famous for its peeling waves and rock-strewn shoreline.', image: '/assets/beach-sunset.webp' },
             { name: 'Muhudu Maha Viharaya', description: 'Centuries-old seaside ruins of a Buddhist temple quietly encroached upon by sand dunes, marking a site of ancient royalty and spiritual significance.', image: '/assets/destination-new-images/arugam%20bay/muhudu-maha-viharaya.png' },
             { name: 'Whiskey Point', description: 'A scenic spot north of the main bay, perfect for beginners and longboarders, known for its consistent swell and vibrant beach parties.', image: '/assets/destination-new-images/arugam%20bay/whiskey-point.png' },
             { name: 'Pottuvil Lagoon', description: 'A serene waterway where you can take a canoe trip to spot crocodiles, monitor lizards, and a vast array of exotic birdlife amidst the mangroves.', image: '/assets/destination-new-images/arugam%20bay/pottuvil-lagoon.png' }
@@ -733,6 +837,10 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Chasing the Perfect Wave', desc: 'Whether a pro or a beginner, take to the water at Main Point or Baby Point for an unforgettable surf session in the Indian Ocean.' },
             { title: 'Lagoon Safari', desc: 'Glide through the tranquil waters of Pottuvil Lagoon at sunrise or sunset to witness the rich biodiversity of the coastal wetlands.' },
             { title: 'Kumana National Park Excursion', desc: 'A short drive away, this park is a birder’s paradise and offers excellent chances to see leopards, elephants, and bears in a raw, untamed landscape.' }
+        ],
+        storyDescription: [
+            'Arugam Bay is a legendary moon-shaped curl of soft sand on Sri Lanka’s wild east coast, fiercely guarded as one of the world’s top surfing destinations. It has evolved from a quiet fishing village into a global gathering place that perfectly blends surf culture with eastern coastal life.',
+            'Beyond its perfect peeling waves, the bay is a gateway to raw, untamed wilderness where elephants frequently roam near the shore. With its laid-back cafes and proximity to untamed national parks, Arugam Bay is a sanctuary for both wave-riders and nature lovers.'
         ],
         cultural_insights: [
             { id: 'arugam-culture', title: 'The Surf & Soul Connection', subtitle: 'Global Gathering', description: 'Arugam Bay has evolved from a small fishing village into a global melting pot where surf culture blends seamlessly with local hospitality and traditional eastern coastal life.', image: '/assets/destination-new-images/arugam%20bay/The-Surf-Soul-Connection.png', highlights: ["Surf Culture", "East Coast Vibe", "Coastal Wildlife"] }
@@ -816,6 +924,10 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Surf Camps', desc: 'Join one of the dozens of world-class surf schools operating straight off the sand.' },
             { title: 'Stilt Fishing Photography', desc: 'Witness and photograph the iconic, traditional method of stilt fishing practiced exclusively in the south.' }
         ],
+        storyDescription: [
+            'Literally translating to "Sandy Village," Weligama is a massive, incredibly scenic bay on the southern coast. Protected from harsh swells and featuring a shallow sandy bottom, it stands as the absolute best and most forgiving destination for surfing beginners in South Asia.',
+            'The bay offers a compelling juxtaposition of ancient and modern coastal life. You can witness iconic stilt fishermen casting their lines mere meters from world-class surf schools, creating a vibrant, integrated local culture unlike anywhere else.'
+        ],
         cultural_insights: [
             { id: 'weligama-culture', title: 'Stilts and Surfboards', subtitle: 'The new South Coast', description: 'A compelling juxtaposition where ancient local stilt fishermen cast lines right beside a booming, international modern surf-culture.', image: '/assets/mirissa-1.webp', highlights: ["Stilt Fishing", "Surf Economy", "Coastal Integration"] }
         ]
@@ -835,6 +947,10 @@ export const destinations: Record<string, DestinationData> = {
         ],
         tagline: 'The Eighth Wonder of the World',
         description: 'An impossible fortress carved into a 200-meter-high sheer rock monolith jutting violently from the jungle plains. Built by a rogue King in the 5th century, it is universally considered Sri Lanka’s greatest ancient architectural marvel.',
+        storyDescription: [
+            'Rising 200 meters above the jungle floor, Sigiriya is an impossible 5th-century fortress and royal palace carved into a sheer rock monolith. Known as the "Palace in the Clouds," it features symmetrical water gardens and the legendary "Heavenly Maidens" frescoes that have survived for over 1,500 years.',
+            'The final ascent takes you through the remains of a massive lion gate, leading to a windswept summit with 360-degree views. It remains Sri Lanka’s most iconic landmark, a breathtaking fusion of natural majesty and defiant human imagination that is often called the Eighth Wonder of the World.'
+        ],
         stats: {
             bestTime: 'January to April',
             elevation: '349 m',
@@ -844,7 +960,8 @@ export const destinations: Record<string, DestinationData> = {
             { name: 'The Lion Paws', description: 'Colossal stone lion paws guarding the final, steepest ascent to the sky-palace summit.', image: '/assets/destination-new-images/sigiriya/the-lion-paws.png' },
             { name: 'The Mirror Wall', description: 'A highly polished masonry wall so reflective the King could see himself, covered in ancient graffiti.', image: '/assets/destination-new-images/sigiriya/the-mirror-wall.png' },
             { name: 'The Water Gardens', description: 'Incredibly advanced, symmetrical pleasure gardens containing functioning fountains that still operate during the rainy season.', image: '/assets/destination-new-images/sigiriya/the-water-garden.png' },
-            { name: 'Pidurangala Rock', description: 'A neighboring monolith offering the absolute best panoramic view of Sigiriya itself.', image: '/assets/destination-new-images/sigiriya/pidurangala-rock.png' }
+            { name: 'Pidurangala Rock', description: 'A neighboring monolith offering the absolute best panoramic view of Sigiriya itself.', image: '/assets/destination-new-images/sigiriya/pidurangala-rock.png' },
+            { name: 'Fresco Maidens', description: 'Ethereal 5th-century frescoes depicting celestial maidens, preserved in a sheltered pocket of the rock. These masterpieces of ancient Sinhalese art remain remarkably vibrant.', image: '/assets/sigiriya/Fresco-Maidens.webp' }
         ],
         activities: [
             { title: 'Climbing the Monolith', desc: 'Ascend the 1,200 steps past ancient frescoes and sheer drops to stand upon the ruins of the sky palace.' },
@@ -884,6 +1001,10 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Snorkeling at Pigeon Island', desc: 'Explore the underwater world of live coral reefs and tropical fish in one of the island’s most accessible marine parks.' },
             { title: 'The Long Wade', desc: 'Experience the unique sensation of walking far out into the Indian Ocean in the mirror-flat, knee-deep waters of Pasikuda.' }
         ],
+        storyDescription: [
+            'Trincomalee is where profound history meets tropical paradise, built around one of the world\'s finest natural deep-water harbours. It is a strategic and spiritual maritime jewel, home to the sacred Koneswaram Temple perched dramatically atop Swami Rock.',
+            'Paired with the nearby shores of Pasikuda, the region offers an incredibly idyllic coastal experience. Here, you can wade hundreds of meters into mirror-flat, knee-deep waters, or dive into the pristine marine sanctuaries of Pigeon Island.'
+        ],
         cultural_insights: [
             { id: 'east-coast-heritage', title: 'The Port of Nations', subtitle: 'Maritime Legacy', description: 'For millennia, Trincomalee has been a strategic maritime jewel, fought over by empires for its harbour, while serving as a sacred site for spiritual pilgrims of all faiths.', image: '/assets/destination-new-images/pasikuda-trinco/The-Port-of-Nations.jpeg', highlights: ["Maritime History", "Hindu Pilgrimages", "Multicultural Legacy"] }
         ]
@@ -914,6 +1035,10 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Bird Watching Safari', desc: 'Expert-led safaris specifically timed to capture the peak activity of both endemic and migratory bird species.' },
             { title: 'Wild Coastal Exploration', desc: 'Discover quiet, untouched beaches where the jungle meets the Indian Ocean in complete isolation.' }
         ],
+        storyDescription: [
+            'Kumana National Park, long known as the bird sanctuary of the east, is a vital feeding and breeding ground for thousands of migratory species. At its heart lies the expansive Kumana Villu, a massive mangrove swamp that becomes a buzzing nursery during the nesting season.',
+            'While globally renowned for its prolific birdlife, including pelicans and rare storks, Kumana’s untamed wilderness also harbors leopards, wild boars, and elephants. It is an essential ecological haven where quiet wetlands meet isolated, wild coastlines.'
+        ],
         cultural_insights: [
             { id: 'bird-migration', title: 'The Great Migration', subtitle: 'Avian Heritage', description: 'Each year, thousands of birds travel thousands of miles to find sanctuary in Kumana, making it one of the most important wetland ecosystems in South Asia.', image: '/assets/wild-life/kumana-national-park-sri-lanka-7.webp', highlights: ["Migratory Patterns", "Wetland Protection", "Eco-tourism"] }
         ]
@@ -943,8 +1068,80 @@ export const destinations: Record<string, DestinationData> = {
             { title: 'Elephant Safari', desc: 'Witness the majestic social behavior of elephant families as they gather near the water at dusk.' },
             { title: 'Lakeside Picnic', desc: 'Enjoy a curated, high-end refreshment break on the scenic banks of the ancient tank.' }
         ],
+        storyDescription: [
+            'Kaudulla National Park forms a critical ecological link in the ancient elephant corridor of the north-central plains. Centered around the historic Kaudulla Tank, it provides the primary water source for a massive, thriving elephant population during the dry season.',
+            'The park’s wide, open grasslands allow for spectacular, unobstructed views of grazing herds and diverse birdlife. Exploring Kaudulla is a journey into a landscape where the survival of majestic wildlife remains inextricably linked to the millennial-old engineering of ancient kings.'
+        ],
         cultural_insights: [
             { id: 'hydraulic-legacy', title: 'Ancient Engineering', subtitle: 'Royal Reservoirs', description: 'The survival of these elephants depends on the 3rd-century engineering of King Mahasen, showing a millennial-old link between human progress and nature.', image: '/assets/wild-life/kaudulla-park-3.webp', highlights: ["King Mahasen's Legacy", "Ancient Irrigation", "Ecological Balance"] }
+        ]
+    },
+    'bentota': {
+        id: 'bentota',
+        name: 'Bentota',
+        type: 'Coastal Sanctuary',
+        heroImage: '/assets/bentota/hero-image.webp',
+        gallery: [
+            '/assets/bentota/hero-image.webp',
+            '/assets/bentota/madu-river-safari.webp',
+            '/assets/bentota/Kosgoda-Turtle-Hatchery.webp'
+        ],
+        tagline: 'The Golden Sun and Bawa\'s Legacy',
+        description: 'Bentota is the epitome of Sri Lanka’s luxurious coastal charm, where broad golden sands meet the tranquil waters of the Bentota Ganga. It is a sanctuary for architecture lovers and serenity seekers, home to legendary estates and sophisticated beachfront retreats.',
+        stats: {
+            bestTime: 'November to April',
+            elevation: 'Sea Level',
+            famousFor: 'Water Sports & Architecture'
+        },
+        attractions: [
+            { name: 'Madu River Safari', description: 'A private boat cruise through ancient mangrove forests and secret waterways, witnessing vibrant birdlife and traditional cinnamon peeling.', image: '/assets/bentota/madu-river-safari.webp' },
+            { name: 'Kosgoda Turtle Hatchery', description: 'A pioneering project protecting five endangered sea turtle species, offering heart-warming seasonal hatchling releases.', image: '/assets/bentota/Kosgoda-Turtle-Hatchery.webp' }
+        ],
+        activities: [
+            { title: 'Premium Water Sports', desc: 'Experience the thrill of jet skiing, windsurfing, and wakeboarding on the calm waters of the Bentota lagoon.' },
+            { title: 'Ayurvedic Wellness Journey', desc: 'Surrender to centuries-old healing traditions with a private Ayurvedic treatment at a world-class luxury spa.' }
+        ],
+        storyDescription: [
+            'Bentota is the epitome of Sri Lanka’s luxurious coastal charm, where broad expanses of golden sand meet the tranquil, lagoon-like waters of the Bentota Ganga. It is a sophisticated sanctuary for serenity seekers and lovers of premium water sports.',
+            'The town is heavily influenced by the architectural legacy of Geoffrey Bawa, blending seamlessly with ancient mangrove forests and thriving turtle hatcheries. From private river safaris to world-class Ayurvedic retreats, Bentota is the ultimate refined beach escape.'
+        ],
+        cultural_insights: [
+            { id: 'coastal-heritage', title: 'Life by the River', subtitle: 'Maritime Traditions', description: 'Bentota\'s culture is deeply tied to its dual nature as both a river and sea town, where traditions of fishing and cinnamon trading have thrived for centuries.', image: '/assets/bentota/madu-river-safari.webp', highlights: ["Maritime Traditions", "Cinnamon Trading", "River Life"] }
+        ]
+    },
+    'kalpitiya': {
+        id: 'kalpitiya',
+        name: 'Kalpitiya',
+        type: 'Marine Sanctuary & Adventure',
+        heroImage: '/assets/sunandsand/kalpitiya-sri-lanka-top-banner.webp',
+        gallery: [
+            '/assets/kalpitiya-1.webp',
+            '/assets/kalpitiya-dolphin.webp',
+            '/assets/kalpitiya-dutch-fort.webp'
+        ],
+        tagline: 'The Peninsula of Dolphins and Wind',
+        description: 'Kalpitiya is a windswept peninsula on the northwest coast, offering a raw and authentic coastal experience. It is the premier destination for kite surfing in South Asia and one of the best places to witness massive pods of spinner dolphins playing in the deep blue.',
+        stats: {
+            bestTime: 'May to October (Kitesurfing) / Nov to April (Dolphins)',
+            elevation: 'Sea Level',
+            famousFor: 'Dolphin Watching & Kitesurfing'
+        },
+        attractions: [
+            { name: 'Kite Surfing Lagoons', description: 'World-famous flat water lagoons providing perfect conditions for both beginners and pro kite surfers.', image: '/assets/kalpitiya-1.webp' },
+            { name: 'Kalpitiya Dutch Fort', description: 'A well-preserved colonial fort built in the 17th century, reflecting the strategic maritime history of the peninsula.', image: '/assets/kalpitiya-dutch-fort.webp' },
+            { name: 'Dolphin Sanctuary', description: 'The deep waters off Kalpitiya are home to thousands of spinner dolphins, often seen in spectacular super-pods.', image: '/assets/kalpitiya-dolphin.webp' }
+        ],
+        activities: [
+            { title: 'Kitesurfing Expedition', desc: 'Harness the power of the wind in one of the world’s top kitesurfing destinations.' },
+            { title: 'Dolphin & Whale Watching', desc: 'Take a boat trip into the deep sea to encounter spinner dolphins and occasional sperm whales.' },
+            { title: 'Bar Reef Snorkeling', desc: 'Explore the largest coral reef in Sri Lanka, teeming with tropical fish and marine life.' }
+        ],
+        storyDescription: [
+            'Kalpitiya is a windswept, raw peninsula extending off the northwest coast, celebrated as the premier destination for kite surfing in South Asia. Its completely authentic and untamed environment is bordered by the vast Indian Ocean and the flat waters of the Puttalam Lagoon.',
+            'The region is a marine wonderland, offering unmatched opportunities to witness massive super-pods of spinner dolphins and explore Sri Lanka\'s largest coral reef. It forms a breathtaking frontier where traditional fishing communities meet thrill-seeking adventurers.'
+        ],
+        cultural_insights: [
+            { id: 'kalpitiya-culture', title: 'The Fishing Frontier', subtitle: 'Traditional Livelihoods', description: 'The local community is deeply connected to the sea, using traditional methods to harvest the rich bounty of the Indian Ocean and the Puttalam Lagoon.', image: '/assets/kalpitiya-fishing-village.webp', highlights: ["Lagoon Life", "Colonial History", "Kite Culture"] }
         ]
     }
 }

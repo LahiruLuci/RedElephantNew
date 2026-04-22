@@ -445,7 +445,7 @@ export default function TravelBlog() {
                     >All Articles <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></a>
                 </div>
                 {/* Grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '28px', alignItems: 'start' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '28px', alignItems: 'start' }}>
                     {/* Featured */}
                     <div>
                         <div onClick={() => setOpenPost(featured)} onMouseEnter={() => setFeatHov(true)} onMouseLeave={() => setFeatHov(false)} style={{ borderRadius: '24px', overflow: 'hidden', cursor: 'pointer', background: 'white', boxShadow: featHov ? '0 28px 64px rgba(0,0,0,0.13)' : '0 6px 28px rgba(0,0,0,0.07)', transition: 'box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.23,1,0.32,1)', transform: featHov ? 'translateY(-5px)' : 'none' }}>

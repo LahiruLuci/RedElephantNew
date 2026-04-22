@@ -111,6 +111,17 @@ const beachesData = {
             famousFor: 'Whale Watching & Pigeon Island',
             highlights: ['Pigeon Island', 'Fort Frederick', 'Whale Watching'],
         },
+        {
+            id: 'bentota',
+            name: 'Bentota',
+            type: 'Coastal Sanctuary',
+            tagline: 'The Golden Sun and Bawa\'s Legacy',
+            image: '/assets/bentota/hero-image.webp',
+            description: 'Bentota is the epitome of Sri Lanka’s luxurious coastal charm, where broad golden sands meet the tranquil waters of the Bentota Ganga.',
+            bestTime: 'Nov – Apr',
+            famousFor: 'Water Sports & Architecture',
+            highlights: ['Madu River Safari', 'Water Sports', 'Turtle Hatchery'],
+        },
     ],
     relatedTour: { label: 'Coastal Escape Package', href: '/tours/coastal-escape' },
 };

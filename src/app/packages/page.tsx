@@ -50,6 +50,7 @@ const CSS = `
     /* fallback then modern unit */
     min-height:100vh;
     min-height:100svh;
+    padding-top:72px; /* offset for fixed navbar */
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
@@ -99,10 +100,10 @@ const CSS = `
   }
   .ph-eyebrow-text {
     font-family:var(--font-accent);
-    font-size:1.12rem; font-weight:700;
-    letter-spacing:.26em; text-transform:uppercase;
+    font-size:clamp(0.65rem, 2.5vw, 1.12rem); font-weight:700;
+    letter-spacing:clamp(0.12em, 0.8vw, 0.26em); text-transform:uppercase;
     color:${C.crimson};
-    white-space:nowrap;
+    white-space:normal;
   }
   .ph-title {
     font-family:var(--font-heading);
@@ -213,8 +214,7 @@ const CSS = `
 
   /* ── Body layout ── */
   .ph-body {
-    display:grid;
-    grid-template-columns:1fr;
+    display:block;
     gap:32px;
     max-width:1340px;
     margin:0 auto;
@@ -252,9 +252,9 @@ const CSS = `
   .ph-count-text { font-family:var(--font-body); font-size:1rem; color:${C.muted}; }
   .ph-count-num  { font-family:var(--font-heading); font-size:1.65rem; font-weight:800; color:${C.dark}; margin-right:7px; }
 
-  .ph-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px; }
+  .ph-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%, 280px),1fr)); gap:20px; }
 
-  .ph-card { border-radius:20px; overflow:hidden; background:${C.white}; cursor:pointer; transition:box-shadow .35s; box-shadow:0 3px 18px rgba(0,0,0,.07); will-change:transform; display:flex; flex-direction:column; }
+  .ph-card { border-radius:20px; overflow:hidden; background:${C.white}; cursor:pointer; transition:box-shadow .35s; box-shadow:0 3px 18px rgba(0,0,0,.07); will-change:transform; display:flex; flex-direction:column; width:100%; box-sizing:border-box; }
   .ph-card-img { position:relative; height:210px; overflow:hidden; flex-shrink:0; }
   .ph-card-img-bg { position:absolute; inset:0; background-size:cover; background-position:center; transition:transform .6s cubic-bezier(.23,1,.32,1); }
   .ph-card:hover .ph-card-img-bg { transform:scale(1.06); }
@@ -300,13 +300,13 @@ const CSS = `
     .ph-stat-num { font-size:1.5rem; }
     .ph-stat-lbl { font-size:0.92rem; }
     .ph-cat-strip { padding:0 16px clamp(18px,4vw,28px); }
-    .ph-cat-row   { gap:8px; }
-    .ph-cat-card  { height:76px; width:96px; border-radius:10px; }
+    .ph-cat-row   { gap:8px; display:grid; grid-template-columns:repeat(3, 1fr); overflow-x:visible; }
+    .ph-cat-card  { height:76px; width:100%; border-radius:10px; }
     .ph-cat-card-lbl  { font-size:0.88rem; }
     .ph-cat-card-icon { font-size:1.2rem; margin-bottom:2px; }
     .ph-cat-card-badge { font-size:0.7rem; padding:1px 6px; }
-    .ph-body { padding:14px 14px 72px !important; }
-    .ph-grid { grid-template-columns:1fr !important; gap:13px; }
+    .ph-body { padding:14px 14px 72px !important; width:100%; box-sizing:border-box; }
+    .ph-grid { grid-template-columns:minmax(0, 1fr) !important; gap:13px; }
     .ph-results-header { margin-bottom:16px; }
     .ph-count-text { font-size:.04rem; }
     .ph-count-num { font-size:1.45rem; }
@@ -319,7 +319,7 @@ const CSS = `
 
   /* ── VERY SMALL ≤380 ── */
   @media screen and (max-width:380px) {
-    .ph-cat-card  { height:62px; width:80px; }
+    .ph-cat-card  { height:62px; width:100%; }
     .ph-cat-card-lbl  { font-size:0.7rem; }
     .ph-cat-card-icon { font-size:.02rem; }
     .ph-title { font-size:1.85rem; }
@@ -408,9 +408,9 @@ function PackageCard({ pkg, delay }: { pkg: typeof packages[0]; delay: number })
 
         </div>
         {/* Body */}
-        <div className="ph-card-body">
-          <div style={{ fontFamily:'var(--font-accent)', fontSize:'0.86rem', fontWeight:700, letterSpacing:'.14em', textTransform:'uppercase', color:pkg.accent, marginBottom:5 }}>{pkg.subtitle}</div>
-          <h3 style={{ fontFamily:'var(--font-heading)', fontSize:'1.35rem', fontWeight:800, color:C.dark, margin:'0 0 11px', letterSpacing:'-.01em' }}>{pkg.title}</h3>
+        <div className="ph-card-body" style={{ minWidth: 0 }}>
+          <div style={{ fontFamily:'var(--font-accent)', fontSize:'0.86rem', fontWeight:700, letterSpacing:'.14em', textTransform:'uppercase', color:pkg.accent, marginBottom:5, whiteSpace:'normal', wordWrap:'break-word' }}>{pkg.subtitle}</div>
+          <h3 style={{ fontFamily:'var(--font-heading)', fontSize:'1.35rem', fontWeight:800, color:C.dark, margin:'0 0 11px', letterSpacing:'-.01em', whiteSpace:'normal', wordWrap:'break-word' }}>{pkg.title}</h3>
           <div style={{ display:'flex', gap:12, flexWrap:'wrap', marginBottom:11 }}>
             <span style={{ display:'flex', alignItems:'center', gap:5, fontFamily:'var(--font-body)', fontSize:'1rem', color:C.muted }}>🕐 {pkg.duration}</span>
           </div>

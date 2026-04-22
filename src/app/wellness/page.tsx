@@ -35,10 +35,10 @@ export default function AdvancedWellnessPage() {
     }, []);
 
     return (
-        <main style={{ background: bgSoft, color: inkPrimary, overflowX: 'hidden' }}>
+        <main style={{ background: bgSoft, color: inkPrimary, overflowX: 'hidden', width: '100%', boxSizing: 'border-box' }}>
 
             {/* 1. CINEMATIC HERO WITH FLOATING ELEMENTS */}
-            <section style={{ height: '100vh', position: 'relative', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+            <section className="wellness-hero" style={{ height: '100vh', position: 'relative', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
                     <Image
                         src="/assets/spa-and-wellness/wellness.webp"
@@ -78,7 +78,7 @@ export default function AdvancedWellnessPage() {
                 </div>
 
                 {/* Vertical Scroll Indicator */}
-                <div style={{ position: 'absolute', bottom: 40, right: 60, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
+                <div style={{ position: 'absolute', bottom: 40, right: 'clamp(16px, 5vw, 60px)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
                     <span style={{ fontFamily: 'var(--font-accent)', fontSize: '1.14rem', letterSpacing: '0.2em', textTransform: 'uppercase', writingMode: 'vertical-rl', opacity: 0.4 }}>Scroll to Explore</span>
                     <div style={{ width: 1, height: 60, background: inkPrimary, opacity: 0.2, position: 'relative', overflow: 'hidden' }}>
                         <div className="line-flow" />
@@ -87,8 +87,8 @@ export default function AdvancedWellnessPage() {
             </section>
 
             {/* 2. THE PHILOSOPHY OF STILLNESS (BREATHING SECTION) */}
-            <section style={{ padding: '160px 0', position: 'relative' }}>
-                <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 80, alignItems: 'center' }}>
+            <section className="wellness-philosophy-section" style={{ padding: '160px 0', position: 'relative' }}>
+                <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(40px, 6vw, 80px)', alignItems: 'center' }}>
                     <Revealer>
                         <div style={{ position: 'relative', paddingBottom: '120%' }}>
                             <Image
@@ -98,7 +98,7 @@ export default function AdvancedWellnessPage() {
                                 style={{ objectFit: 'cover', borderRadius: '4px' }}
                             />
                             {/* Floating Card */}
-                            <div style={{ position: 'absolute', bottom: -40, right: -40, background: sandSilk, padding: '40px', width: '70%', borderRadius: '2px', boxShadow: '0 30px 60px rgba(0,0,0,0.05)' }}>
+                            <div style={{ position: 'absolute', bottom: -40, right: 0, background: sandSilk, padding: 'clamp(20px, 4vw, 40px)', width: '70%', borderRadius: '2px', boxShadow: '0 30px 60px rgba(0,0,0,0.05)' }}>
                                 <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.8rem', fontWeight: 300, marginBottom: 15 }}>The Silent Heart</h3>
                                 <p style={{ fontSize: '1rem', lineHeight: 1.6, color: inkSecondary }}>"The quieter you become, the more you can hear." We invite you to listen to the whispers of your own body.</p>
                             </div>
@@ -133,7 +133,7 @@ export default function AdvancedWellnessPage() {
             </section>
 
             {/* 3. INTERACTIVE RITUALS (EXPANDING CARDS) */}
-            <section style={{ padding: '120px 0', background: sandSilk }}>
+            <section className="wellness-rituals-section" style={{ padding: '120px 0', background: sandSilk }}>
                 <div style={{ padding: '0 clamp(24px, 8vw, 120px)', marginBottom: 80 }}>
                     <Revealer>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 20 }}>
@@ -166,7 +166,7 @@ export default function AdvancedWellnessPage() {
             </section>
 
             {/* 4. THE LIVING WATER (NEW IMMERSIVE SECTION) */}
-            <section style={{ padding: '160px 0', textAlign: 'center', background: '#fff' }}>
+            <section className="wellness-hydro-section" style={{ padding: '160px 0', textAlign: 'center', background: '#fff' }}>
                 <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 24px' }}>
                     <Revealer>
                         <div className="water-emblem" style={{ marginBottom: 40 }}>
@@ -498,8 +498,8 @@ export default function AdvancedWellnessPage() {
             </section>
 
             {/* 5. RESERVATION CONCIERGE */}
-            <section id="enquiry" style={{ padding: '160px 0', background: sandSilk, position: 'relative' }}>
-                <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 100 }}>
+            <section id="enquiry" className="wellness-enquiry-section" style={{ padding: '160px 0', background: sandSilk, position: 'relative' }}>
+                <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(40px, 6vw, 100px)' }}>
                     <div>
                         <Revealer>
                             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '3.5rem', fontWeight: 300, marginBottom: 30 }}>Begin the <br />Journey.</h2>
@@ -512,7 +512,7 @@ export default function AdvancedWellnessPage() {
                     </div>
 
                     <Revealer delay={300}>
-                        <form onSubmit={(e) => {
+                        <form className="wellness-form" onSubmit={(e) => {
                             e.preventDefault();
                             if (!form.name.trim() || !form.email.trim()) {
                                 setErrorMsg('Please fill in all required fields (Name and Email).');
@@ -521,7 +521,7 @@ export default function AdvancedWellnessPage() {
                             setErrorMsg('');
                             alert('Thank you! Your wellness journey inquiry has been received. Our concierge will be in touch shortly.');
                             setForm({ name: '', email: '', intention: 'Detox & Purify' });
-                        }} style={{ background: '#fff', padding: '60px', borderRadius: '4px', boxShadow: '0 40px 100px rgba(0,0,0,0.03)' }}>
+                        }} style={{ background: '#fff', padding: 'clamp(30px, 5vw, 60px)', borderRadius: '4px', boxShadow: '0 40px 100px rgba(0,0,0,0.03)', boxSizing: 'border-box' }}>
                             <div className="input-group">
                                 <label>Your Name *</label>
                                 <input type="text" placeholder="Gautama B." style={inputStyles} value={form.name} onChange={e => setForm({...form, name: e.target.value})} />
@@ -610,10 +610,34 @@ export default function AdvancedWellnessPage() {
                     .ritual-container {
                         flex-direction: column;
                         height: auto;
+                        padding: 0 16px !important;
                     }
                     .ritual-container > div {
-                        height: 300px;
+                        height: 280px;
                         flex: none !important;
+                    }
+                    .wellness-form {
+                        padding: 30px 20px !important;
+                    }
+                    .wellness-enquiry-section {
+                        padding: 80px 0 !important;
+                    }
+                    .wellness-philosophy-section {
+                        padding: 80px 0 !important;
+                    }
+                    .wellness-hydro-section {
+                        padding: 80px 0 !important;
+                    }
+                    .wellness-rituals-section {
+                        padding: 80px 0 !important;
+                    }
+                    .wellness-hero h1 {
+                        font-size: clamp(2.6rem, 12vw, 5rem) !important;
+                        word-break: break-word;
+                    }
+                    .wellness-hero h1 span {
+                        margin-left: 0 !important;
+                        display: block;
                     }
                 }
             `}</style>
@@ -681,7 +705,7 @@ function ExpandableRitual({ title, img, time, tag }: { title: string, img: strin
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%)' }} />
             <div style={{ position: 'absolute', bottom: 30, left: 30, color: '#fff' }}>
                 <span style={{ fontSize: '1.14rem', textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: 10, display: 'block', color: 'rgba(255,255,255,0.7)' }}>{tag} — {time}</span>
-                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.8rem', fontWeight: 300, whiteSpace: 'nowrap' }}>{title}</h3>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.8rem', fontWeight: 300, whiteSpace: 'normal', overflowWrap: 'break-word' }}>{title}</h3>
             </div>
         </div>
     );

@@ -1,2 +1,3 @@
 import GenericDestinationPage from '../GenericDestinationPage';
-export default GenericDestinationPage;
+const BentotaPage = () => <GenericDestinationPage destinationId="bentota" />;
+export default BentotaPage;

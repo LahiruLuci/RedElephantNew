@@ -39,7 +39,7 @@ export default function ContactClient() {
 
                 .contact-card {
                     background: ${C.white};
-                    padding: 40px;
+                    padding: clamp(24px, 5vw, 40px);
                     border-radius: 24px;
                     box-shadow: 0 10px 40px rgba(0,0,0,0.03);
                     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -138,7 +138,7 @@ export default function ContactClient() {
                 position: 'relative', zIndex: 10 
             }}>
                 <div style={{ 
-                    display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+                    display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', 
                     gap: 32 
                 }}>
                     {/* INFO COL */}

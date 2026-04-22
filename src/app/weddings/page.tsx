@@ -435,7 +435,7 @@ function VenueDetailOverlay({ venue, onClose }: { venue: Venue | null; onClose: 
                 </div>
 
                 {/* Scrollable Content */}
-                <div style={{ overflowY: 'auto', flex: 1, padding: 'clamp(24px, 5vw, 48px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 40 }}>
+                <div style={{ overflowY: 'auto', flex: 1, padding: 'clamp(24px, 5vw, 48px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 40 }}>
 
                     {/* Left col */}
                     <div style={{ opacity: contentIn ? 1 : 0, transform: contentIn ? 'translateY(0)' : 'translateY(30px)', transition: 'opacity 0.8s ease 0.45s, transform 0.9s cubic-bezier(0.2,0.8,0.2,1) 0.45s' }}>
@@ -549,7 +549,7 @@ export default function WeddingsDetailPage() {
     }, []);
 
     return (
-        <main style={{ background: bgPaper, color: charcoal, overflowX: 'hidden' }}>
+        <main style={{ background: bgPaper, color: charcoal, overflowX: 'hidden', width: '100%', boxSizing: 'border-box' }}>
 
             {/* 1. EDITORIAL HERO */}
             <section style={{ height: '100vh', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
@@ -738,7 +738,7 @@ export default function WeddingsDetailPage() {
 
             {/* 5. THE SERVICE PILLARS (BURGUNDY BREATH) */}
             <section style={{ padding: '160px 24px', background: burgundy, color: bgPaper, margin: '120px 0' }}>
-                <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 60 }}>
+                <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'clamp(32px, 5vw, 60px)' }}>
                     <Pillar num="01" title="The Concierge" text="A dedicated planner who learns your story, manages your vendors, and protects your peace." />
                     <Pillar num="02" title="The Floral Art" text="Sourcing the rarest blooms from the central highlands to create living sculptures for your aisle." />
                     <Pillar num="03" title="The Gastronomy" text="A menu that travels from traditional Hela flavors to modern global fusion, plated as art." />
@@ -755,32 +755,35 @@ export default function WeddingsDetailPage() {
                     </Revealer>
                 </div>
 
-                <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 40 }}>
+                <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 40 }}>
                     <TierCard
-                        title="Intimate Vows"
-                        price="From $3,800"
-                        features={['Up to 24 Guests', 'Private Beach Access', 'Minister & Music', 'Signature Cake']}
-                        onSelect={() => { setSelectedPackage('Intimate Vows'); setGuestCount('Intimate (2-30)'); document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' }) }}
+                        title="Ocean Whisper Ceremony"
+                        tagline="A serene celebration by the sea, crafted for your closest moments."
+                        features={['Up to 25 Guests', 'Private Beach or Garden Setting', 'Personalized Ceremony & Live Music', 'Elegant Floral Styling & Signature Cake', 'Romantic Candlelit Dinner Experience']}
+                        buttonLabel="BEGIN YOUR JOURNEY"
+                        onSelect={() => { setSelectedPackage('Ocean Whisper Ceremony'); setGuestCount('Intimate (2-30)'); document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' }) }}
                     />
                     <TierCard
                         featured
-                        title="Royal Celebration"
-                        price="From $9,400"
-                        features={['Up to 150 Guests', 'Grand Estate Venue', 'Cultural Performers', '7-Course Banquet', 'Full Event Decor']}
-                        onSelect={() => { setSelectedPackage('Royal Celebration'); setGuestCount('Mid-Scale (30-150)'); document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' }) }}
+                        title="Heritage Grand Wedding"
+                        tagline="A timeless celebration inspired by rich traditions and cultural elegance."
+                        features={['Up to 150 Guests', 'Grand Estate or Heritage Venue', 'Traditional Cultural Performances', 'Curated Multi-Course Banquet', 'Full Event Styling & Luxury Decor']}
+                        buttonLabel="EXPLORE CELEBRATION"
+                        onSelect={() => { setSelectedPackage('Heritage Grand Wedding'); setGuestCount('Mid-Scale (30-150)'); document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' }) }}
                     />
                     <TierCard
-                        title="Bespoke Gala"
-                        price="Tailored"
-                        features={['Unlimited Guests', 'Multi-day Event', 'Global Artist Booking', 'Private Island Option', 'VIP Concierge']}
-                        onSelect={() => { setSelectedPackage('Bespoke Gala'); setGuestCount('Grand (150-500+)'); document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' }) }}
+                        title="Island Prestige Experience"
+                        tagline="An extraordinary destination wedding designed without limits."
+                        features={['Unlimited Guests', 'Multi-Day Celebration Experience', 'Exclusive Resort or Private Island Venues', 'International Entertainment & Performers', 'Dedicated VIP Concierge & Planning Team']}
+                        buttonLabel="CREATE YOUR EXPERIENCE"
+                        onSelect={() => { setSelectedPackage('Island Prestige Experience'); setGuestCount('Grand (150-500+)'); document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' }) }}
                     />
                 </div>
             </section>
 
             {/* 6. ENQUIRY CONCIERGE (Burgundy Accents) */}
             <section id="enquiry" style={{ padding: '160px 24px', maxWidth: 1000, margin: '0 auto' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 100, alignItems: 'center' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(40px, 8vw, 100px)', alignItems: 'center' }}>
                     <div>
                         <Revealer>
                             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '4rem', fontWeight: 300, lineHeight: 1.1, marginBottom: 30 }}>Let's write <br />the <span style={{ color: burgundy, fontStyle: 'italic' }}>prologue.</span></h2>
@@ -1168,7 +1171,7 @@ function Pillar({ num, title, text }: { num: string, title: string, text: string
     );
 }
 
-function TierCard({ title, price, features, featured = false, onSelect }: { title: string, price: string, features: string[], featured?: boolean, onSelect?: () => void }) {
+function TierCard({ title, tagline, features, buttonLabel = "Select Package", featured = false, onSelect }: { title: string, tagline: string, features: string[], buttonLabel?: string, featured?: boolean, onSelect?: () => void }) {
     return (
         <Revealer>
             <div style={{
@@ -1182,7 +1185,7 @@ function TierCard({ title, price, features, featured = false, onSelect }: { titl
                 flexDirection: 'column'
             }}>
                 <h3 style={{ fontFamily: '"Playfair Display", var(--font-heading)', fontSize: '2rem', fontWeight: 400, marginBottom: 10 }}>{title}</h3>
-                <div style={{ color: featured ? goldLeaf : burgundy, fontSize: '1.35rem', marginBottom: 40, fontFamily: '"Playfair Display", var(--font-heading)', fontStyle: 'italic', fontWeight: 500 }}>{price}</div>
+                <div style={{ color: featured ? goldLeaf : burgundy, fontSize: '1.1rem', marginBottom: 40, fontFamily: 'var(--font-body)', fontStyle: 'italic', fontWeight: 400, opacity: 0.8 }}>{tagline}</div>
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 40 }}>
                     {features.map(f => (
                         <div key={f} style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: '1rem', opacity: 0.8 }}>
@@ -1208,7 +1211,7 @@ function TierCard({ title, price, features, featured = false, onSelect }: { titl
                     onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
                     onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
                 >
-                    Select Package
+                    {buttonLabel}
                 </button>
             </div>
         </Revealer>

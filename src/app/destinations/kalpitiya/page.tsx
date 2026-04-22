@@ -1,2 +1,3 @@
 import GenericDestinationPage from '../GenericDestinationPage';
-export default GenericDestinationPage;
+const KalpitiyaPage = () => <GenericDestinationPage destinationId="kalpitiya" />;
+export default KalpitiyaPage;

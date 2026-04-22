@@ -3,6 +3,7 @@
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { destinations } from '../../data/destinations';
+import AnuradhapuraDestinationPage from '../AnuradhapuraDestinationPage';
 
 const baseDark = '#090A09'; // Extremely deep slate/charcoal
 const muted = '#939A95';
@@ -17,6 +18,10 @@ export default function DestinationDetail() {
 
     const [scrolled, setScrolled] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
+
+    if (id === 'anuradhapura') {
+        return <AnuradhapuraDestinationPage />;
+    }
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY);
@@ -305,16 +310,119 @@ export default function DestinationDetail() {
             <div style={{ maxWidth: 1440, margin: '0 auto', padding: isMobile ? '80px 24px 100px' : '140px 64px 180px', boxSizing: 'border-box', position: 'relative', zIndex: 10 }}>
 
                 {/* Description Grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '5fr 6fr', gap: isMobile ? 40 : 100, marginBottom: isMobile ? 100 : 180 }}>
-                    <div>
-                        <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: isMobile ? '2.5rem' : '4rem', fontWeight: 900, color: 'white', margin: '0 0 40px', letterSpacing: '-.02em', lineHeight: 1.05 }}>
-                            The Story of <br /><span style={{ color: gold }}>{data.name}</span>
+                <div style={{ 
+                    display: 'grid', 
+                    gridTemplateColumns: isMobile ? '1fr' : '5fr 6fr', 
+                    gap: isMobile ? 40 : 100, 
+                    marginBottom: isMobile ? 100 : 180,
+                    position: 'relative'
+                }}>
+                    <div className="stagger-1" style={{ 
+                        position: isMobile ? 'relative' : 'sticky', 
+                        top: isMobile ? '0' : '25vh',
+                        alignSelf: 'start',
+                        zIndex: 2,
+                        transition: 'top 0.5s ease-out'
+                    }}>
+                        <h2 style={{ 
+                            fontFamily: 'var(--font-heading)', 
+                            fontSize: isMobile ? '2.5rem' : '4.5rem', 
+                            fontWeight: 900, 
+                            color: 'white', 
+                            margin: '0 0 40px', 
+                            letterSpacing: '-.02em', 
+                            lineHeight: 1.05,
+                            position: 'relative',
+                            transform: isMobile ? 'none' : `translateY(${Math.max(0, (scrolled - 1000) * 0.05)}px)`,
+                            transition: 'transform 0.1s linear'
+                        }}>
+                            <span style={{ 
+                                position: 'absolute', 
+                                top: isMobile ? -40 : -80, 
+                                left: isMobile ? -10 : -30, 
+                                fontSize: isMobile ? '8rem' : '15rem', 
+                                color: 'rgba(255,255,255,0.03)', 
+                                zIndex: -1,
+                                fontFamily: 'var(--font-heading)',
+                                fontWeight: 900,
+                                userSelect: 'none',
+                                transform: isMobile ? 'none' : `translateY(${(scrolled - 1200) * 0.15}px)`,
+                                display: 'block'
+                            }}>
+                                {data.name.charAt(0)}
+                            </span>
+                            The Story of <br />
+                            <span style={{ 
+                                color: gold,
+                                background: `linear-gradient(to right, ${gold}, #F3E5AB)`,
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                display: 'inline-block'
+                            }}>
+                                {data.name}
+                            </span>
                         </h2>
+                        <div style={{ width: 80, height: 4, background: gold, borderRadius: 2, marginBottom: 24 }} />
                     </div>
-                    <div>
-                        <p style={{ fontFamily: 'var(--font-body)', fontSize: isMobile ? '1.1rem' : '1.35rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.9, margin: 0, fontWeight: 300 }}>
-                            {data.description}
-                        </p>
+                    
+                    <div className="stagger-2" style={{ position: 'relative' }}>
+                        {data.storyDescription ? (
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+                                {data.storyDescription.map((para, pIdx) => (
+                                    <p key={pIdx} style={{ 
+                                        fontFamily: 'var(--font-body)', 
+                                        fontSize: isMobile ? '1.1rem' : '1.3rem', 
+                                        color: 'rgba(255,255,255,0.8)', 
+                                        lineHeight: 1.8, 
+                                        margin: 0, 
+                                        fontWeight: 300,
+                                        position: 'relative'
+                                    }}>
+                                        {pIdx === 0 ? (
+                                            <>
+                                                <span style={{ 
+                                                    float: 'left', 
+                                                    fontSize: isMobile ? '3.5rem' : '5rem', 
+                                                    lineHeight: '1', 
+                                                    paddingTop: isMobile ? '4px' : '8px', 
+                                                    paddingRight: '16px', 
+                                                    fontFamily: 'var(--font-heading)', 
+                                                    color: gold,
+                                                    fontWeight: 900,
+                                                    textShadow: '0 0 20px rgba(201, 169, 110, 0.2)'
+                                                }}>
+                                                    {para.charAt(0)}
+                                                </span>
+                                                {para.slice(1)}
+                                            </>
+                                        ) : para}
+                                    </p>
+                                ))}
+                            </div>
+                        ) : (
+                            <p style={{ 
+                                fontFamily: 'var(--font-body)', 
+                                fontSize: isMobile ? '1.1rem' : '1.35rem', 
+                                color: 'rgba(255,255,255,0.7)', 
+                                lineHeight: 1.9, 
+                                margin: 0, 
+                                fontWeight: 300 
+                            }}>
+                                {data.description}
+                            </p>
+                        )}
+                        
+                        {/* Decorative background element for the text column */}
+                        <div style={{ 
+                            position: 'absolute', 
+                            top: -20, 
+                            right: -20, 
+                            width: 100, 
+                            height: 100, 
+                            borderRight: `1px solid ${gold}22`, 
+                            borderTop: `1px solid ${gold}22`, 
+                            zIndex: -1 
+                        }} />
                     </div>
                 </div>
 

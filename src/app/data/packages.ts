@@ -649,7 +649,7 @@ export const packages: TourPackage[] = [
                 description: "Arrive and transfer to Kitulgala — Sri Lanka's adventure capital. Safety briefing from your certified guides, gear fitting, and an evening at the jungle camp with river sounds as your soundtrack.",
                 highlights: ['Adventure safety briefing', 'Jungle camp arrival', 'Campfire dinner'],
                 accommodation: 'Borderlands Adventure Camp, Kitulgala', meals: 'Dinner',
-                image: '/assets/tour-package-images/kitulgala-jungle-camp.webp', location: 'Kitulgala',
+                image: '/assets/kitulgala-jungle-camp.webp', location: 'Kitulgala',
                 activity: 'Jungle Arrival'
             },
             {
@@ -657,7 +657,7 @@ export const packages: TourPackage[] = [
                 description: "The Kelani River offers Asia's most consistent white water — Grade 3–4 rapids through a jungle gorge. Leap from rock platforms into calm pools and zip-line over the river. Afternoon transfer to Kandy for a cultural evening.",
                 highlights: ['5km white-water rafting', 'Canyon rock jumping', 'Temple of the Tooth visit'],
                 accommodation: 'OZO Kandy', meals: 'Breakfast, Dinner',
-                image: '/assets/tour-category/adventure1.webp', location: 'Kitulgala / Kandy',
+                image: '/assets/destination-new-images/white-water-rafting.webp', location: 'Kitulgala / Kandy',
                 activity: 'White-Water Rafting'
             },
             {
@@ -735,9 +735,9 @@ export const packages: TourPackage[] = [
         title: 'Honeymoon Bliss',
         subtitle: 'Romance Across the Island',
         tagline: 'Your love story, written across paradise',
-        heroImage: '/assets/honeymoon-in-beach.webp',
+        heroImage: '/assets/tour-category/honeymoon-bliss.webp',
         galleryImages: [
-            '/assets/honeymoon-in-beach.webp',
+            '/assets/tour-category/honeymoon-bliss.webp',
             '/assets/spa-and-wellness/Luxury-Couple-Spa-Experiences.webp',
             '/assets/culture-package/sigiriya.webp',
             '/assets/sunandsand/mirissa-sri-lanka-gallery-1.webp',
@@ -836,7 +836,7 @@ export const packages: TourPackage[] = [
                 description: 'A relaxed morning. Enjoy a couple\'s massage at the resort spa overlooking the Ella Gap. In the late afternoon, take a gentle walk to the Nine Arch Bridge to watch the evening train cross the colonial viaduct.',
                 highlights: ['Couples spa morning', 'Nine Arch Bridge', 'Romantic sunset at Ella Gap'],
                 accommodation: '98 Acres Resort & Spa', meals: 'Breakfast, Dinner',
-                image: '/assets/tour-package-images/Ella-Mountain-Vistas.webp', location: 'Ella Mountain',
+                image: '/assets/tour-category/ella-mountain-vistas.webp', location: 'Ella Mountain',
                 activity: 'Leisure & Vistas'
             },
             {

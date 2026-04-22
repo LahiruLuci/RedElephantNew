@@ -30,12 +30,13 @@ const megaCols = [
         title: 'Sun and Sand',
         links: [
             { label: 'All Beaches', href: '/destinations/beaches' },
-            { label: 'Arugam Bay', href: '/destinations/arugambay' },
+            { label: 'Bentota', href: '/destinations/bentota' },
             { label: 'Galle & Unawatuna', href: '/destinations/galle' },
-            { label: 'Negombo', href: '/destinations/negombo' },
             { label: 'Mirissa/Weligama', href: '/destinations/mirissa' },
+            { label: 'Hikkaduwa', href: '/destinations/hikkaduwa' },
+            { label: 'Arugam Bay', href: '/destinations/arugambay' },
             { label: 'Pasikuda/Trinco', href: '/destinations/trincomalee' },
-            { label: 'Hikkaduwa', href: '/destinations/hikkaduwa' }
+            { label: 'Negombo', href: '/destinations/negombo' }
         ],
     },
     {

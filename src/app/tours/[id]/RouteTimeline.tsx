@@ -333,7 +333,7 @@ function MobileCard({ day, idx, accent }: { day: DayItinerary; idx: number; acce
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke={accent} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
                 </div>
             </button>
-            <div style={{ maxHeight: open ? 600 : 0, overflow: 'hidden', transition: 'max-height .45s cubic-bezier(.23,1,.32,1)' }}>
+            <div style={{ maxHeight: open ? 2000 : 0, overflow: 'hidden', transition: 'max-height .8s cubic-bezier(.23,1,.32,1)' }}>
                 {src && <img src={src} alt={day.title} style={{ width: '100%', height: 200, objectFit: 'cover', display: 'block' }} />}
                 <div style={{ padding: '14px 16px 20px' }}>
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.17rem', color: '#666', lineHeight: 1.78, margin: '0 0 14px' }}>{day.description}</p>

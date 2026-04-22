@@ -18,10 +18,8 @@ function useIsMobile(bp = 768) {
 /* ─── animated counter ─── */
 function useCountUp(target: number, duration: number, isVisible: boolean) {
     const [count, setCount] = useState(0);
-    const hasAnimated = useRef(false);
     useEffect(() => {
-        if (!isVisible || hasAnimated.current) return;
-        hasAnimated.current = true;
+        if (!isVisible) return;
         const steps = 60;
         const stepDuration = duration / steps;
         let current = 0;
@@ -90,7 +88,7 @@ function StatCard({ stat, index, isVisible, isMobile }: {
                 background: hovered ? 'rgba(196,30,58,0.1)' : 'rgba(255,255,255,0.04)',
                 border: `1px solid ${hovered ? 'rgba(196,30,58,0.4)' : 'rgba(255,255,255,0.08)'}`,
                 borderRadius: '20px',
-                padding: isMobile ? '24px 20px' : '36px 28px',
+                padding: isMobile ? '20px 12px' : '36px 28px',
                 textAlign: 'center',
                 transition: 'all 0.35s cubic-bezier(0.4,0,0.2,1)',
                 cursor: 'default',
@@ -98,6 +96,7 @@ function StatCard({ stat, index, isVisible, isMobile }: {
                 opacity: isVisible ? 1 : 0,
                 transitionDelay: `${0.4 + index * 0.1}s`,
                 boxShadow: hovered ? 'var(--shadow-red)' : 'none',
+                wordWrap: 'break-word',
             }}
         >
             <div style={{
@@ -115,10 +114,7 @@ function StatCard({ stat, index, isVisible, isMobile }: {
                 fontSize: isMobile ? '2.2rem' : 'clamp(2.5rem, 4vw, 3.5rem)',
                 fontWeight: 800,
                 lineHeight: 1,
-                background: 'var(--gradient-primary)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
+                color: '#C41E3A', /* Solid red to guarantee visibility instead of relying on missing CSS variable gradient */
                 marginBottom: '8px',
             }}>
                 {count.toLocaleString()}{stat.suffix}
@@ -141,7 +137,7 @@ function StatCard({ stat, index, isVisible, isMobile }: {
                 color: 'rgba(255,255,255,0.5)',
                 lineHeight: 1.6,
                 margin: 0,
-                maxHeight: showDesc ? '80px' : '0',
+                maxHeight: showDesc ? '250px' : '0',
                 overflow: 'hidden',
                 opacity: showDesc ? 1 : 0,
                 transition: 'all 0.3s ease',
@@ -225,11 +221,21 @@ export default function StatsSection() {
                 </div>
 
                 {/* ── STATS GRID ── */}
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
-                    gap: isMobile ? '12px' : '20px',
-                }}>
+                <style>{`
+                    .stats-grid-responsive {
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        gap: 20px;
+                    }
+                    @media (max-width: 900px) {
+                        .stats-grid-responsive { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+                    }
+                    @media (max-width: 440px) {
+                        /* Force 1 column on extremely small devices to prevent squishing */
+                        .stats-grid-responsive { grid-template-columns: 1fr; gap: 12px; }
+                    }
+                `}</style>
+                <div className="stats-grid-responsive">
                     {stats.map((stat, i) => (
                         <StatCard key={stat.label} stat={stat} index={i} isVisible={isVisible} isMobile={isMobile} />
                     ))}

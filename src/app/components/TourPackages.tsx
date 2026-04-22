@@ -102,7 +102,7 @@ const packages = [
         category: 'beach',
         title: 'Honeymoon Bliss',
         subtitle: 'Romance Across the Island',
-        image: '/assets/honeymoon-in-beach.webp',
+        image: '/assets/tour-category/honeymoon-bliss.webp',
         // price: 2490,
         duration: '12 Days / 11 Nights',
         // group: 'Couple',
@@ -299,17 +299,18 @@ function PackageCard({ pkg, delay }: { pkg: typeof packages[0]; delay: number })
                         </div>
                     </div>
 
-                    <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.96rem', color: muted }}>{pkg.reviews} reviews</span>
+                    <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', flexWrap: 'wrap' }}>
+                        <span style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(0.85rem, 3vw, 0.96rem)', color: muted }}>{pkg.reviews} reviews</span>
                         <span style={{
                             background: hovered ? crimson : 'transparent',
                             border: `1.5px solid ${crimson}`,
                             color: hovered ? 'white' : crimson,
-                            fontFamily: 'var(--font-accent)', fontSize: '1rem', fontWeight: 800,
+                            fontFamily: 'var(--font-accent)', fontSize: 'clamp(0.75rem, 3.5vw, 0.9rem)', fontWeight: 800,
                             letterSpacing: '0.1em', textTransform: 'uppercase',
-                            padding: '9px 20px', borderRadius: '50px', cursor: 'pointer',
+                            padding: '8px clamp(12px, 4vw, 20px)', borderRadius: '50px', cursor: 'pointer',
                             display: 'inline-flex', alignItems: 'center', gap: '7px',
                             transition: 'background 0.3s, color 0.3s',
+                            whiteSpace: 'nowrap'
                         }}>
                             View Details
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -413,7 +414,7 @@ export default function TourPackages() {
                 {/* Cards grid */}
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))',
                     gap: '24px',
                 }}>
                     {filtered.map((pkg, i) => (
