@@ -625,9 +625,9 @@ export const destinations: Record<string, DestinationData> = {
         id: 'udawalawe',
         name: 'Udawalawe',
         type: 'National Park',
-        heroImage: '/assets/destination-new-images/udawalawe/hero-image.jpg',
+        heroImage: '/assets/destination-new-images/udawalawe-hero-image.webp',
         gallery: [
-            '/assets/destination-new-images/udawalawe/hero-image.jpg',
+            '/assets/destination-new-images/udawalawe-hero-image.webp',
             '/assets/destination-new-images/udawalawe/elephant-transit-home.png',
             '/assets/wild-life/udawalawe-national-park.webp'
         ],
@@ -675,7 +675,7 @@ export const destinations: Record<string, DestinationData> = {
         },
         attractions: [
             { name: 'Horton Plains National Park', description: 'A UNESCO World Heritage site featuring montane grasslands and cloud forests. Home to the dramatic World\'s End precipice and Baker\'s Falls.', image: '/assets/nuwara-eliya/horton-plains-nuwara-eliya.webp' },
-            { name: 'Eagle\'s Viewpoint (Shanthipura)', description: 'Located in Shanthipura, the highest village in Sri Lanka, this point offers breathtaking 360-degree views of the central highlands.', image: '/assets/nuwara-eliya/eagles-viewpoint.png' },
+            { name: 'Eagle\'s Viewpoint (Shanthipura)', description: 'Located in Shanthipura, the highest village in Sri Lanka, this point offers breathtaking 360-degree views of the central highlands.', image: '/assets/destination-new-images/eagle-eye-view.webp' },
             { name: 'Tea Factory Visit', description: 'Experience the journey of Ceylon tea from leaf to cup. Tour a historic factory to see vintage machinery in action.', image: '/assets/destination-new-images/hatton/working-tea-factory.png' },
             { name: 'Lake Gregory', description: 'A picturesque lake in the center of town surrounded by blooming flowers and Victorian houses.', image: '/assets/destination-new-images/nuwara-eliya/lake-gregory.png' },
             { name: 'Hakgala Botanical Gardens', description: 'The second-largest botanical garden in Sri Lanka, boasting immense collections of roses and orchids.', image: '/assets/hakgala-botanical-garden.webp' },

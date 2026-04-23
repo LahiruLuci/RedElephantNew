@@ -31,21 +31,21 @@ export default function SeaportsPage() {
             name: "Port of Colombo",
             status: "The Strategic Hub",
             desc: "The largest and busiest port in Sri Lanka, a major hub for maritime trade in South Asia. Colombo's port is a cornerstone of the regional Silk Road, integrating ancient routes with cutting-edge global logistics.",
-            image: "/assets/ports/colombo-port.webp",
+            image: "/assets/destination-new-images/colombo-harbor.webp",
             metrics: ["Top 25 Global Port", "7M+ TEU Capacity"]
         },
         {
             name: "Hambantota International",
             status: "The Southern Milestone",
             desc: "Located on the crossroads of the East-West shipping line, Hambantota is a deep-water port designed for the giants of the sea. It represents the future of the Indian Ocean's blue economy.",
-            image: "/assets/destination-new-images/hambantota_port.webp",
+            image: "/assets/destination-new-images/hambantota-harbor.webp",
             metrics: ["Strategic Location", "Transshipment Hub"]
         },
         {
             name: "China Bay Harbor",
             status: "The Natural Marvel",
             desc: "The world's second-deepest natural harbour. Known for its historical significance and breathtaking geography, Trincomalee is a hidden pearl of the maritime world.",
-            image: "/assets/ports/trincomalee.webp",
+            image: "/assets/destination-new-images/china-bay-port .webp",
             metrics: ["Natural Deep Water", "Historic Gateway"]
         }
     ];
