@@ -114,7 +114,7 @@ export default function AboutPage() {
                                 <div style={{ fontFamily: 'var(--font-accent)', fontSize: '0.87rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', marginTop: '8px' }}>Years Experience</div>
                             </div>
                             <div>
-                                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 900, color: 'var(--color-gold)' }}>3000+</div>
+                                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 900, color: 'var(--color-gold)' }}>1000+</div>
                                 <div style={{ fontFamily: 'var(--font-accent)', fontSize: '0.87rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', marginTop: '8px' }}>Happy Travelers</div>
                             </div>
                         </div>
@@ -209,10 +209,10 @@ export default function AboutPage() {
                         gap: '32px',
                     }}>
                         {[
-                            { name: 'John Doe', role: 'Chief Executive Officer', image: '/assets/destination-new-images/mr.webp' },
-                            { name: 'Jane Smith', role: 'Head of Operations', image: '/assets/destination-new-images/miss.webp' },
-                            { name: 'David Johnson', role: 'Director Global Sales', image: '/assets/destination-new-images/director-sale-south-india.webp' },
-                            { name: 'Sarah Williams', role: 'Client Experience Director', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80&auto=format&fit=crop' },
+                            { name: 'Mr. Amesh Panawala', role: 'Director Events & Operations', image: '/assets/destination-new-images/mr.webp' },
+                            { name: 'Ms. Chauntelle Panawala', role: 'Director Inbound Operations', image: '/assets/destination-new-images/miss.webp' },
+                            { name: 'Mr. Sajith Soman', role: 'Director Global Sales', image: '/assets/destination-new-images/director-sale-south-india.webp' },
+                            { name: 'Mr. Dhruval Viyas', role: 'Director Sales Gujarat', image: '/assets/destination-new-images/Director sales Gujarat.webp' },
                         ].map((member, i) => (
                             <div key={i} className="team-card" style={{
                                 background: 'rgba(255,255,255,0.02)',

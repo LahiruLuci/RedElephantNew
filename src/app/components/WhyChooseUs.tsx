@@ -72,10 +72,10 @@ const features = [
                 <path d="M4 24c2-2 4-1 6 0s4 2 6 0 4-2 6 0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
             </svg>
         ),
-        number: '3000+',
+        number: '1000+',
         label: 'Happy Travellers',
         title: 'Trust Built on Joy',
-        desc: 'More than 3,000 happy travellers from 60+ countries — and counting. Their smiles are our greatest achievement and our strongest motivation.',
+        desc: 'More than 1,000 happy travellers from 60+ countries — and counting. Their smiles are our greatest achievement and our strongest motivation.',
     },
 ];
 

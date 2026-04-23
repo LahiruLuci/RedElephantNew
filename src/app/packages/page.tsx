@@ -545,7 +545,7 @@ export default function PackagesPage() {
             {[
               { to:50, suffix:'+', label:'Curated Packages' },
               { to:15, suffix:'+', label:'Years Experience' },
-              { to:3000, suffix:'+', label:'Happy Travellers' },
+              { to:1000, suffix:'+', label:'Happy Travellers' },
               { to:98, suffix:'%', label:'Satisfaction Rate' },
             ].map(s => (
               <div key={s.label}>
