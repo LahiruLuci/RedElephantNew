@@ -108,7 +108,7 @@ export default function ContactClient() {
             }}>
                 <div style={{
                     position: 'absolute', inset: 0,
-                    backgroundImage: 'url(/assets/index-hero.webp)',
+                    backgroundImage: 'url(/assets/header_bg.webp)',
                     backgroundSize: 'cover', backgroundPosition: 'center',
                     opacity: 0.4, filter: 'grayscale(0.2)'
                 }} />

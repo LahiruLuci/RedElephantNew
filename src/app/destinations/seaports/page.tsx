@@ -38,11 +38,11 @@ export default function SeaportsPage() {
             name: "Hambantota International",
             status: "The Southern Milestone",
             desc: "Located on the crossroads of the East-West shipping line, Hambantota is a deep-water port designed for the giants of the sea. It represents the future of the Indian Ocean's blue economy.",
-            image: "/assets/ports/hambanthota-harbor.webp",
+            image: "/assets/destination-new-images/hambantota_port.webp",
             metrics: ["Strategic Location", "Transshipment Hub"]
         },
         {
-            name: "Trincomalee Harbour",
+            name: "China Bay Harbor",
             status: "The Natural Marvel",
             desc: "The world's second-deepest natural harbour. Known for its historical significance and breathtaking geography, Trincomalee is a hidden pearl of the maritime world.",
             image: "/assets/ports/trincomalee.webp",

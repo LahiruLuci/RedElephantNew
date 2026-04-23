@@ -23,7 +23,7 @@ export default function AboutPage() {
                 {/* Background image */}
                 <div style={{ position: 'absolute', inset: 0 }}>
                     <Image
-                        src="/assets/travel-in-Sri-Lanka.webp"
+                        src="/assets/about-us.webp"
                         alt="Sri Lanka landscape"
                         fill
                         style={{ objectFit: 'cover', transform: 'scale(1.05)' }}
@@ -82,7 +82,7 @@ export default function AboutPage() {
                     
                     {/* Image side */}
                     <div style={{ position: 'relative', aspectRatio: '4/5', borderRadius: '24px', overflow: 'hidden' }}>
-                        <Image src="/assets/culture-and-heritage-top-banner.webp" alt="Sri Lankan Culture" fill style={{ objectFit: 'cover' }} />
+                        <Image src="/assets/destination-new-images/colombo-night.webp" alt="Sri Lankan Culture" fill style={{ objectFit: 'cover' }} />
                         <div style={{ position: 'absolute', inset: 0, border: '1px solid rgba(201,169,110,0.2)', borderRadius: '24px', zIndex: 2 }} />
                     </div>
 
@@ -209,9 +209,9 @@ export default function AboutPage() {
                         gap: '32px',
                     }}>
                         {[
-                            { name: 'John Doe', role: 'Chief Executive Officer', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80&auto=format&fit=crop' },
-                            { name: 'Jane Smith', role: 'Head of Operations', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format&fit=crop' },
-                            { name: 'David Johnson', role: 'Lead Tour Architect', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&q=80&auto=format&fit=crop' },
+                            { name: 'John Doe', role: 'Chief Executive Officer', image: '/assets/destination-new-images/mr.webp' },
+                            { name: 'Jane Smith', role: 'Head of Operations', image: '/assets/destination-new-images/miss.webp' },
+                            { name: 'David Johnson', role: 'Director Global Sales', image: '/assets/destination-new-images/director-sale-south-india.webp' },
                             { name: 'Sarah Williams', role: 'Client Experience Director', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80&auto=format&fit=crop' },
                         ].map((member, i) => (
                             <div key={i} className="team-card" style={{

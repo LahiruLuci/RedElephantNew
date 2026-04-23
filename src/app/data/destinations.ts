@@ -102,7 +102,7 @@ export const destinations: Record<string, DestinationData> = {
             famousFor: 'Seafood, Dutch Canals & Beaches'
         },
         attractions: [
-            { name: 'Negombo Beach Park', image: '/assets/negembo-destination/hero-new-img.webp', description: 'The golden sandy strip that runs alongside the resort hotels, spectacular for sunset walks.' },
+            { name: 'Negombo Beach Park', image: '/assets/destination-new-images/negombo-beach-park.webp', description: 'The golden sandy strip that runs alongside the resort hotels, spectacular for sunset walks.' },
             { name: 'Hamilton Canal', image: '/assets/destination-new-images/negombo/hamilton-canel.webp', description: 'A 100km waterway constructed by the British in 1802, perfect for a slow boat ride viewing local life.' },
             { name: 'Negombo Fish Market', image: '/assets/destination-new-images/negombo/fish-market.webp', description: 'A vibrant and chaotic morning auction where giant tuna and thousands of fish of every shape and colour are traded.' },
             { name: 'St. Mary\'s Church', image: '/assets/destination-new-images/negombo/st.marys-church.webp', description: 'A massive pastel-pink cathedral featuring stunning European-style ceiling frescoes.' },
@@ -192,7 +192,7 @@ export const destinations: Record<string, DestinationData> = {
             { name: 'Dutch Reformed Church', image: '/assets/destination-new-images/galle/dutch-reformed-chrurch.png', description: 'Built in 1755, its floor is paved entirely with gravestones from the old Dutch cemetery.' },
             { name: 'Pedlar Street', image: '/assets/destination-new-images/galle/pedlar-street.png', description: 'Narrow lanes bursting with luxury boutique shops, intimate cafes, colonial villas, and art galleries.' },
             { name: 'Galle National Museum', image: '/assets/galle/Galle_Museum.webp', description: 'Housed in the oldest Dutch building in the fort, this museum displays artifacts from the Portuguese, Dutch, and British periods, offering a deep dive into the maritime history of the region.' },
-            { name: 'Flag Rock', image: '/assets/destination-new-images/galle/flag-rock.png', description: 'Historically a Portuguese bastion where sailors swung warnings to incoming ships, now a prime spot for sunset watching and cliff-diving locals.' }
+            { name: 'Galle International Cricket Stadium', image: '/assets/galle/cricket-stadium.webp', description: 'One of the most picturesque cricket grounds in the world, bordered by the Indian Ocean on two sides and overlooked by the historic Galle Fort.' }
         ],
         activities: [
             { title: 'Private Yacht Whale Watching', desc: 'Board an exclusive luxury motor yacht and cruise the deep blue waters off Mirissa to witness majestic Blue Whales in complete privacy.' },
@@ -344,9 +344,9 @@ export const destinations: Record<string, DestinationData> = {
             famousFor: 'Ceylon Tea & Cool Climate'
         },
         attractions: [
-            { name: 'Adam\'s Peak (Sri Pada)', image: '/assets/destination-new-images/hatton/adams-peak.png', description: 'A towering, sharply pointed holy mountain. It is a major pilgrimage site due to a footprint rock formation at its summit.' },
+            { name: 'Adam\'s Peak (Sri Pada)', image: '/assets/destination-new-images/adams-peak.webp', description: 'A towering, sharply pointed holy mountain. It is a major pilgrimage site due to a footprint rock formation at its summit.' },
             { name: 'Castlereagh Reservoir', image: '/assets/hatton/hatton-1.webp', description: 'A mirror-like lake hidden in a deep valley, wrapped by dense pine forests and the finest tea estates.' },
-            { name: 'Working Tea Factories', image: '/assets/destination-new-images/hatton/working-tea-factory.png', description: 'Step inside 19th-century colonial machines that withered, rolled, and fermented the leaves that conquered the globe.' }
+            { name: 'Tea Factory Visit', image: '/assets/destination-new-images/tea-factory-visit.webp', description: 'Step inside 19th-century colonial machines that withered, rolled, and fermented the leaves that conquered the globe.' }
         ],
         activities: [
             { title: 'Adam\'s Peak Sunrise Pilgrimage', desc: 'Embark on a soul-stirring night ascent up the 5,500 steps to reach the summit as dawn breaks, witnessing the legendary triangular shadow.' },
@@ -527,9 +527,9 @@ export const destinations: Record<string, DestinationData> = {
         id: 'wilpattu',
         name: 'Wilpattu',
         type: 'National Park',
-        heroImage: '/assets/destination-new-images/wilpattu/hero-image.jpg',
+        heroImage: '/assets/destination-new-images/wilpattu-hero-image.webp',
         gallery: [
-            '/assets/destination-new-images/wilpattu/hero-image.jpg',
+            '/assets/destination-new-images/wilpattu-hero-image.webp',
             '/assets/destination-new-images/wilpattu/the-villu-lake.png',
             '/assets/wild-life/wilpattu-national-park-sri-lanka.webp',
             '/assets/wild-life/wilpattu-national-park-sri-lanka-1.webp'
@@ -561,9 +561,9 @@ export const destinations: Record<string, DestinationData> = {
         id: 'minneriya',
         name: 'Minneriya',
         type: 'National Park',
-        heroImage: '/assets/wild-life/minneriya-national-park-sri-lanka.webp',
+        heroImage: '/assets/destination-new-images/minneriya-hero-image.webp',
         gallery: [
-            '/assets/wild-life/minneriya-national-park-sri-lanka.webp',
+            '/assets/destination-new-images/minneriya-hero-image.webp',
             '/assets/wild-life/minneriya-national-park-1.webp'
         ],
         tagline: 'The Great Elephant Gathering',
@@ -591,9 +591,9 @@ export const destinations: Record<string, DestinationData> = {
         id: 'galoya',
         name: 'Gal Oya',
         type: 'National Park',
-        heroImage: '/assets/destination-new-images/galoya/senanayake-samudraya.png',
+        heroImage: '/assets/destination-new-images/gal-oya-hero-image.webp',
         gallery: [
-            '/assets/destination-new-images/galoya/senanayake-samudraya.png',
+            '/assets/destination-new-images/gal-oya-hero-image.webp',
             '/assets/destination-new-images/galoya/monkey-mountain.jpeg',
             '/assets/wild-life/gal-oya-national-park-sri-lanka.webp',
             '/assets/wild-life/gal-oya-national-park-sri-lanka-1.webp'
@@ -658,7 +658,7 @@ export const destinations: Record<string, DestinationData> = {
         id: 'nuwaraeliya',
         name: 'Nuwara Eliya',
         type: 'Hill Station',
-        heroImage: '/assets/nuwara-eliya/hero-image.webp',
+        heroImage: '/assets/destination-new-images/nuwara-eliya-hero-image.webp',
         gallery: [
             '/assets/destination-new-images/nuwara-eliya/Colonial-Retreats.png',
             '/assets/destination-new-images/nuwara-eliya/lake-gregory.png',
@@ -681,7 +681,8 @@ export const destinations: Record<string, DestinationData> = {
             { name: 'Hakgala Botanical Gardens', description: 'The second-largest botanical garden in Sri Lanka, boasting immense collections of roses and orchids.', image: '/assets/hakgala-botanical-garden.webp' },
             { name: 'Single Tree Hill', description: 'Rising to 2,100m, Single Tree Hill offers one of the most stunning panoramic views of Nuwara Eliya and Lake Gregory.', image: '/assets/nuwara-eliya/single-tree-hill.webp' },
             { name: 'Moon Plains Jeep Safari', description: 'Famous for its 360-degree "Mini World\'s End" vista. A rugged jeep safari across high-altitude plains.', image: '/assets/nuwara-eliya/moon-plains.webp' },
-            { name: 'Victoria Golf & Country Resort', description: 'Ranked among the most beautiful golf courses in the world, offering a world-class experience amidst scenic hills.', image: '/assets/nuwara-eliya/golf.webp' }
+            { name: 'Victoria Golf & Country Resort', description: 'Ranked among the most beautiful golf courses in the world, offering a world-class experience amidst scenic hills.', image: '/assets/nuwara-eliya/golf.webp' },
+            { name: 'Helicopter & Seaplane Tours', description: 'Experience Nuwara Eliya from the sky with breathtaking scenic flights over mist-covered mountains, cascading waterfalls, and sprawling tea estates.', image: '/assets/destination-new-images/helicoptor-tours-and-sea-planes.webp' }
         ],
         activities: [
             { title: 'Golfing at Victoria Golf Club', desc: 'Enjoy a round of golf at one of the world’s most scenic courses, featuring rolling fairways and breathtaking mountain views.' },
@@ -694,7 +695,7 @@ export const destinations: Record<string, DestinationData> = {
             'Surrounded by sprawling tea plantations and cascading falls like Ramboda, the town is a base for exploring Horton Plains and Lake Gregory. It remains the island’s premier retreat for those seeking a cool climate and the timeless elegance of the tea country.'
         ],
         cultural_insights: [
-            { id: 'nuwaraeliya-culture', title: 'Colonial Retreats', subtitle: 'British Heritage', description: 'Once the premier escape for British planters seeking a cooler climate, the town still meticulously preserves its colonial sporting clubs and Tudor architecture.', image: '/assets/destination-new-images/nuwara-eliya/Colonial-Retreats.png', highlights: ["Tudor Architecture", "Horse Racing", "Tea Planter Elite"] }
+            { id: 'nuwaraeliya-culture', title: 'Colonial Retreats', subtitle: 'British Heritage', description: 'Once the premier escape for British planters seeking a cooler climate, the town still meticulously preserves its colonial sporting clubs and Tudor architecture.', image: '/assets/nuwara-eliya/the-grand-hotel.webp', highlights: ["Tudor Architecture", "Horse Racing", "Tea Planter Elite"] }
         ]
     },
     'hortonplains': {
@@ -751,7 +752,8 @@ export const destinations: Record<string, DestinationData> = {
             { name: 'Little Adam\'s Peak', description: 'A rewarding, relatively easy hike culminating in narrow ridges and sweeping panoramas of the Ella gap.', image: '/assets/destination-new-images/ella/Little-Adam\'sPeak.png' },
             { name: 'Ella Rock', description: 'A dramatic, towering rock formation challenging hikers with a steep ascent.', image: '/assets/destination-new-images/ella/ella-roxk.png' },
             { name: 'Ravana Adventure Park', description: 'Sri Lanka\'s first international-standard mega adventure park, featuring the famous Flying Ravana zipline.', image: '/assets/ella/ravana-adventure-park.webp' },
-            { name: 'Ravana Pool Club', description: 'A premium Balinese-style day club with a heated infinity pool and stunning views of the Ella Gap.', image: '/assets/ella/ravana-adventure-pool-club.webp' }
+            { name: 'Ravana Pool Club', description: 'A premium Balinese-style day club with a heated infinity pool and stunning views of the Ella Gap.', image: '/assets/ella/ravana-adventure-pool-club-new.webp' },
+            { name: 'Night Party Life', description: 'Experience the energetic nightlife of Ella, known for its vibrant parties, eclectic bars, and music that lasts until dawn.', image: '/assets/ella/night-life-party.webp' }
         ],
         activities: [
             { title: 'Mega Zip-Line Adventure', desc: 'Soar over lush tea estates and capture breathtaking views of the Ella Gap on Sri Lanka’s first ever mega zip-line.' },
@@ -1013,9 +1015,9 @@ export const destinations: Record<string, DestinationData> = {
         id: 'kumana',
         name: 'Kumana',
         type: 'National Park',
-        heroImage: '/assets/destination-new-images/kumana/hero-image.jpg',
+        heroImage: '/assets/destination-new-images/kumana-hero-image.webp',
         gallery: [
-            '/assets/destination-new-images/kumana/hero-image.jpg',
+            '/assets/destination-new-images/kumana-hero-image.webp',
             '/assets/destination-new-images/kumana/kumana-villu.png',
             '/assets/wild-life/kumana-national-park-sri-lanka-1.webp'
         ],
@@ -1047,7 +1049,7 @@ export const destinations: Record<string, DestinationData> = {
         id: 'kaudulla',
         name: 'Kaudulla',
         type: 'National Park',
-        heroImage: '/assets/wild-life/kaudulla-national-park.webp',
+        heroImage: '/assets/destination-new-images/kaudulla-hero-image.webp',
         gallery: [
             '/assets/wild-life/kaudulla-park-1.webp',
             '/assets/wild-life/kaudulla-park-2.webp',
