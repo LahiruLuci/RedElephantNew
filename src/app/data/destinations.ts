@@ -752,7 +752,7 @@ export const destinations: Record<string, DestinationData> = {
             { name: 'Little Adam\'s Peak', description: 'A rewarding, relatively easy hike culminating in narrow ridges and sweeping panoramas of the Ella gap.', image: '/assets/destination-new-images/ella/Little-Adam\'sPeak.png' },
             { name: 'Ella Rock', description: 'A dramatic, towering rock formation challenging hikers with a steep ascent.', image: '/assets/destination-new-images/ella/ella-roxk.png' },
             { name: 'Ravana Adventure Park', description: 'Sri Lanka\'s first international-standard mega adventure park, featuring the famous Flying Ravana zipline.', image: '/assets/ella/ravana-adventure-park.webp' },
-            { name: 'Ravana Pool Club', description: 'A premium Balinese-style day club with a heated infinity pool and stunning views of the Ella Gap.', image: '/assets/ella/ravana-adventure-pool-club-new.webp' },
+            { name: 'Ravana Pool Club', description: 'A premium Balinese-style day club with a heated infinity pool and stunning views of the Ella Gap.', image: '/assets/destination-new-images/ravana-pool-club.webp' },
             { name: 'Night Party Life', description: 'Experience the energetic nightlife of Ella, known for its vibrant parties, eclectic bars, and music that lasts until dawn.', image: '/assets/ella/night-life-party.webp' }
         ],
         activities: [
