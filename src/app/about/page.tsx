@@ -211,7 +211,7 @@ export default function AboutPage() {
                         {[
                             { name: 'Mr. Amesh Panawala', role: 'Director Events & Operations', image: '/assets/destination-new-images/mr.webp' },
                             { name: 'Ms. Chauntelle Panawala', role: 'Director Inbound Operations', image: '/assets/destination-new-images/miss.webp' },
-                            { name: 'Mr. Sajith Soman', role: 'Director Global Sales', image: '/assets/destination-new-images/director-sale-south-india.webp' },
+                            { name: 'Mr. Sajith Soman', role: 'Director', image: '/assets/destination-new-images/director-sale-south-india.webp' },
                             { name: 'Mr. Dhruval Viyas', role: 'Director Sales Gujarat', image: '/assets/destination-new-images/Director sales Gujarat.webp' },
                             { name: 'Mr. Ansh Mehta', role: 'Director & Partner South India', image: '/assets/destination-new-images/ansh.webp' },
                         ].map((member, i) => (
