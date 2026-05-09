@@ -544,8 +544,8 @@ export default function PackagesPage() {
           <div className="ph-stats">
             {[
               { to:50, suffix:'+', label:'Curated Packages' },
-              { to:15, suffix:'+', label:'Years Experience' },
-              { to:1000, suffix:'+', label:'Happy Travellers' },
+              { to:20, suffix:'+', label:'Years Experience' },
+              { to:3000, suffix:'+', label:'Happy Travellers' },
               { to:98, suffix:'%', label:'Satisfaction Rate' },
             ].map(s => (
               <div key={s.label}>

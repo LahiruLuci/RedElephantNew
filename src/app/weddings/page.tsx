@@ -515,6 +515,7 @@ export default function WeddingsDetailPage() {
     const [guestCount, setGuestCount] = useState<string>('Intimate (2-30)');
     const [formState, setFormState] = useState({ name: '', email: '', date: '', vision: '' });
     const [errorMsg, setErrorMsg] = useState('');
+    const today = new Date().toISOString().split('T')[0];
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 80);
@@ -799,6 +800,11 @@ export default function WeddingsDetailPage() {
                                     setErrorMsg('Please fill in all required fields (Name, Email, and Date).');
                                     return;
                                 }
+                                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                if (!emailRegex.test(formState.email)) {
+                                    setErrorMsg('Please enter a valid email address.');
+                                    return;
+                                }
                                 setErrorMsg('');
                                 alert('Thank you! Your private event inquiry has been received. Our concierge will be in touch within 24 hours to begin crafting your prologue.');
                                 setFormState({ name: '', email: '', date: '', vision: '' });
@@ -817,7 +823,15 @@ export default function WeddingsDetailPage() {
                             </div>
                             <div className="input-group">
                                 <label style={labelStyle}>Proposed Date *</label>
-                                <input type="date" style={inputStyle} value={formState.date} onChange={e => setFormState({...formState, date: e.target.value})} />
+                                <input type="date" style={inputStyle} value={formState.date} min={new Date().toISOString().split('T')[0]} onChange={e => {
+                                    const selected = e.target.value;
+                                    if (new Date(selected) < new Date(new Date().setHours(0,0,0,0))) {
+                                        setErrorMsg('Please select a future date.');
+                                        return;
+                                    }
+                                    setErrorMsg('');
+                                    setFormState({...formState, date: selected});
+                                }} />
                             </div>
                             <div className="input-group">
                                 <label style={labelStyle}>Guest Count</label>

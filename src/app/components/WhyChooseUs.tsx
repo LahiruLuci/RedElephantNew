@@ -11,10 +11,10 @@ const features = [
                 <circle cx="16" cy="16" r="2" fill="currentColor" />
             </svg>
         ),
-        number: '15+',
+        number: '20+',
         label: 'Years of Expertise',
         title: 'Decades of Mastery',
-        desc: 'Over 15 years crafting unforgettable journeys across Sri Lanka. Our deep local roots mean you experience the island through the eyes of a true insider.',
+        desc: 'Over 20 years crafting unforgettable journeys across Sri Lanka. Our deep local roots mean you experience the island through the eyes of a true insider.',
     },
     {
         icon: (
@@ -72,10 +72,10 @@ const features = [
                 <path d="M4 24c2-2 4-1 6 0s4 2 6 0 4-2 6 0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
             </svg>
         ),
-        number: '1000+',
+        number: '3000+',
         label: 'Happy Travellers',
         title: 'Trust Built on Joy',
-        desc: 'More than 1,000 happy travellers from 60+ countries — and counting. Their smiles are our greatest achievement and our strongest motivation.',
+        desc: 'More than 3,000 happy travellers from 60+ countries — and counting. Their smiles are our greatest achievement and our strongest motivation.',
     },
 ];
 

@@ -652,7 +652,7 @@ export default function WeddingEvents() {
                             fontSize: '1rem', color: muted,
                             lineHeight: 1.7, maxWidth: '440px', margin: '0 auto',
                         }}>
-                            Your dream celebration is our obsession. Our expert team has been creating magical weddings and events across Sri Lanka for over a decade.
+                            Your dream celebration is our obsession. Our expert team has been creating magical weddings and events across Sri Lanka for over 20 years.
                         </p>
                     </div>
 

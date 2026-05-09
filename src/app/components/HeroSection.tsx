@@ -37,7 +37,7 @@ const slides = [
     },
 
     {
-        src: '/assets/home-slide-03.webp',
+        src: '/assets/home-hero-section-sigiriya.webp',
         alt: 'Sigiriya Rock Fortress Sri Lanka',
         label: 'Ancient Wonders',
         headline: ['Rise of', 'Sigiriya'],
@@ -61,9 +61,9 @@ const slides = [
 const DURATION = 5500;
 
 const STATS = [
-    { value: '15+', label: 'Years Experience' },
+    { value: '20+', label: 'Years Experience' },
     { value: '4.9★', label: 'Guest Rating' },
-    { value: '1,000+', label: 'Happy Travellers' },
+    { value: '3,000+', label: 'Happy Travellers' },
     { value: '50+', label: 'Curated Routes' },
 ];
 

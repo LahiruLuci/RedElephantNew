@@ -18,9 +18,16 @@ export default function ContactClient() {
         subject: '',
         message: ''
     });
+    const [errorMsg, setErrorMsg] = useState('');
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formState.email)) {
+            setErrorMsg('Please enter a valid email address.');
+            return;
+        }
+        setErrorMsg('');
         alert('Thank you for reaching out. Our travel experts will contact you shortly.');
         setFormState({ name: '', email: '', subject: '', message: '' });
     };
@@ -211,6 +218,11 @@ export default function ContactClient() {
                                     placeholder="How can we help you plan your perfect journey?"
                                 />
                             </div>
+                             {errorMsg && (
+                                <div style={{ color: C.crimson, fontSize: '0.9rem', marginBottom: '20px', fontFamily: 'var(--font-body)' }}>
+                                    {errorMsg}
+                                </div>
+                            )}
                             <button type="submit" className="submit-btn text-bold">Send Message</button>
                         </form>
                     </div>

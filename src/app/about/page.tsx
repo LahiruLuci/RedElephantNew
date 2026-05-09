@@ -60,7 +60,7 @@ export default function AboutPage() {
                         marginBottom: '32px',
                         textShadow: '0 20px 40px rgba(0,0,0,0.5)'
                     }}>
-                        Crafting <span style={{ fontStyle: 'italic', fontWeight: 400, color: 'var(--color-gold)' }}>unforgettable</span> journeys since 2009.
+                        Art of <span style={{ fontStyle: 'italic', fontWeight: 400, color: 'var(--color-gold)' }}>Extraordinary</span> Vacations
                     </h1>
 
                     <p style={{
@@ -71,7 +71,7 @@ export default function AboutPage() {
                         maxWidth: '640px',
                         margin: '0 auto',
                     }}>
-                        We believe that travel is the ultimate artisan craft. For over a decade, we have been tailoring the most extraordinary, bespoke experiences across the paradise island of Sri Lanka.
+                        We believe that travel is the ultimate artisan craft. For over 20 years, we have been tailoring the most extraordinary, bespoke experiences across the paradise island of Sri Lanka.
                     </p>
                 </div>
             </section>
@@ -110,11 +110,11 @@ export default function AboutPage() {
 
                         <div style={{ display: 'flex', gap: '32px' }}>
                             <div>
-                                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 900, color: 'var(--color-gold)' }}>15+</div>
+                                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 900, color: 'var(--color-gold)' }}>20+</div>
                                 <div style={{ fontFamily: 'var(--font-accent)', fontSize: '0.87rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', marginTop: '8px' }}>Years Experience</div>
                             </div>
                             <div>
-                                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 900, color: 'var(--color-gold)' }}>1000+</div>
+                                <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 900, color: 'var(--color-gold)' }}>3000+</div>
                                 <div style={{ fontFamily: 'var(--font-accent)', fontSize: '0.87rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', marginTop: '8px' }}>Happy Travelers</div>
                             </div>
                         </div>
@@ -251,7 +251,7 @@ export default function AboutPage() {
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
                     <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 800, color: 'white', marginBottom: '24px' }}>
-                        Ready to write your Sri Lankan Chapter?
+                        Every journey is a story worth sharing.
                     </h2>
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.2rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, marginBottom: '48px' }}>
                         Our expert travel designers are standing by to curate an itinerary that exceeds every imagination. 

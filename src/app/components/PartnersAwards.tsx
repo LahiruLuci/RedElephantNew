@@ -168,7 +168,7 @@ export default function PartnersAwards() {
                         Recognised by the World's <span style={{ color: gold, fontStyle: 'italic' }}>Best</span>
                     </h2>
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.14rem', color: muted, lineHeight: 1.7, maxWidth: '440px', margin: '0 auto', opacity: headVis ? 1 : 0, transition: 'opacity 0.7s ease 0.25s' }}>
-                        Over a decade of award-winning excellence and global partnerships make Red Elephant the most trusted name in Sri Lanka travel.
+                        Over 20 years of award-winning excellence and global partnerships make Red Elephant the most trusted name in Sri Lanka travel.
                     </p>
                 </div>
 

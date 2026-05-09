@@ -518,6 +518,11 @@ export default function AdvancedWellnessPage() {
                                 setErrorMsg('Please fill in all required fields (Name and Email).');
                                 return;
                             }
+                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            if (!emailRegex.test(form.email)) {
+                                setErrorMsg('Please enter a valid email address.');
+                                return;
+                            }
                             setErrorMsg('');
                             alert('Thank you! Your wellness journey inquiry has been received. Our concierge will be in touch shortly.');
                             setForm({ name: '', email: '', intention: 'Detox & Purify' });

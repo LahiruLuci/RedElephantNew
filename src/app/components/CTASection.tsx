@@ -60,6 +60,7 @@ export default function CTASection() {
     const w = useWindowWidth();
     const isMobile = w > 0 && w <= 600;
     const isTablet = w > 0 && w <= 960;
+    const today = new Date().toISOString().split('T')[0];
 
     useEffect(() => {
         const obs = new IntersectionObserver(
@@ -97,6 +98,15 @@ export default function CTASection() {
         e.preventDefault();
         if (!form.name.trim() || !form.email.trim()) {
             setErrorMsg('Please enter your Name and Email to continue.');
+            return;
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(form.email)) {
+            setErrorMsg('Please enter a valid email address.');
+            return;
+        }
+        if (form.from && form.to && form.from > form.to) {
+            setErrorMsg('Departure date cannot be before arrival date.');
             return;
         }
         setErrorMsg('');
@@ -397,11 +407,13 @@ export default function CTASection() {
                                 <div style={{ display: 'grid', gridTemplateColumns: pairGrid, gap: 14 }}>
                                     <Field label="Arrival Date">
                                         <input type="date" value={form.from} onChange={set('from')}
+                                            min={today}
                                             onFocus={() => setFocusedField('from')} onBlur={() => setFocusedField(null)}
                                             style={{ ...focusStyle('from'), colorScheme: 'dark' }} />
                                     </Field>
                                     <Field label="Departure Date">
                                         <input type="date" value={form.to} onChange={set('to')}
+                                            min={form.from || today}
                                             onFocus={() => setFocusedField('to')} onBlur={() => setFocusedField(null)}
                                             style={{ ...focusStyle('to'), colorScheme: 'dark' }} />
                                     </Field>

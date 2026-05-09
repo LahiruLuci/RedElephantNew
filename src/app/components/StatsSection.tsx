@@ -66,8 +66,8 @@ const StarIcon = () => (
 );
 
 const stats = [
-    { value: 15, suffix: '+', label: 'Years of Excellence', Icon: AwardIcon, description: 'Since 2009, crafting unforgettable Sri Lanka experiences' },
-    { value: 1000, suffix: '+', label: 'Happy Travelers', Icon: GlobeIcon, description: 'Guests from 60+ countries who chose to explore with us' },
+    { value: 20, suffix: '+', label: 'Years of Excellence', Icon: AwardIcon, description: 'Since 2009, crafting unforgettable Sri Lanka experiences' },
+    { value: 3000, suffix: '+', label: 'Happy Travelers', Icon: GlobeIcon, description: 'Guests from 60+ countries who chose to explore with us' },
     { value: 50, suffix: '+', label: 'Curated Tours', Icon: CompassIcon, description: 'Carefully designed packages for every travel style' },
     { value: 98, suffix: '%', label: 'Satisfaction Rate', Icon: StarIcon, description: 'Our guests consistently rate their experience 5 stars' },
 ];
@@ -215,7 +215,7 @@ export default function StatsSection() {
                         lineHeight: 1.7,
                         padding: '0 8px',
                     }}>
-                        Over a decade of crafting award-winning experiences across Sri Lanka.
+                        Over 20 years of crafting award-winning experiences across Sri Lanka.
                         Your perfect journey begins with our expertise.
                     </p>
                 </div>
@@ -353,7 +353,7 @@ export default function StatsSection() {
                             textAlign: 'center',
                             minWidth: isMobile ? '90px' : '120px',
                         }}>
-                            <div style={{ fontFamily: 'var(--font-heading)', fontSize: isMobile ? '1.8rem' : '2.2rem', fontWeight: 800, color: 'white' }}>15+</div>
+                            <div style={{ fontFamily: 'var(--font-heading)', fontSize: isMobile ? '1.8rem' : '2.2rem', fontWeight: 800, color: 'white' }}>20+</div>
                             <div style={{ fontFamily: 'var(--font-accent)', fontSize: '1.14rem', color: 'rgba(255,255,255,0.8)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Years<br />Experience</div>
                         </div>
                     </div>
