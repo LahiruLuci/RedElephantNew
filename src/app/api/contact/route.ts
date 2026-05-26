@@ -60,6 +60,7 @@ const BRAND = {
 /**
  * Wraps any email body in a consistent branded outer shell.
  */
+//supiri
 function emailShell(bodyHtml: string): string {
   return `
 <!DOCTYPE html>
@@ -85,7 +86,7 @@ function emailShell(bodyHtml: string): string {
           </tr>
           <!-- Body -->
           <tr>
-            <td style="padding:40px;">
+            <td style="padding:40px;"> 
               ${bodyHtml}
             </td>
           </tr>
