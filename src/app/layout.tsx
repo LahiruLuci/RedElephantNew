@@ -28,6 +28,15 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      { url: '/assets/headder-logo.png' },
+    ],
+    shortcut: '/assets/headder-logo.png',
+    apple: [
+      { url: '/assets/headder-logo.png' },
+    ],
+  },
 };
 
 import Navbar from "./components/Navbar";
@@ -45,6 +54,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body
+        suppressHydrationWarning
         style={{
           margin: 0,
           padding: 0,

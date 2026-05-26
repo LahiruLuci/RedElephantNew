@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import SuccessModal from '../components/SuccessModal';
 
 /* ====== WEDDING & EVENTS DESIGN TOKENS ====== */
 const bgPaper = '#FAF9F6';
@@ -515,6 +516,9 @@ export default function WeddingsDetailPage() {
     const [guestCount, setGuestCount] = useState<string>('Intimate (2-30)');
     const [formState, setFormState] = useState({ name: '', email: '', date: '', vision: '' });
     const [errorMsg, setErrorMsg] = useState('');
+    const [successMsg, setSuccessMsg] = useState('');
+    const [sending, setSending] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const today = new Date().toISOString().split('T')[0];
 
     useEffect(() => {
@@ -783,7 +787,7 @@ export default function WeddingsDetailPage() {
             </section>
 
             {/* 6. ENQUIRY CONCIERGE (Burgundy Accents) */}
-            <section id="enquiry" style={{ padding: '160px 24px', maxWidth: 1000, margin: '0 auto' }}>
+            <section id="enquiry" style={{ padding: '160px 24px 120px', maxWidth: 1000, margin: '0 auto' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(40px, 8vw, 100px)', alignItems: 'center' }}>
                     <div>
                         <Revealer>
@@ -793,9 +797,12 @@ export default function WeddingsDetailPage() {
                     </div>
 
                     <Revealer delay={300}>
-                        <form 
-                            onSubmit={(e) => {
+                        <form
+                            noValidate
+                            onSubmit={async (e) => {
                                 e.preventDefault();
+
+                                // ── Validation ──
                                 if (!formState.name.trim() || !formState.email.trim() || !formState.date) {
                                     setErrorMsg('Please fill in all required fields (Name, Email, and Date).');
                                     return;
@@ -805,32 +812,69 @@ export default function WeddingsDetailPage() {
                                     setErrorMsg('Please enter a valid email address.');
                                     return;
                                 }
+
                                 setErrorMsg('');
-                                alert('Thank you! Your private event inquiry has been received. Our concierge will be in touch within 24 hours to begin crafting your prologue.');
-                                setFormState({ name: '', email: '', date: '', vision: '' });
-                                setSelectedPackage('');
-                                setGuestCount('Intimate (2-30)');
+                                setSuccessMsg('');
+                                setSending(true);
+
+                                try {
+                                    // ── POST to secure API route ──
+                                    const res = await fetch('/api/contact', {
+                                        method: 'POST',
+                                        headers: { 'Content-Type': 'application/json' },
+                                        body: JSON.stringify({
+                                            formType: 'wedding',
+                                            name: formState.name,
+                                            email: formState.email,
+                                            date: formState.date,
+                                            guestCount: guestCount,
+                                            selectedPackage: selectedPackage,
+                                            vision: formState.vision,
+                                        }),
+                                    });
+                                    const data = await res.json();
+                                    if (!res.ok) {
+                                        setErrorMsg(data.error || 'Something went wrong. Please try again.');
+                                    } else {
+                                        setSuccessMsg('Thank you! Your wedding enquiry has been received. Our concierge will be in touch within 24 hours to begin crafting your celebration.');
+                                        setFormState({ name: '', email: '', date: '', vision: '' });
+                                        setSelectedPackage('');
+                                        setGuestCount('Intimate (2-30)');
+                                        setIsModalOpen(true);
+                                    }
+                                } catch {
+                                    setErrorMsg('A network error occurred. Please check your connection and try again.');
+                                } finally {
+                                    setSending(false);
+                                }
                             }}
                             style={{ display: 'flex', flexDirection: 'column', gap: 32 }}
                         >
+                            {/* Success banner */}
+                            {successMsg && (
+                                <div style={{ background: 'rgba(91,111,93,0.07)', border: '1px solid rgba(91,111,93,0.25)', borderRadius: 8, padding: '14px 18px', color: '#3d5c40', fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                                    ✔ {successMsg}
+                                </div>
+                            )}
+
                             <div className="input-group">
                                 <label style={labelStyle}>Your Name *</label>
-                                <input type="text" placeholder="e.g. Eleanor & James" style={inputStyle} value={formState.name} onChange={e => setFormState({...formState, name: e.target.value})} />
+                                <input type="text" placeholder="e.g. Eleanor &amp; James" style={inputStyle} value={formState.name} onChange={e => setFormState({ ...formState, name: e.target.value })} disabled={sending} />
                             </div>
                             <div className="input-group">
                                 <label style={labelStyle}>Email Address *</label>
-                                <input type="email" placeholder="hello@example.com" style={inputStyle} value={formState.email} onChange={e => setFormState({...formState, email: e.target.value})} />
+                                <input type="email" placeholder="redelephant.trv@gmail.com" style={inputStyle} value={formState.email} onChange={e => setFormState({ ...formState, email: e.target.value })} disabled={sending} />
                             </div>
                             <div className="input-group">
                                 <label style={labelStyle}>Proposed Date *</label>
                                 <input type="date" style={inputStyle} value={formState.date} min={new Date().toISOString().split('T')[0]} onChange={e => {
                                     const selected = e.target.value;
-                                    if (new Date(selected) < new Date(new Date().setHours(0,0,0,0))) {
+                                    if (new Date(selected) < new Date(new Date().setHours(0, 0, 0, 0))) {
                                         setErrorMsg('Please select a future date.');
                                         return;
                                     }
                                     setErrorMsg('');
-                                    setFormState({...formState, date: selected});
+                                    setFormState({ ...formState, date: selected });
                                 }} />
                             </div>
                             <div className="input-group">
@@ -852,33 +896,45 @@ export default function WeddingsDetailPage() {
                             </div>
                             <div className="input-group">
                                 <label style={labelStyle}>The Vision</label>
-                                <textarea placeholder="Tropical, Minimalist, Traditional Royal..." style={{ ...inputStyle, minHeight: 120 }} value={formState.vision} onChange={e => setFormState({...formState, vision: e.target.value})} />
+                                <textarea placeholder="Tropical, Minimalist, Traditional Royal..." style={{ ...inputStyle, minHeight: 120 }} value={formState.vision} onChange={e => setFormState({ ...formState, vision: e.target.value })} />
                             </div>
-                            
+
                             {errorMsg && (
-                                <div style={{ color: '#C41E3A', fontSize: '1.12rem', marginTop: '-10px', marginBottom: '-10px', fontFamily: 'var(--font-body)' }}>
+                                <div style={{ color: '#C41E3A', fontSize: '0.9rem', marginTop: '-10px', marginBottom: '-10px', fontFamily: 'var(--font-body)', background: 'rgba(196,30,58,0.06)', padding: '10px 14px', borderRadius: '8px', border: '1px solid rgba(196,30,58,0.15)' }}>
                                     {errorMsg}
                                 </div>
                             )}
 
-                            <button style={{
-                                background: burgundy,
-                                color: '#fff',
-                                border: 'none',
-                                padding: '24px',
-                                fontFamily: 'var(--font-accent)',
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.3em',
-                                fontSize: '1.14rem',
-                                cursor: 'pointer',
-                                transition: '0.4s'
-                            }} onMouseEnter={e => e.currentTarget.style.background = charcoal} onMouseLeave={e => e.currentTarget.style.background = burgundy}>
-                                Send Proposal Request
+                            <button
+                                type="submit"
+                                disabled={sending}
+                                style={{
+                                    background: sending ? 'rgba(90,30,40,0.5)' : burgundy,
+                                    color: '#fff',
+                                    border: 'none',
+                                    padding: '24px',
+                                    fontFamily: 'var(--font-accent)',
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '0.3em',
+                                    fontSize: '1.14rem',
+                                    cursor: sending ? 'not-allowed' : 'pointer',
+                                    transition: '0.4s',
+                                    width: '100%',
+                                }}
+                                onMouseEnter={e => { if (!sending) e.currentTarget.style.background = charcoal; }}
+                                onMouseLeave={e => { if (!sending) e.currentTarget.style.background = burgundy; }}
+                            >
+                                {sending ? 'Sending…' : 'Send Proposal Request'}
                             </button>
                         </form>
                     </Revealer>
                 </div>
             </section>
+            <SuccessModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                message={successMsg}
+            />
         </main>
     );
 }
@@ -1208,7 +1264,7 @@ function TierCard({ title, tagline, features, buttonLabel = "Select Package", fe
                         </div>
                     ))}
                 </div>
-                <button 
+                <button
                     onClick={onSelect}
                     style={{
                         padding: '16px 0',

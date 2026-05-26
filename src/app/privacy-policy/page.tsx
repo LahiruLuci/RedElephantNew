@@ -31,7 +31,7 @@ const SECTIONS = [
     },
     {
         title: "5. Your Rights",
-        p: "You have the right to access, correct, or delete your personal information. You also have the right to object to or restrict certain types of data processing. To exercise these rights, please contact our data protection officer at info@redelephanttravel.com."
+        p: "You have the right to access, correct, or delete your personal information. You also have the right to object to or restrict certain types of data processing. To exercise these rights, please contact our data protection officer at redelephant.trv@gmail.com."
     }
 ];
 
@@ -73,7 +73,7 @@ export default function PrivacyPolicyPage() {
             `}</style>
 
             {/* HEADER */}
-            <section style={{ 
+            <section style={{
                 padding: '160px 24px 120px', textAlign: 'center', background: C.dark, color: C.white,
                 overflow: 'hidden', position: 'relative'
             }}>
@@ -86,15 +86,15 @@ export default function PrivacyPolicyPage() {
                 <div style={{ position: 'relative', zIndex: 2 }}>
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
                         <div style={{ width: 40, height: 1, background: C.gold }} />
-                        <span style={{ 
-                            fontFamily: 'var(--font-accent)', fontSize: '0.85rem', color: C.gold, 
-                            letterSpacing: '0.25em', textTransform: 'uppercase', fontWeight: 700 
+                        <span style={{
+                            fontFamily: 'var(--font-accent)', fontSize: '0.85rem', color: C.gold,
+                            letterSpacing: '0.25em', textTransform: 'uppercase', fontWeight: 700
                         }}>Your Data Matters</span>
                         <div style={{ width: 40, height: 1, background: C.gold }} />
                     </div>
-                    <h1 style={{ 
-                        fontFamily: 'var(--font-heading)', fontSize: 'clamp(2.5rem, 6vw, 5rem)', 
-                        margin: 0, fontWeight: 900, letterSpacing: '-0.02em' 
+                    <h1 style={{
+                        fontFamily: 'var(--font-heading)', fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                        margin: 0, fontWeight: 900, letterSpacing: '-0.02em'
                     }}>Privacy Policy</h1>
                 </div>
             </section>
@@ -110,7 +110,7 @@ export default function PrivacyPolicyPage() {
                         </div>
                     ))}
                     <div style={{ marginTop: 40, borderTop: `1px solid ${C.border}`, padding: '40px 0 0', textAlign: 'center' }}>
-                         <p style={{ color: C.muted, fontFamily: 'var(--font-body)', fontSize: '1.2rem' }}>Last updated: March 20, 2026</p>
+                        <p style={{ color: C.muted, fontFamily: 'var(--font-body)', fontSize: '1.2rem' }}>Last updated: March 20, 2026</p>
                     </div>
                 </div>
             </section>

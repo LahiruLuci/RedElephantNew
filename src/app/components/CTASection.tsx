@@ -79,7 +79,7 @@ export default function CTASection() {
                 pkg: pkgParam || f.pkg,
                 guests: guestsParam || f.guests
             }));
-            
+
             // Scroll to form if redirected from a package page
             if (window.location.hash === '#contact') {
                 setTimeout(() => {
@@ -94,8 +94,10 @@ export default function CTASection() {
     const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
         setForm(f => ({ ...f, [k]: e.target.value }));
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // ── Client-side validation ──
         if (!form.name.trim() || !form.email.trim()) {
             setErrorMsg('Please enter your Name and Email to continue.');
             return;
@@ -109,9 +111,40 @@ export default function CTASection() {
             setErrorMsg('Departure date cannot be before arrival date.');
             return;
         }
+
         setErrorMsg('');
         setSending(true);
-        setTimeout(() => { setSending(false); setSent(true); }, 1600);
+
+        try {
+            // ── POST to our secure API route ──
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    formType: 'enquiry',
+                    name: form.name,
+                    email: form.email,
+                    phone: form.phone,
+                    pkg: form.pkg,
+                    guests: form.guests,
+                    from: form.from,
+                    to: form.to,
+                    message: form.message,
+                }),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                setErrorMsg(data.error || 'Something went wrong. Please try again.');
+            } else {
+                setSent(true);
+            }
+        } catch {
+            setErrorMsg('A network error occurred. Please check your connection and try again.');
+        } finally {
+            setSending(false);
+        }
     };
 
     const inputBase: React.CSSProperties = {
@@ -279,7 +312,7 @@ export default function CTASection() {
                                 svg: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={gold} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 010 1.18A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>,
                             },
                             {
-                                href: 'mailto:info@redelephanttravel.com', label: 'info@redelephanttravel.com',
+                                href: 'mailto:redelephant.trv@gmail.com', label: 'redelephant.trv@gmail.com',
                                 svg: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={gold} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>,
                             },
                         ].map(c => (
@@ -386,7 +419,7 @@ export default function CTASection() {
                                             style={focusStyle('guests')} />
                                     </Field>
                                 </div>
-                                
+
                                 {errorMsg && (
                                     <div style={{ color: '#ff6b6b', fontSize: '0.97rem', fontFamily: 'var(--font-body)', background: 'rgba(255,107,107,0.1)', padding: '10px 14px', borderRadius: '8px', border: '1px solid rgba(255,107,107,0.2)' }}>
                                         {errorMsg}

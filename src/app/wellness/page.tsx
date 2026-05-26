@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import SuccessModal from '../components/SuccessModal';
 
 /* ====== DESIGN TOKENS ====== */
 const bgSoft = '#FDFDFB'; // Ultra-clean paper-like background
@@ -15,6 +16,9 @@ export default function AdvancedWellnessPage() {
     const [headerActive, setHeaderActive] = useState(false);
     const [form, setForm] = useState({ name: '', email: '', intention: 'Detox & Purify' });
     const [errorMsg, setErrorMsg] = useState('');
+    const [successMsg, setSuccessMsg] = useState('');
+    const [sending, setSending] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => setHeaderActive(window.scrollY > 100);
@@ -498,7 +502,7 @@ export default function AdvancedWellnessPage() {
             </section>
 
             {/* 5. RESERVATION CONCIERGE */}
-            <section id="enquiry" className="wellness-enquiry-section" style={{ padding: '160px 0', background: sandSilk, position: 'relative' }}>
+            <section id="enquiry" className="wellness-enquiry-section" style={{ padding: '160px 0 120px', background: sandSilk, position: 'relative' }}>
                 <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(40px, 6vw, 100px)' }}>
                     <div>
                         <Revealer>
@@ -506,14 +510,16 @@ export default function AdvancedWellnessPage() {
                             <p style={{ lineHeight: 1.8, color: inkSecondary, marginBottom: 40 }}>Our wellness concierge will contact you within 24 hours to personalize your itinerary.</p>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                                 <ContactInfo icon="📞" text="+94 77 315 71 71" />
-                                <ContactInfo icon="✉" text="info@redelephanttravel.com" />
+                                <ContactInfo icon="✉" text="redelephant.trv@gmail.com" />
                             </div>
                         </Revealer>
                     </div>
 
                     <Revealer delay={300}>
-                        <form className="wellness-form" onSubmit={(e) => {
+                        <form className="wellness-form" noValidate onSubmit={async (e) => {
                             e.preventDefault();
+
+                            // ── Validation ──
                             if (!form.name.trim() || !form.email.trim()) {
                                 setErrorMsg('Please fill in all required fields (Name and Email).');
                                 return;
@@ -523,48 +529,92 @@ export default function AdvancedWellnessPage() {
                                 setErrorMsg('Please enter a valid email address.');
                                 return;
                             }
+
                             setErrorMsg('');
-                            alert('Thank you! Your wellness journey inquiry has been received. Our concierge will be in touch shortly.');
-                            setForm({ name: '', email: '', intention: 'Detox & Purify' });
+                            setSuccessMsg('');
+                            setSending(true);
+
+                            try {
+                                // ── POST to secure API route ──
+                                const res = await fetch('/api/contact', {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({
+                                        formType: 'wellness',
+                                        name: form.name,
+                                        email: form.email,
+                                        intention: form.intention,
+                                    }),
+                                });
+                                const data = await res.json();
+                                if (!res.ok) {
+                                    setErrorMsg(data.error || 'Something went wrong. Please try again.');
+                                } else {
+                                    setSuccessMsg('Thank you! Your wellness journey enquiry has been received. Our concierge will be in touch within 24 hours.');
+                                    setForm({ name: '', email: '', intention: 'Detox & Purify' });
+                                    setIsModalOpen(true);
+                                }
+                            } catch {
+                                setErrorMsg('A network error occurred. Please check your connection and try again.');
+                            } finally {
+                                setSending(false);
+                            }
                         }} style={{ background: '#fff', padding: 'clamp(30px, 5vw, 60px)', borderRadius: '4px', boxShadow: '0 40px 100px rgba(0,0,0,0.03)', boxSizing: 'border-box' }}>
+
+                            {/* Success banner */}
+                            {successMsg && (
+                                <div style={{ background: 'rgba(91,111,93,0.08)', border: '1px solid rgba(91,111,93,0.25)', borderRadius: 8, padding: '14px 18px', marginBottom: 24, color: '#3d5c40', fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                                    ✔ {successMsg}
+                                </div>
+                            )}
+
                             <div className="input-group">
                                 <label>Your Name *</label>
-                                <input type="text" placeholder="Gautama B." style={inputStyles} value={form.name} onChange={e => setForm({...form, name: e.target.value})} />
+                                <input type="text" placeholder="Gautama B." style={inputStyles} value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} disabled={sending} />
                             </div>
                             <div className="input-group">
                                 <label>Email Address *</label>
-                                <input type="email" placeholder="hello@calm.com" style={inputStyles} value={form.email} onChange={e => setForm({...form, email: e.target.value})} />
+                                <input type="email" placeholder="redelephant.trv@gmail.com" style={inputStyles} value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} disabled={sending} />
                             </div>
                             <div className="input-group">
                                 <label>Intention</label>
-                                <select style={inputStyles} value={form.intention} onChange={e => setForm({...form, intention: e.target.value})}>
-                                    <option>Detox & Purify</option>
+                                <select style={inputStyles} value={form.intention} onChange={e => setForm({ ...form, intention: e.target.value })} disabled={sending}>
+                                    <option>Detox &amp; Purify</option>
                                     <option>Stress Release</option>
                                     <option>Sleep Restoration</option>
                                     <option>Ayurvedic Immersion</option>
                                 </select>
                             </div>
-                            
+
                             {errorMsg && (
-                                <div style={{ color: '#C41E3A', fontSize: '1.12rem', marginBottom: '20px', fontFamily: 'var(--font-body)' }}>
+                                <div style={{ color: '#C41E3A', fontSize: '0.9rem', marginBottom: '20px', fontFamily: 'var(--font-body)', background: 'rgba(196,30,58,0.06)', padding: '10px 14px', borderRadius: '8px', border: '1px solid rgba(196,30,58,0.15)' }}>
                                     {errorMsg}
                                 </div>
                             )}
 
-                            <button className="submit-btn" style={{
-                                width: '100%',
-                                background: inkPrimary,
-                                color: '#fff',
-                                border: 'none',
-                                padding: '20px',
-                                fontFamily: 'var(--font-accent)',
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.2em',
-                                fontSize: '1.14rem',
-                                cursor: 'pointer',
-                                marginTop: errorMsg ? '0px' : '20px'
-                            }}>
-                                Send Enquiry
+                            <button
+                                className="submit-btn"
+                                type="submit"
+                                disabled={sending}
+                                style={{
+                                    width: '100%',
+                                    background: sending ? 'rgba(26,28,26,0.5)' : inkPrimary,
+                                    color: '#fff',
+                                    border: 'none',
+                                    padding: '20px',
+                                    fontFamily: 'var(--font-accent)',
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '0.2em',
+                                    fontSize: '1.14rem',
+                                    cursor: sending ? 'not-allowed' : 'pointer',
+                                    marginTop: errorMsg ? '0px' : '20px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: 10,
+                                }}
+                            >
+                                {sending ? 'Sending…' : 'Send Enquiry'}
                             </button>
                         </form>
                     </Revealer>
@@ -646,6 +696,11 @@ export default function AdvancedWellnessPage() {
                     }
                 }
             `}</style>
+            <SuccessModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                message={successMsg}
+            />
         </main>
     );
 }

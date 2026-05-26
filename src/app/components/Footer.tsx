@@ -57,7 +57,7 @@ export default function Footer() {
             overflow: 'hidden',
         }}>
             {/* MAIN FOOTER */}
-            <div style={{ maxWidth: '1400px', margin: '0 auto', padding: isMobile ? '60px 20px 40px' : '80px 32px 40px' }}>
+            <div style={{ maxWidth: '1400px', margin: '0 auto', padding: isMobile ? '40px 20px 40px' : '40px 32px 40px' }}>
                 <div className="footer-grid" style={{
                     display: 'grid',
                     gridTemplateColumns: isMobile ? '1fr' : '2fr 1fr 1fr 1fr 1fr',
@@ -111,7 +111,7 @@ export default function Footer() {
                             {[
                                 { icon: '📍', text: '50/5 Rajamahavihara Road, Mirihana, Kotte.' },
                                 { icon: '📞', text: '+94 77 315 71 71' },
-                                { icon: '✉️', text: 'info@redelephanttravel.com' },
+                                { icon: '✉️', text: 'redelephant.trv@gmail.com' },
                             ].map((item) => (
                                 <div key={item.icon} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                                     <span style={{ fontSize: '1rem', flexShrink: 0, marginTop: '1px' }}>{item.icon}</span>
@@ -123,7 +123,7 @@ export default function Footer() {
                         {/* SOCIAL LINKS */}
                         <div style={{ display: 'flex', gap: '10px' }}>
                             {[
-                                { label: 'Facebook', icon: 'f', href: '#' },
+                                { label: 'Facebook', icon: 'f', href: 'https://www.facebook.com/share/1C7VcXwFDp/?mibextid=wwXIfr' },
                                 { label: 'Instagram', icon: '◈', href: '#' },
                                 { label: 'TripAdvisor', icon: '✈', href: '#' },
                                 { label: 'WhatsApp', icon: '💬', href: 'https://wa.me/94773157171' },
